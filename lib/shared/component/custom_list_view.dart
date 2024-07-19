@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_model.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/tag.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/views/home/news_details_page.dart';
 import 'package:yemenshabab_news_cms_mobile/views/home/video_details_page.dart';
@@ -24,7 +24,7 @@ class CustomsListView extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             textDirection:
-            isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
+                isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
             children: [
               Text(
                 newsModel.title!,
@@ -46,68 +46,74 @@ class CustomsListView extends StatelessWidget {
           child: Column(
             children: List.generate(
               newsModel.data!.length * 2 - 1,
-                  (index) =>
-              index % 2 == 0
+              (index) => index % 2 == 0
                   ? InkWell(
-                splashColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () {
-                  Navigator.push(
-                      context, _createRoute(newsModel.data![index]));
-                },
-                child: Row(
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 120,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child:
-                      ImageComponent(
-                        imageUrl: newsModel.data![index ~/ 2].image!,),
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      splashColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            createRoute(
+                              () => newsModel.data![index].dataType == 'VIDEO'
+                                  ? VideoDetailsPage(
+                                      dataModel: newsModel.data![index])
+                                  : NewsDetailsPage(
+                                      dataModel: newsModel.data![index]),
+                            ));
+                      },
+                      child: Row(
                         children: [
-                          Tag(
-                            tagName: newsModel.data![index ~/ 2].tag!,
-                            color: newsModel.data![index ~/ 2].color!,
-                            width: 120,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            newsModel.data![index ~/ 2].title!,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                          Container(
+                            width: 150,
+                            height: 120,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
+                            child: ImageComponent(
+                              imageUrl: newsModel.data![index ~/ 2].image!,
+                            ),
                           ),
-                          SizedBox(height: 10),
-                          Text(
-                            newsModel.data![index ~/ 2].time!,
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 18,
+                          SizedBox(width: 20),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Tag(
+                                  tagName: newsModel.data![index ~/ 2].tag!,
+                                  color: newsModel.data![index ~/ 2].color!,
+                                  width: 120,
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  newsModel.data![index ~/ 2].title!,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  newsModel.data![index ~/ 2].time!,
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-              )
+                    )
                   : Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Divider(),
-              ),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Divider(),
+                    ),
             ),
           ),
         ),
