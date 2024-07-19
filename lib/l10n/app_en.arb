@@ -1,0 +1,198 @@
+{
+  "language": "Language",
+  "@language": {
+    "description": "Language"
+  },
+  "theme": "Dark Theme",
+  "@theme": {
+    "description": "Dark Theme"
+  },
+  "faq": "Faq",
+  "@faq": {
+    "description": "Frequently Asked Questions"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Link to the homepage"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings for customization"
+  },
+  "about_us": "About Us",
+  "@about_us": {
+    "description": "Information about the company or organization"
+  },
+  "terms_conditions": "Terms & Conditions",
+  "@terms_conditions": {
+    "description": "Legal terms and conditions"
+  },
+  "privacy_policy": "Privacy Policy",
+  "@privacy_policy": {
+    "description": "Policy regarding user privacy"
+  },
+  "copyright": "©YemenShabab",
+  "@copyright": {
+    "description": "©YemenShabab"
+  },
+  "you": "You",
+  "@you": {
+    "description": "section with name you"
+  },
+  "programs": "Programs",
+  "@programs": {
+    "description": "programs"
+  },
+  "myList": "My List",
+  "@myList": {
+    "description": "my List"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "profile"
+  },
+  "live": "Live",
+  "@live": {
+    "description": "live"
+  },
+  "username": "username",
+  "@username": {
+    "description": "Username"
+  },
+  "followUs": "Follow Us",
+  "@followUs": {
+    "description": "Follow Us"
+  },
+  "password": "password",
+  "@password": {
+    "description": "Username"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot Password"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "usernameErrorMessage": "username is required !",
+  "@usernameErrorMessage": {
+    "description": "A valid username is required !"
+  },
+  "passwordErrorMessage": "password is required !",
+  "@passwordErrorMessage": {
+    "description": "A valid password is required !"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create Account"
+  },
+  "keywords": "Keywords",
+  "@keywords": {
+    "description": "Keywords"
+  },
+  "since": "since",
+  "@since": {
+    "description": "since"
+  },
+  "emptyMyList": "Your List Is Empty",
+  "@emptyMyList": {
+    "description": "Your List Is Empty"
+  },
+  "liveNow": "Live Now",
+  "@liveNow": {
+    "description": "Live Now"
+  },
+  "voice": "Voice",
+  "@voice": {
+    "description": "Voice"
+  },
+  "video": "Video",
+  "@video": {
+    "description": "Video"
+  },
+  "watch": "Watch",
+  "settingContent": "Content Settings",
+  "@watch": {
+    "description": "watch"
+  },
+  "fontSize": "Font Size",
+  "readingMode": "Reading Mode",
+  "broadcastsHour": "It broadcasts the hour",
+  "daysShow": "Days Show",
+  "@daysShow": {
+    "description": "Says Show"
+  },
+  "timeShow": " Watching Time",
+  "@timeShow": {
+    "description": "Says Show"
+  },
+  "programsSchedule": "Programs Schedule",
+  "@programsSchedule": {
+    "description": "Programs Schedule"
+  },
+  "noPrograms": "There are no programs for today",
+  "@noPrograms": {
+    "description": "There are no programs for today"
+  },
+  "nowShowing": "Now Showing",
+  "@nowShowing": {
+    "description": "Now Showing"
+  },
+  "audioBroadcast": "Audio broadcast",
+  "@audioBroadcast": {
+    "description": "Audio broadcast"
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Appearance"
+  },
+  "sunday": "Sunday",
+  "@sunday": {
+    "description": "Name of the day: Sunday"
+  },
+  "monday": "Monday",
+  "@monday": {
+    "description": "Name of the day: Monday"
+  },
+  "tuesday": "Tuesday",
+  "@tuesday": {
+    "description": "Name of the day: Tuesday"
+  },
+  "wednesday": "Wednesday",
+  "@wednesday": {
+    "description": "Name of the day: Wednesday"
+  },
+  "thursday": "Thursday",
+  "@thursday": {
+    "description": "Name of the day: Thursday"
+  },
+  "friday": "Friday",
+  "@friday": {
+    "description": "Name of the day: Friday"
+  },
+  "saturday": "Saturday",
+  "@saturday": {
+    "description": "Name of the day: Saturday"
+  },
+  "airing": "Currently Airing",
+  "@airing": {
+    "description": "Currently Airing"
+  },
+  "finished": "Finished",
+  "@finished": {
+    "description": "Finished Airing"
+  },
+  "soon": "Soon",
+  "@soon": {
+    "description": "Airing Soon"
+  }
+}
