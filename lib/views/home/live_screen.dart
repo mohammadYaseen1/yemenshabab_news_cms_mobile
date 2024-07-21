@@ -7,9 +7,7 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'package:qyplayer/interface/qyplayer_interface.dart';
 import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_management.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_widget.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/toast.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/web_view.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
@@ -62,7 +60,7 @@ class _LiveScreenState extends State<LiveScreen> {
   @override
   void initState() {
     super.initState();
-    _audioPlayer =  AudioPlayer();
+    _audioPlayer = AudioPlayer();
     floating = Floating();
     streamView = [liveStream(), audioBroadcast()];
     enable();
