@@ -61,8 +61,7 @@ class _AppState extends State<App> {
       supportedLocales: AppLocalizations.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
-      // _themeMode,
+      themeMode: _themeMode,
       initialRoute: '/',
       routes: {
         '/image': (context) => Scaffold(
