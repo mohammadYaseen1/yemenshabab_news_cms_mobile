@@ -1,4 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_player_full.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_view.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CustomYouTubePlayer extends StatefulWidget {
@@ -16,6 +22,7 @@ class _CustomYouTubePlayerState extends State<CustomYouTubePlayer> {
 
   @override
   void initState() {
+    print("initState");
     super.initState();
     _controller = YoutubePlayerController.fromVideoId(
       videoId: widget.id,
@@ -27,30 +34,57 @@ class _CustomYouTubePlayerState extends State<CustomYouTubePlayer> {
       ),
     );
   }
-
+  //
   @override
   void deactivate() {
+    print("deactivate");
     _controller.pauseVideo();
     super.deactivate();
   }
 
   @override
   void dispose() {
+    print("dispose");
     _controller.close();
     super.dispose();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+    print("build123");
+    print(widget.id);
+    return YoutubeView(id: widget.id);
     return YoutubePlayerScaffold(
-      enableFullScreenOnVerticalDrag: true,
       fullscreenOrientations: [],
-      autoFullScreen: true,
       controller: _controller,
       builder: (context, player) {
         return SizedBox(
           width: double.infinity,
-          child: player,
+          child: Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              player,
+              InkWell(
+                onTap: () {
+                  SystemChrome.setPreferredOrientations([
+                    DeviceOrientation.landscapeRight,
+                    DeviceOrientation.landscapeLeft,
+                  ]);
+                  Navigator.of(context).push(createRoute(
+                    () => CustomYouTubePlayerFull( controller: _controller),
+                  ));
+                  print("onTap");
+                },
+                child: Container(
+                  height: 40,
+                  width: 55,
+                  color: Colors.red,
+                ),
+              ),
+            ],
+          ),
         );
       },
     );

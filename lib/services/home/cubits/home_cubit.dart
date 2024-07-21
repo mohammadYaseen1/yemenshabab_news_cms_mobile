@@ -54,7 +54,7 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       emit(LandingLoading());
       final homeModel = await fetchLanding(language);
-      final program = await homeService.fetchPrograms();
+      final program = await homeService.fetchPrograms(rows: 0);
       final section = await homeService.fetchSections();
       programEntity = program;
       fillCategorySection(section);

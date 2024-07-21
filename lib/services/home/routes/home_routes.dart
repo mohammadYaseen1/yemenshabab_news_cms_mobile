@@ -10,6 +10,9 @@ class HomeRoutes {
   static String fetchPrograms({required int rows, required int first}) =>
       '${Config.baseUrl}/api/v1/main/programs/active?rows=$rows&first=$first';
 
+  static String fetchWriters({required int rows, required int first, required String uuid}) =>
+      '${Config.baseUrl}/api/v1/main/writer/articles/$uuid?rows=$rows&first=$first';
+
   static String fetchPlaylist =
       '${Config.youtubeApiUrl}/playlistItems';
 

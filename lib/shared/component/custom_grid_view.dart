@@ -60,7 +60,7 @@ class CustomGridView extends StatelessWidget {
           ),
         SizedBox(height: 20),
         Container(
-          height: 250,
+          height: 270,
           child: ListView.builder(
             itemCount: newsModel.data!.length,
             scrollDirection: Axis.horizontal,
@@ -100,29 +100,29 @@ class CustomGridView extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(5.0),
-                    //   child: Row(
-                    //     textDirection: isArabic(context)
-                    //         ? TextDirection.rtl
-                    //         : TextDirection.ltr,
-                    //     children: [
-                    //       const Icon(
-                    //         Icons.access_time_rounded,
-                    //         size: 18,
-                    //         color: Colors.grey,
-                    //       ),
-                    // const SizedBox(width: 10),
-                    // Text(
-                    //   newsModel.data![index].time!,
-                    //   style: const TextStyle(
-                    //     color: Colors.grey,
-                    //     fontSize: 18,
-                    //   ),
-                    // ),
-                    // ],
-                    // ),
-                    // ),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Row(
+                        textDirection: isArabic(context)
+                            ? TextDirection.rtl
+                            : TextDirection.ltr,
+                        children: [
+                          const Icon(
+                            Icons.access_time_rounded,
+                            size: 18,
+                            color: Colors.grey,
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            newsModel.data![index].time!,
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

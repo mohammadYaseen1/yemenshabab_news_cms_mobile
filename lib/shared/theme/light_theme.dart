@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
 
 /*
@@ -8,7 +8,7 @@ import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
 * */
 
 ThemeData lightTheme = ThemeData(
-  fontFamily: FontFamily.manrope,
+  fontFamily: FontFamily.notoSansArabic,
   brightness: Brightness.light,
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.white,
@@ -23,21 +23,19 @@ ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch().copyWith(
     surface: Colors.white,
     primary: Colors.red,
-    secondary:Colors.grey.shade600,
+    secondary: Colors.grey.shade600,
   ),
   chipTheme: ChipThemeData(
     backgroundColor: Colors.white,
   ),
   textTheme: TextTheme(
-    bodySmall: TextStyle(
-      color:  Colors.grey,
-    ),
-  ),
+      bodySmall: TextStyle(
+    color: Colors.grey,
+  )),
   drawerTheme: DrawerThemeData(
-    backgroundColor:  Colors.grey.shade400,
+    backgroundColor: Colors.grey.shade400,
   ),
   cardColor: Colors.grey.shade50,
   toggleButtonsTheme: ToggleButtonsThemeData(
       fillColor: Colors.grey.shade50, color: Colors.white),
-
 );

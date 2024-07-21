@@ -1,13 +1,13 @@
 import 'package:yemenshabab_news_cms_mobile/data/models/home/home_model.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/indicator/Indicator_model.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/extra_data.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_model.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab_news_cms_mobile/data/models/writer_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/data.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/item.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/landing.dart';
@@ -111,6 +111,12 @@ class HomeService {
 
   Future<ProgramEntity> fetchPrograms({int rows = 10, int first = 0}) async {
     return await homeRepository.fetchPrograms(rows: rows, first: first);
+  }
+
+  Future<WriterEntity> fetchWriters(
+      {required String uuid, int rows = 10, int first = 0}) async {
+    return await homeRepository.fetchWriters(
+        uuid: uuid, rows: rows, first: first);
   }
 
   Future<ProgramPrograms> getProgram(String uuid) async {

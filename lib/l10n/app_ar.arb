@@ -39,6 +39,7 @@
   "timeShow": "أوقات المشاهدة",
   "programsSchedule": "الخارطة البرمجية",
   "broadcastsHour": "يبث الساعة",
+  "archive": "أرشيف",
   "noPrograms": "لا يوجد برامج لهذا اليوم",
   "nowShowing": "يعرض الآن",
   "copyright": "YemenShabab©",
@@ -50,5 +51,6 @@
   "airing": "يعرض حاليا",
   "settingContent": "اعدادت المحتوى",
   "fontSize": "حجم الخط",
-  "readingMode": "وضع القراءة"
+  "readingMode": "وضع القراءة",
+  "articles": "مقالات"
 }

@@ -120,6 +120,8 @@
     "description": "Video"
   },
   "watch": "Watch",
+  "articles": "Articles",
+  "archive": "Archive",
   "settingContent": "Content Settings",
   "@watch": {
     "description": "watch"

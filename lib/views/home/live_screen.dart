@@ -9,6 +9,7 @@ import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_management.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_widget.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/component/toast.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/web_view.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
@@ -98,7 +99,7 @@ class _LiveScreenState extends State<LiveScreen> {
   @override
   void dispose() {
     disable();
-    // _audioPlayer.dispose();
+    _audioPlayer.dispose();
     super.dispose();
   }
 
@@ -110,23 +111,23 @@ class _LiveScreenState extends State<LiveScreen> {
           body:
               WebViewWidget(controller: viewController ?? WebViewController())),
       childWhenDisabled: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () async {
-            print(_audioPlayer.processingState);
-            var play = _audioPlayer.playing;
-            print("playing: $play");
-            if (_audioPlayer.playing) {
-              await _audioPlayer.stop();
-              print("stop");
-            } else {
-              await _audioPlayer.play();
-              print("play");
-            }
-          },
-          icon: Icon(Icons.podcasts_rounded),
-          label: Text(AppLocalizations.of(context)!.audioBroadcast),
-        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterTop,
+        // floatingActionButton: FloatingActionButton.extended(
+        //   onPressed: () async {
+        //     print(_audioPlayer.processingState);
+        //     var play = _audioPlayer.playing;
+        //     print("playing: $play");
+        //     if (_audioPlayer.playing) {
+        //       await _audioPlayer.stop();
+        //       print("stop");
+        //     } else {
+        //       await _audioPlayer.play();
+        //       print("play");
+        //     }
+        //   },
+        //   icon: Icon(Icons.podcasts_rounded),
+        //   label: Text(AppLocalizations.of(context)!.audioBroadcast),
+        // ),
         appBar: AppBar(),
         body: Padding(
           padding: const EdgeInsets.all(20),
@@ -143,6 +144,23 @@ class _LiveScreenState extends State<LiveScreen> {
               ),
               SizedBox(height: 30),
               liveStream(),
+              SizedBox(height: 30),
+              FloatingActionButton.extended(
+                onPressed: () async {
+                  print(_audioPlayer.processingState);
+                  var play = _audioPlayer.playing;
+                  print("playing: $play");
+                  if (_audioPlayer.playing) {
+                    await _audioPlayer.stop();
+                    print("stop");
+                  } else {
+                    await _audioPlayer.play();
+                    print("play");
+                  }
+                },
+                icon: Icon(Icons.podcasts_rounded),
+                label: Text(AppLocalizations.of(context)!.audioBroadcast),
+              ),
               Expanded(flex: (value - 1).abs(), child: SizedBox()),
               Expanded(
                 child: Container(

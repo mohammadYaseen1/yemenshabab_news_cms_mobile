@@ -1,6 +1,7 @@
 import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab_news_cms_mobile/data/models/writer_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/data.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/landing.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
@@ -73,6 +74,19 @@ class HomeRepository {
       return ProgramEntity.fromJson(response.data);
     } else {
       throw Exception('Failed to load Programs');
+    }
+  }
+
+  Future<WriterEntity> fetchWriters(
+      {required int rows, required int first, required String uuid}) async {
+    var dio = await dioFactory.getDio();
+    final response =
+        await dio.get(HomeRoutes.fetchWriters(rows: rows, first: first, uuid: uuid));
+
+    if (response.statusCode == 200) {
+      return WriterEntity.fromJson(response.data);
+    } else {
+      throw Exception('Failed to load Writers');
     }
   }
 

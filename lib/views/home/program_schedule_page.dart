@@ -38,7 +38,8 @@ class ProgramSchedulePage extends StatelessWidget {
                             programs: (state as ProgramsScheduleLoaded)
                                     .program
                                     .data[Days.values[index]] ??
-                                []),
+                                [],
+                        day: Days.values[index]),
                       );
                     },
                   )

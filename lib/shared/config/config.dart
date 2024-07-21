@@ -10,7 +10,7 @@ class Config {
 
   static String timeZoneName = 'Asia/Aden';
   static String webUrl = "https://yemenshabab.org";
-
+  static String archiveSite = "https://yemenshabab.net";
   static String webViewLive = '$webUrl/mobile/live';
 
   static String API_KEY = 'AIzaSyCceWXD8onGDt961b0UlGbdCe3hqNgH_1Q';

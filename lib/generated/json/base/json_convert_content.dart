@@ -7,6 +7,7 @@ import 'package:flutter/material.dart' show debugPrint;
 import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab_news_cms_mobile/data/models/writer_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/services/app/models/setting_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
@@ -231,6 +232,22 @@ class JsonConvert {
       return data.map<SectionDataMostViewed>((Map<String, dynamic> e) =>
           SectionDataMostViewed.fromJson(e)).toList() as M;
     }
+    if (<WriterEntity>[] is M) {
+      return data.map<WriterEntity>((Map<String, dynamic> e) =>
+          WriterEntity.fromJson(e)).toList() as M;
+    }
+    if (<WriterWriter>[] is M) {
+      return data.map<WriterWriter>((Map<String, dynamic> e) =>
+          WriterWriter.fromJson(e)).toList() as M;
+    }
+    if (<WriterArticles>[] is M) {
+      return data.map<WriterArticles>((Map<String, dynamic> e) =>
+          WriterArticles.fromJson(e)).toList() as M;
+    }
+    if (<WriterArticlesResources>[] is M) {
+      return data.map<WriterArticlesResources>((Map<String, dynamic> e) =>
+          WriterArticlesResources.fromJson(e)).toList() as M;
+    }
     if (<SettingEntity>[] is M) {
       return data.map<SettingEntity>((Map<String, dynamic> e) =>
           SettingEntity.fromJson(e)).toList() as M;
@@ -319,6 +336,10 @@ class JsonConvertClassCollection {
     (SectionDataData).toString(): SectionDataData.fromJson,
     (SectionDataLatestData).toString(): SectionDataLatestData.fromJson,
     (SectionDataMostViewed).toString(): SectionDataMostViewed.fromJson,
+    (WriterEntity).toString(): WriterEntity.fromJson,
+    (WriterWriter).toString(): WriterWriter.fromJson,
+    (WriterArticles).toString(): WriterArticles.fromJson,
+    (WriterArticlesResources).toString(): WriterArticlesResources.fromJson,
     (SettingEntity).toString(): SettingEntity.fromJson,
     (NewsEntity).toString(): NewsEntity.fromJson,
     (NewsCategory).toString(): NewsCategory.fromJson,

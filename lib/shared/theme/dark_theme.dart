@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
 import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
+import 'package:yemenshabab_news_cms_mobile/generated/assets.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/extension/string.dart';
 
 ThemeData darkTheme = ThemeData(
-  fontFamily: FontFamily.manrope,
+  fontFamily: FontFamily.notoSansArabic,
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
     surface: Colors.black,

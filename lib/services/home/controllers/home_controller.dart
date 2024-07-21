@@ -4,6 +4,7 @@ import 'package:yemenshabab_news_cms_mobile/services/home/cubits/news_cubit.dart
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/playlist_cubit.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/program_cubit.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/program_schedule_cubit.dart';
+import 'package:yemenshabab_news_cms_mobile/services/home/cubits/writer_cubit.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/repositories/home_repository.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/service/home_service.dart';
 
@@ -14,12 +15,16 @@ class HomeController {
   ProgramScheduleCubit programScheduleCubit;
   PlaylistCubit playlistCubit;
   CategoryCubit categoryCubit;
+  WriterCubit writerCubit;
 
   HomeController()
       : homeCubit = HomeCubit(
           homeService: HomeService(homeRepository: HomeRepository()),
         ),
         newsCubit = NewsCubit(
+          homeService: HomeService(homeRepository: HomeRepository()),
+        ),
+        writerCubit = WriterCubit(
           homeService: HomeService(homeRepository: HomeRepository()),
         ),
         categoryCubit = CategoryCubit(),
@@ -39,8 +44,9 @@ class HomeController {
     );
     return newsCubit;
   }
+
   CategoryCubit newCategoryCubit() {
-    categoryCubit = CategoryCubit( );
+    categoryCubit = CategoryCubit();
     return categoryCubit;
   }
 
@@ -56,6 +62,13 @@ class HomeController {
       homeService: HomeService(homeRepository: HomeRepository()),
     );
     return programCubit;
+  }
+
+  WriterCubit newWriterCubit() {
+    writerCubit = WriterCubit(
+      homeService: HomeService(homeRepository: HomeRepository()),
+    );
+    return writerCubit;
   }
 
   ProgramScheduleCubit newProgramScheduleCubit() {

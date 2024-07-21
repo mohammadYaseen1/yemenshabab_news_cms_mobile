@@ -17,6 +17,8 @@ import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/social_media.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/views/home/my_slider.dart';
+import 'package:yemenshabab_news_cms_mobile/views/reading_mode_page.dart';
+import 'package:yemenshabab_news_cms_mobile/views/writer_page.dart';
 
 class NewsDetailsPage extends StatefulWidget {
   const NewsDetailsPage({super.key, required this.dataModel});
@@ -32,6 +34,8 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
   late SfRangeValues _values;
   var fontSize = 18.0;
 
+  late Locale lang;
+
   @override
   void initState() {
     _values = SfRangeValues(10.0, 24.0);
@@ -41,6 +45,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
   @override
   void didChangeDependencies() {
     isArabicLang = isArabic(context);
+    lang = AppLocalizations.supportedLocales[isArabicLang ? 0 : 1];
     super.didChangeDependencies();
   }
 
@@ -54,104 +59,120 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
           return Scaffold(
             appBar: AppBar(
               actions: [
-                if (state is NewsLoaded)
+                if (state is NewsLoaded) ...[
                   ShareButton(url: makeSharedUrl(context, state.newsEntity)),
-                if (false)
                   IconButton(
                       onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          backgroundColor: Theme.of(context).cardColor,
-                          constraints: const BoxConstraints(
-                            maxHeight: 300,
+                        Navigator.of(context).push(createRoute(
+                          () => ReadingModePage(
+                            content: state.newsEntity,
+                            isArabicLang: isArabicLang,
                           ),
-                          isScrollControlled: true,
-                          shape: RoundedRectangleBorder(
+                        ));
+                      },
+                      icon: Icon(
+                        FontAwesomeIcons.glasses,
+                      ))
+                ],
+                // if (false)
+                IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Theme.of(context).cardColor,
+                        constraints: const BoxConstraints(
+                          maxHeight: 300,
+                        ),
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        builder: (context) => Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
                             borderRadius: BorderRadius.circular(15.0),
                           ),
-                          builder: (context) => Container(
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Padding(
-                              padding: MediaQuery.of(context).viewInsets,
-                              child: SizedBox(
-                                child: ListView(
-                                  padding: EdgeInsets.only(
-                                      top: 15, left: 15, right: 15),
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  children: [
-                                    Text(
-                                      AppLocalizations.of(context)!
-                                          .settingContent,
-                                      style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold),
+                          child: Padding(
+                            padding: MediaQuery.of(context).viewInsets,
+                            child: SizedBox(
+                              child: ListView(
+                                padding: EdgeInsets.only(
+                                    top: 15, left: 15, right: 15),
+                                physics: const NeverScrollableScrollPhysics(),
+                                children: [
+                                  Text(
+                                    AppLocalizations.of(context)!
+                                        .settingContent,
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Divider(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    AppLocalizations.of(context)!.fontSize,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                    Divider(),
-                                    Text(
-                                      AppLocalizations.of(context)!.fontSize,
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                  ),
+                                  MySlider(
+                                    fontSize: fontSize,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        fontSize = value;
+                                        print(fontSize);
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    AppLocalizations.of(context)!.language,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                    MySlider(
-                                      fontSize: fontSize,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          fontSize = value;
-                                          print(fontSize);
-                                        });
-                                      },
+                                  ),
+                                  AnimatedToggleSwitch<Locale>.size(
+                                    textDirection: TextDirection.rtl,
+                                    current: lang,
+                                    values: AppLocalizations.supportedLocales,
+                                    indicatorSize: const Size.fromWidth(300),
+                                    borderWidth: 4.0,
+                                    iconList: [
+                                      Text('العربية'),
+                                      Text('English'),
+                                    ],
+                                    iconAnimationType: AnimationType.onHover,
+                                    style: ToggleStyle(
+                                      borderColor: Colors.transparent,
+                                      indicatorColor: Theme.of(context)
+                                          .toggleButtonsTheme
+                                          .color,
+                                      backgroundColor: Theme.of(context)
+                                          .toggleButtonsTheme
+                                          .fillColor,
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    Text(
-                                      AppLocalizations.of(context)!.language,
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    AnimatedToggleSwitch<Locale>.size(
-                                      textDirection: TextDirection.rtl,
-                                      current:
-                                          AppLocalizations.supportedLocales[
-                                              isArabicLang ? 0 : 1],
-                                      values: AppLocalizations.supportedLocales,
-                                      indicatorSize: const Size.fromWidth(300),
-                                      borderWidth: 4.0,
-                                      iconList: [
-                                        Text('العربية'),
-                                        Text('English'),
-                                      ],
-                                      iconAnimationType: AnimationType.onHover,
-                                      style: ToggleStyle(
-                                        borderColor: Colors.transparent,
-                                        indicatorColor: Theme.of(context)
-                                            .toggleButtonsTheme
-                                            .color,
-                                        backgroundColor: Theme.of(context)
-                                            .toggleButtonsTheme
-                                            .fillColor,
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      onChanged: (local) {
-                                        setState(() {
-                                          isArabicLang =
-                                              local.languageCode == "ar";
-                                        });
-                                      },
-                                    ),
-                                  ],
-                                ),
+                                    onChanged: (local) {
+                                      setState(() {
+                                        lang = local;
+                                        isArabicLang =
+                                            local.languageCode == 'ar';
+                                      });
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        );
-                      },
-                      icon: Icon(Icons.settings)),
+                        ),
+                      );
+                    },
+                    icon: Icon(Icons.settings)),
               ],
             ),
             body: state is NewsLoaded
@@ -438,7 +459,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                       ? state.newsEntity.contentAr!
                                       : state.newsEntity.contentEn!,
                                   renderMode: RenderMode.column,
-                                  textStyle: TextStyle(fontSize: 18),
+                                  textStyle: TextStyle(fontSize: fontSize),
                                 ),
                               ),
                             ),
@@ -492,7 +513,11 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
       hoverColor: Colors.transparent,
       focusColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(createRoute(
+          () => WriterPage(uuid: state.newsEntity.extras!.writerId!),
+        ));
+      },
       child: Text(
         isArabicLang
             ? state.newsEntity.extras!.writerName!

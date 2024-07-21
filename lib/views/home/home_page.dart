@@ -32,10 +32,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             isSelected = isSelected
                 .map(
                   (e) => false,
-            )
+                )
                 .toList();
           });
-
         },
       );
 
@@ -59,11 +58,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         var allSections = homeController.homeCubit.allSections;
         if (isSelected.isEmpty) isSelected = unSelected(allSections);
         return DefaultTabController(
-          initialIndex: 0,
+          initialIndex: 1,
           length: allSections.length + 1,
           child: Scaffold(
             appBar: AppBar(
-              toolbarHeight: 25,
+              toolbarHeight: 30,
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(30),
                 child: TabBar(
@@ -74,9 +73,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   tabAlignment: TabAlignment.start,
                   dividerColor: Theme.of(context).cardColor,
                   unselectedLabelColor: Colors.grey,
-                  labelStyle: TextStyle(fontWeight: FontWeight.w900),
+                  labelStyle:
+                      TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
                   unselectedLabelStyle:
-                      TextStyle(fontWeight: FontWeight.normal),
+                      TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
                   tabs: <Widget>[
                     Tab(
                       text: AppLocalizations.of(context)!.you,
@@ -98,8 +98,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               style: TextStyle(
                                   fontWeight: isSelected[index]
                                       ? FontWeight.w900
-                                      : FontWeight.normal),
-                              dropdownColor: Theme.of(context).cardColor,
+                                      : FontWeight.normal,
+                                  fontSize: isSelected[index] ? 18 : 14,
+                                  color: Theme.of(context).iconTheme.color),
+                              dropdownColor:
+                                  Theme.of(context).cardColor.withOpacity(0.7),
                               items: allSections[index]
                                   .section
                                   .categories!

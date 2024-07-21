@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/days.dart';
 
 bool isArabic(BuildContext context) =>
     Localizations.localeOf(context).toLanguageTag() == "ar";
@@ -165,8 +166,10 @@ int compareDate(String date1, String date2, [String pattern = 'hh:mm a']) {
 bool isActiveDate(
     {required String date,
     required Duration duration,
-    String pattern = 'hh:mm a'}) {
-  DateTime now = DateTime.now();
+    String pattern = 'hh:mm a',
+    required Days day}) {
+  DateTime now = DateTime.now().toUtc();
+  int dayNow = now.weekday;
   DateFormat inputFormat = DateFormat(pattern);
   DateTime dateTime = inputFormat.parse(date.replaceFirst(' UTC', ''));
   DateTime timeOnly = DateTime(0, 1, 1, dateTime.hour, dateTime.minute,
@@ -174,7 +177,8 @@ bool isActiveDate(
   DateTime timeOnlyNow = DateTime(0, 1, 1, now.hour, now.minute, now.second,
       now.millisecond, now.microsecond);
 
-  return timeOnly.isAfter(timeOnlyNow) &&
+  return day == Days.getDayEnum(dayNow) &&
+      timeOnly.isAfter(timeOnlyNow) &&
       timeOnly.isBefore(timeOnlyNow.add(duration));
 }
 

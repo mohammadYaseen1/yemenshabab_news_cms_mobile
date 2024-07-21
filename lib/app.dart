@@ -10,6 +10,7 @@ import 'package:yemenshabab_news_cms_mobile/shared/theme/dark_theme.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/theme/light_theme.dart';
 import 'package:yemenshabab_news_cms_mobile/views/auth/login_screen.dart';
 import 'package:yemenshabab_news_cms_mobile/views/auth/register_screen.dart';
+import 'package:yemenshabab_news_cms_mobile/views/writer_page.dart';
 
 class App extends StatefulWidget {
   const App({
@@ -60,7 +61,8 @@ class _AppState extends State<App> {
       supportedLocales: AppLocalizations.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: _themeMode,
+      themeMode: ThemeMode.dark,
+      // _themeMode,
       initialRoute: '/',
       routes: {
         '/image': (context) => Scaffold(
@@ -77,6 +79,8 @@ class _AppState extends State<App> {
         '/': (context) => AppLayout(),
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
+        '/writer': (context) =>
+            WriterPage(uuid: "adcedb52-4239-11ef-a569-02f52df354b1"),
         '/live': (context) => AudioPlayerWidget(
             url: 'http://webaudioapi.com/samples/audio-tag/chrono.mp3'),
       },

@@ -4,12 +4,16 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/banner_basic.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/days.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/views/home/program_details_page.dart';
 
 class ProgramTabScreen extends StatelessWidget {
-  const ProgramTabScreen({Key? key, required this.programs}) : super(key: key);
+  const ProgramTabScreen({Key? key, required this.programs, required this.day})
+      : super(key: key);
+
+  final Days day;
 
   final List<ProgramSchedulePrograms> programs;
 
@@ -64,8 +68,10 @@ class ProgramTabScreen extends StatelessWidget {
       focusColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: isActiveDate(
-              date: programs[index].showTime!,
-              duration: const Duration(hours: 1))
+        date: programs[index].showTime!,
+        duration: const Duration(hours: 1),
+        day: day,
+      )
           ? BannerBasicPage(
               title: AppLocalizations.of(context)!.nowShowing,
               widget: buildProgram(context, index),
@@ -115,11 +121,9 @@ class ProgramTabScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      getFormattedTime(
-                        programs[index].showTime!,
-                        locale: Localizations.localeOf(context).toLanguageTag(),
-                        pattern: 'yyyy-MM-dd HH:mm:ss.SSS',
-                      ),
+                      getFormattedTime(programs[index].showTime!,
+                          locale:
+                              Localizations.localeOf(context).toLanguageTag()),
                       style: const TextStyle(fontSize: 16),
                     ),
                   ),
