@@ -1,4 +1,4 @@
-package com.stacktec.yemenshabab_news_cms_mobile
+package net.yemenshabab
 
 import io.flutter.embedding.android.FlutterActivity
 
