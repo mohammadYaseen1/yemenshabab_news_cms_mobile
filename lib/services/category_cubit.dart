@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/category.dart';
+import 'package:yemenshabab/data/models/section/category.dart';
 
 part 'category_state.dart';
 

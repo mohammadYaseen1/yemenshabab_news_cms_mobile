@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/animated_search_bar.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/component/animated_search_bar.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({Key? key}) : super(key: key);

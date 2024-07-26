@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_model.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/program_status.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/banner_basic.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/program_details_page.dart';
+import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/data/models/home/news/news_model.dart';
+import 'package:yemenshabab/data/models/program_status.dart';
+import 'package:yemenshabab/shared/component/banner_basic.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramView extends StatelessWidget {
   const ProgramView({

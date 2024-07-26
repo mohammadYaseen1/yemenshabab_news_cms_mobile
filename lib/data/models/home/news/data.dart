@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
+import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 
 class DataModel {
   DataModel({

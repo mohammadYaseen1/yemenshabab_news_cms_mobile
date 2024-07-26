@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:yemenshabab_news_cms_mobile/data/models/news/news.dart';
-import 'package:yemenshabab_news_cms_mobile/services/news/routes/news_routes.dart';
+import 'package:yemenshabab/data/models/news/news.dart';
+import 'package:yemenshabab/services/news/routes/news_routes.dart';
 
 class NewsRepository {
   Future<List<News>> fetchNews() async {

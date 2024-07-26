@@ -1,9 +1,9 @@
 import 'dart:collection';
 
-import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/days.dart';
+import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/shared/days.dart';
 
-export 'package:yemenshabab_news_cms_mobile/generated/json/program_schedule_entity.g.dart';
+export 'package:yemenshabab/generated/json/program_schedule_entity.g.dart';
 
 class ProgramSchedule {
   Map<Days, List<ProgramSchedulePrograms>> _data = {};

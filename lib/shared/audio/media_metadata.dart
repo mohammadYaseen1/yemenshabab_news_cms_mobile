@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
 
 class MediaMetaData extends StatelessWidget {
   const MediaMetaData({

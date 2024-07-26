@@ -1,11 +1,11 @@
 // import 'package:flutter/material.dart';
 // import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-// import 'package:yemenshabab_news_cms_mobile/data/models/home/data_type.dart';
-// import 'package:yemenshabab_news_cms_mobile/data/models/section/category.dart';
-// import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-// import 'package:yemenshabab_news_cms_mobile/services/home/service/home_service.dart';
-// import 'package:yemenshabab_news_cms_mobile/shared/component/category_grid_view.dart';
-// import 'package:yemenshabab_news_cms_mobile/shared/component/category_list_view.dart';
+// import 'package:yemenshabab/data/models/home/data_type.dart';
+// import 'package:yemenshabab/data/models/section/category.dart';
+// import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+// import 'package:yemenshabab/services/home/service/home_service.dart';
+// import 'package:yemenshabab/shared/component/category_grid_view.dart';
+// import 'package:yemenshabab/shared/component/category_list_view.dart';
 //
 // class DefaultListView extends StatefulWidget {
 //   final HomeService homeService;

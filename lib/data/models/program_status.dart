@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 enum ProgramStatus {
   AIRING(Color.fromRGBO(73, 149, 32, 0.8)),

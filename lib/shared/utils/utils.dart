@@ -3,9 +3,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/days.dart';
+import 'package:yemenshabab/services/home/models/news/news_entity.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/days.dart';
 
 bool isArabic(BuildContext context) =>
     Localizations.localeOf(context).toLanguageTag() == "ar";
@@ -70,7 +70,7 @@ String getFormattedTime(String inputTime,
     DateFormat inputFormat = DateFormat(pattern);
     DateTime dateTime = inputFormat.parse(sanitizedInputTime, isUtc);
     DateTime convertedDate =
-    isUtc ? tz.TZDateTime.from(dateTime, location) : dateTime;
+        isUtc ? tz.TZDateTime.from(dateTime, location) : dateTime;
     DateFormat outputFormat = DateFormat('hh:mm a', locale);
     String formattedTime = outputFormat.format(convertedDate);
     return formattedTime;
@@ -191,15 +191,14 @@ int compareDate(String date1, String date2, [String pattern = 'hh:mm a']) {
   DateFormat inputFormat = DateFormat(pattern);
   DateTime dateTime1 = inputFormat.parse(date1.replaceFirst(' UTC', ''));
   DateTime dateTime2 = inputFormat.parse(date2.replaceFirst(' UTC', ''));
-  return dateTime2
-      .difference(dateTime1)
-      .inMilliseconds;
+  return dateTime2.difference(dateTime1).inMilliseconds;
 }
 
-bool isActiveDate({required String date,
-  required Duration duration,
-  String pattern = 'hh:mm a',
-  required Days day}) {
+bool isActiveDate(
+    {required String date,
+    required Duration duration,
+    String pattern = 'hh:mm a',
+    required Days day}) {
   DateFormat inputFormat = DateFormat(pattern);
   bool isUtc = date.isCaseInsensitiveContains("utc");
   tz.Location yemenLocation = tz.getLocation(Config.timeZoneName);
@@ -211,31 +210,15 @@ bool isActiveDate({required String date,
     now = tz.TZDateTime.from(DateTime.now(), yemenLocation);
     dateTime = tz.TZDateTime.from(dateTime, yemenLocation);
   }
-  DateTime start = DateTime(
-      0,
-      1,
-      1,
-      dateTime.hour,
-      dateTime.minute,
-      dateTime.second,
-      dateTime.millisecond,
-      dateTime.microsecond);
-  DateTime timeNow = DateTime(
-      0,
-      1,
-      1,
-      now.hour,
-      now.minute,
-      now.second,
-      now.millisecond,
-      now.microsecond);
+  DateTime start = DateTime(0, 1, 1, dateTime.hour, dateTime.minute,
+      dateTime.second, dateTime.millisecond, dateTime.microsecond);
+  DateTime timeNow = DateTime(0, 1, 1, now.hour, now.minute, now.second,
+      now.millisecond, now.microsecond);
   bool isToday = day == Days.getDayEnum(now.weekday);
   DateTime end = start.add(duration);
   return isToday && timeNow.isAfter(start) && timeNow.isBefore(end);
 }
 
 String makeSharedUrl(BuildContext context, NewsEntity news) {
-  return "${Config.webUrl}/${Localizations.localeOf(context)
-      .toLanguageTag()}/sections/${news.dataType}/${news.category!
-      .nameEn}/${news.uuid}";
+  return "${Config.webUrl}/${Localizations.localeOf(context).toLanguageTag()}/sections/${news.dataType}/${news.category!.nameEn}/${news.uuid}";
 }

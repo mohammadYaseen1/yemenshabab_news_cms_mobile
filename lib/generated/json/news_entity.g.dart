@@ -1,5 +1,5 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_convert_content.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
+import 'package:yemenshabab/generated/json/base/json_convert_content.dart';
+import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 
 NewsEntity $NewsEntityFromJson(Map<String, dynamic> json) {
   final NewsEntity newsEntity = NewsEntity();

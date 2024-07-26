@@ -1,4 +1,4 @@
-import 'package:yemenshabab_news_cms_mobile/shared/local/cache_helper.dart';
+import 'package:yemenshabab/shared/local/cache_helper.dart';
 
 class AuthStorage {
   static const _tokenKey = 'auth_token';

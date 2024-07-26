@@ -2,15 +2,15 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/program_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/loading.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/tag.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/program_watch_page.dart';
+import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/component/loading.dart';
+import 'package:yemenshabab/shared/component/tag.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/program_watch_page.dart';
 
 class ProgramDetailsPage extends StatelessWidget {
   const ProgramDetailsPage({super.key, this.program, required this.uuid});

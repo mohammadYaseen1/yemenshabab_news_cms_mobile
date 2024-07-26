@@ -1,7 +1,7 @@
-import 'package:yemenshabab_news_cms_mobile/data/models/home/indicator/Indicator_model.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_model.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/section/section_entity.dart';
+import 'package:yemenshabab/data/models/home/indicator/Indicator_model.dart';
+import 'package:yemenshabab/data/models/home/news/news_model.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 
 class HomeModel {
   HomeModel({

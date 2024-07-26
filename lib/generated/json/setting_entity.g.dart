@@ -1,5 +1,5 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_convert_content.dart';
-import 'package:yemenshabab_news_cms_mobile/services/app/models/setting_entity.dart';
+import 'package:yemenshabab/generated/json/base/json_convert_content.dart';
+import 'package:yemenshabab/services/app/models/setting_entity.dart';
 
 SettingEntity $SettingEntityFromJson(Map<String, dynamic> json) {
   final SettingEntity settingEntity = SettingEntity();

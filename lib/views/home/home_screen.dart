@@ -2,12 +2,12 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toastification/toastification.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/loading.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/toast.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/live_screen.dart';
+import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
+import 'package:yemenshabab/shared/component/loading.dart';
+import 'package:yemenshabab/shared/component/toast.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/views/home/live_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -34,91 +34,76 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return state is LandingLoaded
             ? Scaffold(
-          extendBody: true,
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.play_arrow_rounded),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50)),
-            onPressed: () {
-              Navigator.push(context, createRoute(() => LiveScreen()));
-            },
-          ),
-          floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: AnimatedBottomNavigationBar.builder(
-            itemCount:
-            homeController.homeCubit
-                .bottomNavData(context)
-                .length,
-            tabBuilder: (int index, bool isActive) {
-              final color = isActive
-                  ? Theme
-                  .of(context)
-                  .colorScheme
-                  .primary
-                  : Theme
-                  .of(context)
-                  .bottomNavigationBarTheme
-                  .unselectedItemColor;
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    homeController.homeCubit
-                        .bottomNavData(context)[index]
-                        .icon,
-                    size: 24,
-                    color: color,
+                extendBody: true,
+                floatingActionButton: FloatingActionButton(
+                  child: Icon(Icons.play_arrow_rounded),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                  onPressed: () {
+                    Navigator.push(context, createRoute(() => LiveScreen()));
+                  },
+                ),
+                floatingActionButtonLocation:
+                    FloatingActionButtonLocation.centerDocked,
+                bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+                  itemCount:
+                      homeController.homeCubit.bottomNavData(context).length,
+                  tabBuilder: (int index, bool isActive) {
+                    final color = isActive
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context)
+                            .bottomNavigationBarTheme
+                            .unselectedItemColor;
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          homeController.homeCubit
+                              .bottomNavData(context)[index]
+                              .icon,
+                          size: 24,
+                          color: color,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          homeController.homeCubit
+                              .bottomNavData(context)[index]
+                              .title,
+                          maxLines: 1,
+                          style: TextStyle(color: color, fontSize: 12),
+                        )
+                      ],
+                    );
+                  },
+                  backgroundColor: Theme.of(context)
+                      .bottomNavigationBarTheme
+                      .backgroundColor,
+                  borderColor:
+                      Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+                  shadow: Shadow(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Theme.of(context)
+                            .colorScheme
+                            .secondary
+                            .withOpacity(0.1)
+                        : Colors.transparent,
+                    blurRadius: 50,
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    homeController.homeCubit
-                        .bottomNavData(context)[index]
-                        .title,
-                    maxLines: 1,
-                    style: TextStyle(color: color, fontSize: 12),
-                  )
-                ],
-              );
-            },
-            backgroundColor: Theme
-                .of(context)
-                .bottomNavigationBarTheme
-                .backgroundColor,
-            borderColor:
-            Theme
-                .of(context)
-                .colorScheme
-                .secondary
-                .withOpacity(0.1),
-            shadow: Shadow(
-              color: Theme
-                  .of(context)
-                  .brightness == Brightness.light
-                  ? Theme
-                  .of(context)
-                  .colorScheme
-                  .secondary
-                  .withOpacity(0.1)
-                  : Colors.transparent,
-              blurRadius: 50,
-            ),
 
-            activeIndex: activeIndex,
-            // notchAndCornersAnimation: borderRadiusAnimation,
-            splashSpeedInMilliseconds: 300,
-            notchSmoothness: NotchSmoothness.softEdge,
-            gapLocation: GapLocation.center,
-            onTap: (index) =>
-                setState(() {
-                  activeIndex = index;
-                }),
-          ),
-          body: homeController.homeCubit
-              .bottomNavData(context)[activeIndex]
-              .screen(state.props.first),
-        )
+                  activeIndex: activeIndex,
+                  // notchAndCornersAnimation: borderRadiusAnimation,
+                  splashSpeedInMilliseconds: 300,
+                  notchSmoothness: NotchSmoothness.softEdge,
+                  gapLocation: GapLocation.center,
+                  onTap: (index) => setState(() {
+                    activeIndex = index;
+                  }),
+                ),
+                body: homeController.homeCubit
+                    .bottomNavData(context)[activeIndex]
+                    .screen(state.props.first),
+              )
             : LoadingScreen();
       },
     );

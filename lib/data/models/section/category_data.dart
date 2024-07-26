@@ -1,5 +1,5 @@
 
-import 'package:yemenshabab_news_cms_mobile/data/models/home/data_type.dart';
+import 'package:yemenshabab/data/models/home/data_type.dart';
 
 class CategoryData {
   CategoryData({

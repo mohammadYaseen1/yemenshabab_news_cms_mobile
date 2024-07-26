@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/service/home_service.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
+import 'package:yemenshabab/data/models/program_schedule.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/services/home/service/home_service.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
 
 part 'program_state.dart';
 

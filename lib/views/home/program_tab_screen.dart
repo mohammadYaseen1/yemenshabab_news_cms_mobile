@@ -1,13 +1,12 @@
 import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/banner_basic.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/days.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/program_details_page.dart';
+import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/days.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramTabScreen extends StatelessWidget {
   const ProgramTabScreen({Key? key, required this.programs, required this.day})
@@ -58,17 +57,7 @@ class ProgramTabScreen extends StatelessWidget {
       hoverColor: Colors.transparent,
       focusColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      child: isActiveDate(
-        date: programs[index].showTime!,
-        duration:
-            Duration(minutes: int.parse(programs[index].showDuration ?? "60")),
-        day: day,
-      )
-          ? BannerBasicPage(
-              title: AppLocalizations.of(context)!.nowShowing,
-              widget: buildProgram(context, index),
-            )
-          : buildProgram(context, index),
+      child: buildProgram(context, index),
     );
   }
 

@@ -7,13 +7,13 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'package:qyplayer/interface/qyplayer_interface.dart';
 import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_widget.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/controls.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/web_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/social_media.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
+import 'package:yemenshabab/shared/audio/controls.dart';
+import 'package:yemenshabab/shared/component/web_view.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils/social_media.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class LiveScreen extends StatefulWidget {
   LiveScreen({Key? key}) : super(key: key);

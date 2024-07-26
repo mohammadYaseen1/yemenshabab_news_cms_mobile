@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:widget_zoom/widget_zoom.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/utils.dart';
 
 class ImageComponent extends StatelessWidget {
   const ImageComponent(

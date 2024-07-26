@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_player_full.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
+import 'package:yemenshabab/shared/component/youtube_player_full.dart';
+import 'package:yemenshabab/shared/component/youtube_view.dart';
+import 'package:yemenshabab/shared/utils.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CustomYouTubePlayer extends StatefulWidget {

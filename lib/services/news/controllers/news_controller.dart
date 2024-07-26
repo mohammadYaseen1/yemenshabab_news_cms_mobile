@@ -1,5 +1,5 @@
-import 'package:yemenshabab_news_cms_mobile/services/news/cubits/news_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/news/service/new_service.dart';
+import 'package:yemenshabab/services/news/cubits/news_cubit.dart';
+import 'package:yemenshabab/services/news/service/new_service.dart';
 
 import '../repositories/news_repository.dart';
 

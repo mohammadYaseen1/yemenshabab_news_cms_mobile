@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/extension/string.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/extension/string.dart';
+import 'package:yemenshabab/shared/utils.dart';
 
 class CustomAppBar extends StatelessWidget {
   CustomAppBar({

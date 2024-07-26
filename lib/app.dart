@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/layout/app_layout.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_widget.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/local/cache_helper.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/theme/dark_theme.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/theme/light_theme.dart';
-import 'package:yemenshabab_news_cms_mobile/views/auth/login_screen.dart';
-import 'package:yemenshabab_news_cms_mobile/views/auth/register_screen.dart';
-import 'package:yemenshabab_news_cms_mobile/views/writer_page.dart';
+import 'package:yemenshabab/layout/app_layout.dart';
+import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/local/cache_helper.dart';
+import 'package:yemenshabab/shared/theme/dark_theme.dart';
+import 'package:yemenshabab/shared/theme/light_theme.dart';
+import 'package:yemenshabab/views/auth/login_screen.dart';
+import 'package:yemenshabab/views/auth/register_screen.dart';
+import 'package:yemenshabab/views/writer_page.dart';
 
 class App extends StatefulWidget {
   const App({

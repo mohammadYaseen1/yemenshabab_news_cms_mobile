@@ -1,14 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/program_status.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/CustomHoverAnimatedContainer.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/program_details_page.dart';
+import 'package:yemenshabab/data/models/program_status.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/shared/component/CustomHoverAnimatedContainer.dart';
+import 'package:yemenshabab/shared/component/custom_app_bar.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramPage extends StatelessWidget {
   const ProgramPage({super.key, required this.program});
@@ -23,7 +23,8 @@ class ProgramPage extends StatelessWidget {
         crossAxisSpacing: 10,
         semanticChildCount: 20,
         childAspectRatio: 1.5,
-        padding: EdgeInsets.only(top: 20, bottom: 100, right: 10, left: 10),
+        padding:
+            const EdgeInsets.only(top: 20, bottom: 100, right: 10, left: 10),
         physics: const BouncingScrollPhysics(),
         crossAxisCount: 2,
         children: List.generate(
@@ -69,7 +70,7 @@ class ProgramPage extends StatelessWidget {
                     hoverHeight: 80,
                     color: Colors.black38,
                     height: 40,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       children: [
                         Container(
@@ -80,7 +81,7 @@ class ProgramPage extends StatelessWidget {
                           // height: 40,
                           width: 4,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Expanded(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,13 +93,15 @@ class ProgramPage extends StatelessWidget {
                                       ? program.programs![index].titleAr!
                                       : program.programs![index].title!,
                                   maxLines: 1,
-                                  style: TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.white),
                                 ),
                               ),
-                              AutoSizeText(getFormattedTime(
-                                  program.programs![index].time!,
-                                  locale: Localizations.localeOf(context)
-                                      .toLanguageTag())),
+                              AutoSizeText(
+                                getFormattedTime(program.programs![index].time!,
+                                    locale: Localizations.localeOf(context)
+                                        .toLanguageTag()),
+                                style: const TextStyle(color: Colors.white),
+                              ),
                             ],
                           ),
                         ),
@@ -114,7 +117,7 @@ class ProgramPage extends StatelessWidget {
                           // height: 40,
                           width: 4,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Expanded(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,9 +132,10 @@ class ProgramPage extends StatelessWidget {
                                           ? program.programs![index].titleAr!
                                           : program.programs![index].title!,
                                       maxLines: 1,
-                                      style: TextStyle(color: Colors.white),
+                                      style:
+                                          const TextStyle(color: Colors.white),
                                     ),
-                                    SizedBox(height: 5),
+                                    const SizedBox(height: 5),
                                     AutoSizeText(
                                       ProgramStatus.titleOf(context,
                                           status: status)!,
@@ -142,10 +146,12 @@ class ProgramPage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AutoSizeText(getFormattedTime(
-                                  program.programs![index].time!,
-                                  locale: Localizations.localeOf(context)
-                                      .toLanguageTag())),
+                              AutoSizeText(
+                                getFormattedTime(program.programs![index].time!,
+                                    locale: Localizations.localeOf(context)
+                                        .toLanguageTag()),
+                                style: const TextStyle(color: Colors.white),
+                              ),
                             ],
                           ),
                         ),

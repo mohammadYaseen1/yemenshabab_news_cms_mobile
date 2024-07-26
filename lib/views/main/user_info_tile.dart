@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yemenshabab_news_cms_mobile/layout/navigation_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/views/main/user_info_tile.dart';
-import 'package:yemenshabab_news_cms_mobile/views/main/main_screen.dart';
+import 'package:yemenshabab/layout/navigation_cubit.dart';
+import 'package:yemenshabab/views/main/user_info_tile.dart';
+import 'package:yemenshabab/views/main/main_screen.dart';
 
 
 class UserInfoTile extends StatelessWidget {

@@ -1,15 +1,15 @@
-import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/writer_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/data.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/landing.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/section/section_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/routes/home_routes.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/network/dio_factory.dart';
+import 'package:yemenshabab/data/models/playlist_entity.dart';
+import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/data/models/writer_entity.dart';
+import 'package:yemenshabab/services/home/models/landing/data.dart';
+import 'package:yemenshabab/services/home/models/landing/landing.dart';
+import 'package:yemenshabab/services/home/models/news/news_entity.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/services/home/models/section/section_entity.dart';
+import 'package:yemenshabab/services/home/routes/home_routes.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/network/dio_factory.dart';
 
 class HomeRepository {
   final dioFactory = DioFactory();

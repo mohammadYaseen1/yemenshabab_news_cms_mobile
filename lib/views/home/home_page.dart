@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/data_type.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/home_model.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/category.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/section/section_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/custom_tab_screen.dart';
+import 'package:yemenshabab/data/models/home/data_type.dart';
+import 'package:yemenshabab/data/models/home/home_model.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
+import 'package:yemenshabab/data/models/section/category.dart';
+import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
+import 'package:yemenshabab/services/home/models/section/section_entity.dart';
+import 'package:yemenshabab/shared/component/custom_app_bar.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/custom_tab_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.homeModel});

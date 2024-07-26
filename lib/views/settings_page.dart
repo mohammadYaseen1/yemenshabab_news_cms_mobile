@@ -2,12 +2,12 @@ import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:yemenshabab_news_cms_mobile/app.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/extension/string.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/social_media.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/app.dart';
+import 'package:yemenshabab/shared/component/custom_app_bar.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/extension/string.dart';
+import 'package:yemenshabab/shared/utils/social_media.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);

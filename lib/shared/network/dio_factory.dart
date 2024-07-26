@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
 
 const String APPLICATION_JSON = "application/json";
 const String CONTENT_TYPE = "content-type";

@@ -1,9 +1,9 @@
 import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_player.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/data/models/playlist_entity.dart';
+import 'package:yemenshabab/shared/component/youtube_player.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class PlaylistDetailsPage extends StatefulWidget {
   PlaylistDetailsPage({super.key, required this.item});

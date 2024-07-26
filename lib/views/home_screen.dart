@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
-// import 'package:yemenshabab_news_cms_mobile/data/models/channel.dart';
-// import 'package:yemenshabab_news_cms_mobile/data/models/video.dart';
-// import 'package:yemenshabab_news_cms_mobile/services/api_service.dart';
-// import 'package:yemenshabab_news_cms_mobile/views/videio_screen.dart';
+// import 'package:yemenshabab/data/models/channel.dart';
+// import 'package:yemenshabab/data/models/video.dart';
+// import 'package:yemenshabab/services/api_service.dart';
+// import 'package:yemenshabab/views/videio_screen.dart';
 //
 // class HomeScreen extends StatefulWidget {
 //   @override

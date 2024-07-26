@@ -1,7 +1,7 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
+import 'package:yemenshabab/shared/config/config.dart';
 
 class LiveStream extends StatefulWidget {
   const LiveStream({

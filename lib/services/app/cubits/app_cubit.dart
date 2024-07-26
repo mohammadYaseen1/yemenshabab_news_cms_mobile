@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:yemenshabab_news_cms_mobile/services/app/models/setting_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/app/service/app_service.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
+import 'package:yemenshabab/services/app/models/setting_entity.dart';
+import 'package:yemenshabab/services/app/service/app_service.dart';
+import 'package:yemenshabab/shared/config/config.dart';
 
 part 'app_state.dart';
 

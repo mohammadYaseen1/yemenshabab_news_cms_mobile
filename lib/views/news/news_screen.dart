@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yemenshabab_news_cms_mobile/services/news/controllers/news_controller.dart';
-import 'package:yemenshabab_news_cms_mobile/services/news/cubits/news_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
+import 'package:yemenshabab/services/news/controllers/news_controller.dart';
+import 'package:yemenshabab/services/news/cubits/news_cubit.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
 
 class NewsScreen extends StatelessWidget {
   final NewsController newsController = NewsController();

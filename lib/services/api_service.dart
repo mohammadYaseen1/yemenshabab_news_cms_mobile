@@ -1,10 +1,10 @@
 // import 'dart:convert';
 // import 'dart:io';
 //
-// import 'package:yemenshabab_news_cms_mobile/data/models/channel.dart';
-// import 'package:yemenshabab_news_cms_mobile/data/models/video.dart';
-// import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-// import 'package:yemenshabab_news_cms_mobile/shared/network/dio_factory.dart';
+// import 'package:yemenshabab/data/models/channel.dart';
+// import 'package:yemenshabab/data/models/video.dart';
+// import 'package:yemenshabab/shared/config/config.dart';
+// import 'package:yemenshabab/shared/network/dio_factory.dart';
 //
 // class APIService {
 //   APIService._instantiate();

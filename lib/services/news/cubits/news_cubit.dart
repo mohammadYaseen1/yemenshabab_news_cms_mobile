@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/news/news.dart';
-import 'package:yemenshabab_news_cms_mobile/services/news/service/new_service.dart';
+import 'package:yemenshabab/data/models/news/news.dart';
+import 'package:yemenshabab/services/news/service/new_service.dart';
 
 part 'news_state.dart';
 

@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/news_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/loading.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/share_button.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/youtube_player.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/component/loading.dart';
+import 'package:yemenshabab/shared/component/share_button.dart';
+import 'package:yemenshabab/shared/component/youtube_player.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class VideoDetailsPage extends StatefulWidget {
   VideoDetailsPage({super.key, required this.dataModel});

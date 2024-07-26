@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/layout/app_layout.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/controllers/auth_controller.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/cubits/auth_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/outlined_button.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/text_field.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/style/icon_broken.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/style/style.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/layout/app_layout.dart';
+import 'package:yemenshabab/services/auth/controllers/auth_controller.dart';
+import 'package:yemenshabab/services/auth/cubits/auth_cubit.dart';
+import 'package:yemenshabab/shared/component/outlined_button.dart';
+import 'package:yemenshabab/shared/component/text_field.dart';
+import 'package:yemenshabab/shared/style/icon_broken.dart';
+import 'package:yemenshabab/shared/style/style.dart';
+import 'package:yemenshabab/shared/utils.dart';
 
 class RegisterScreen extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_field.dart';
-import 'package:yemenshabab_news_cms_mobile/generated/json/news_entity.g.dart';
+import 'package:yemenshabab/generated/json/base/json_field.dart';
+import 'package:yemenshabab/generated/json/news_entity.g.dart';
 
-export 'package:yemenshabab_news_cms_mobile/generated/json/news_entity.g.dart';
+export 'package:yemenshabab/generated/json/news_entity.g.dart';
 
 @JsonSerializable()
 class NewsEntity {

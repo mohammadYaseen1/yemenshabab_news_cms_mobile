@@ -4,7 +4,7 @@ import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
 
 class YoutubeView extends StatefulWidget {
   YoutubeView({super.key, required this.id});

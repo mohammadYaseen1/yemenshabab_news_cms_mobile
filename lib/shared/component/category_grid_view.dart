@@ -1,14 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/news_details_page.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/video_details_page.dart';
+import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
+import 'package:yemenshabab/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/home/news_details_page.dart';
+import 'package:yemenshabab/views/home/video_details_page.dart';
 
 class CategoryGridView extends StatelessWidget {
   const CategoryGridView({

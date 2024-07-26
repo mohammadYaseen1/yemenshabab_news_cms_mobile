@@ -3,11 +3,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_management.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/controls.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/audio/position_data.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/shared/audio/audio_player_management.dart';
+import 'package:yemenshabab/shared/audio/controls.dart';
+import 'package:yemenshabab/shared/audio/position_data.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class AudioPlayerWidget extends StatefulWidget {
   const AudioPlayerWidget({super.key, required this.url});

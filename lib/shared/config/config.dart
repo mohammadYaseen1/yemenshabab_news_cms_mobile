@@ -1,4 +1,4 @@
-import 'package:yemenshabab_news_cms_mobile/services/app/models/setting_entity.dart';
+import 'package:yemenshabab/services/app/models/setting_entity.dart';
 
 class Config {
   // static String baseUrl = "http://10.0.2.2:8100";

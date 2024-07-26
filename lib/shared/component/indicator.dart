@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/indicator/Indicator_model.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/tag.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/news_details_page.dart';
+import 'package:yemenshabab/data/models/home/indicator/Indicator_model.dart';
+import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/component/tag.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/views/home/news_details_page.dart';
 
 class Indicator extends StatelessWidget {
   Indicator({

@@ -1,12 +1,12 @@
-import 'package:yemenshabab_news_cms_mobile/services/category_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/news_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/playlist_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/program_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/program_schedule_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/writer_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/repositories/home_repository.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/service/home_service.dart';
+import 'package:yemenshabab/services/category_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/playlist_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/program_schedule_cubit.dart';
+import 'package:yemenshabab/services/home/cubits/writer_cubit.dart';
+import 'package:yemenshabab/services/home/repositories/home_repository.dart';
+import 'package:yemenshabab/services/home/service/home_service.dart';
 
 class HomeController {
   final HomeCubit homeCubit;

@@ -1,4 +1,4 @@
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 
 import 'data.dart';
 

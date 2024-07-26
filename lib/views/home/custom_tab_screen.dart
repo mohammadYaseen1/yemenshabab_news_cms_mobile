@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/home_model.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/article_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/custom_grid_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/indicator.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/program_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/social_media.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+import 'package:yemenshabab/data/models/home/home_model.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
+import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
+import 'package:yemenshabab/shared/component/article_view.dart';
+import 'package:yemenshabab/shared/component/custom_grid_view.dart';
+import 'package:yemenshabab/shared/component/indicator.dart';
+import 'package:yemenshabab/shared/component/program_view.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/utils/social_media.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 
 class CustomTabScreen extends StatelessWidget {
   CustomTabScreen({

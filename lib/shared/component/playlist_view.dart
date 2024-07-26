@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/playlist_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/service/home_service.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
-import 'package:yemenshabab_news_cms_mobile/views/home/playlist_details_page.dart';
+import 'package:yemenshabab/data/models/playlist_entity.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/services/home/service/home_service.dart';
+import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/utils.dart';
+import 'package:yemenshabab/views/home/playlist_details_page.dart';
 
 class PlaylistView extends StatefulWidget {
   final HomeService homeService;

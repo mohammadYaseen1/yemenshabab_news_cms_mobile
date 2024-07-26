@@ -1,6 +1,6 @@
-import 'package:yemenshabab_news_cms_mobile/services/app/models/setting_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/services/app/routes/app_routes.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/network/dio_factory.dart';
+import 'package:yemenshabab/services/app/models/setting_entity.dart';
+import 'package:yemenshabab/services/app/routes/app_routes.dart';
+import 'package:yemenshabab/shared/network/dio_factory.dart';
 
 class AppRepository {
   final dioFactory = DioFactory();

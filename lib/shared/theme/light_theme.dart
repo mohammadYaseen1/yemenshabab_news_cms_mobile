@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
+import 'package:yemenshabab/gen/fonts.gen.dart';
 
 /*
   "days": "{day, select, =sunday{{day} أحد} monday{{day} إثنين} tuesday{{day} ثلاثاء} wednesday{{day} أربعاء} thursday{{day} خميس} friday{{day} جمعة} saturday{{day} سبت}}"

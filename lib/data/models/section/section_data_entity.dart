@@ -1,7 +1,7 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_field.dart';
-import 'package:yemenshabab_news_cms_mobile/generated/json/section_data_entity.g.dart';
+import 'package:yemenshabab/generated/json/base/json_field.dart';
+import 'package:yemenshabab/generated/json/section_data_entity.g.dart';
 import 'dart:convert';
-export 'package:yemenshabab_news_cms_mobile/generated/json/section_data_entity.g.dart';
+export 'package:yemenshabab/generated/json/section_data_entity.g.dart';
 
 @JsonSerializable()
 class SectionDataEntity {

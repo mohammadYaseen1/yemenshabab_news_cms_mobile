@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:yemenshabab_news_cms_mobile/services/auth/models/user_model.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/routes/news_routes.dart';
+import 'package:yemenshabab/services/auth/models/user_model.dart';
+import 'package:yemenshabab/services/auth/routes/news_routes.dart';
 
 class AuthRepository {
   Future<User?> login(String email, String password) async {

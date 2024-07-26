@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/home/home_model.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/controllers/home_controller.dart';
-import 'package:yemenshabab_news_cms_mobile/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/data/models/home/home_model.dart';
+import 'package:yemenshabab/services/home/controllers/home_controller.dart';
+import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 
 class Constants {
   static const String baseUrl = 'https://api.example.com';

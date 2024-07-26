@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/models/user_model.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/service/auth_service.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/utils/auth_storage.dart';
+import 'package:yemenshabab/services/auth/models/user_model.dart';
+import 'package:yemenshabab/services/auth/service/auth_service.dart';
+import 'package:yemenshabab/services/auth/utils/auth_storage.dart';
 
 part 'auth_state.dart';
 

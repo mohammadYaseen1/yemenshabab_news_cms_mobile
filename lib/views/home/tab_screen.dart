@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/category.dart';
-import 'package:yemenshabab_news_cms_mobile/services/category_cubit.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/component/default_list_view.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
+import 'package:yemenshabab/data/models/section/category.dart';
+import 'package:yemenshabab/services/category_cubit.dart';
+import 'package:yemenshabab/shared/component/default_list_view.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
 
 class TabScreen extends StatefulWidget {
   TabScreen(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:loading_animations/loading_animations.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({Key? key}) : super(key: key);

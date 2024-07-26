@@ -6,10 +6,10 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/extension/string.dart';
-import 'package:yemenshabab_news_cms_mobile/views/search_page.dart';
+import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/shared/extension/string.dart';
+import 'package:yemenshabab/views/search_page.dart';
 
 Future<String> loadJsonData() async {
   String jsonData = await rootBundle.loadString('assets/data.json');

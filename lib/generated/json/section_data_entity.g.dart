@@ -1,5 +1,5 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_convert_content.dart';
-import 'package:yemenshabab_news_cms_mobile/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/generated/json/base/json_convert_content.dart';
+import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 
 SectionDataEntity $SectionDataEntityFromJson(Map<String, dynamic> json) {
   final SectionDataEntity sectionDataEntity = SectionDataEntity();

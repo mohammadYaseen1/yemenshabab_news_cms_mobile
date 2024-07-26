@@ -1,5 +1,5 @@
-import 'package:yemenshabab_news_cms_mobile/services/auth/models/user_model.dart';
-import 'package:yemenshabab_news_cms_mobile/services/auth/repositories/auth_repository.dart';
+import 'package:yemenshabab/services/auth/models/user_model.dart';
+import 'package:yemenshabab/services/auth/repositories/auth_repository.dart';
 
 class AuthService {
   final AuthRepository authRepository;

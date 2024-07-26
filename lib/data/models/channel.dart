@@ -1,4 +1,4 @@
-import 'package:yemenshabab_news_cms_mobile/data/models/video.dart';
+import 'package:yemenshabab/data/models/video.dart';
 
 class Channel {
 
