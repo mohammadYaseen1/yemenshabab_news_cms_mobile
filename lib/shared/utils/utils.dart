@@ -33,7 +33,7 @@ Color parseColorString(String colorString) {
 
 String getFormattedDate(String dateStr, [String locale = 'ar']) {
   if (dateStr.isEmpty) return '';
-  DateTime data = DateTime.parse(dateStr);
+  DateTime data = DateTime.parse(dateStr).toLocal();
   return DateFormat.yMMMd(locale).add_jm().format(data);
 }
 
@@ -70,7 +70,7 @@ String getFormattedTime(String inputTime,
     DateFormat inputFormat = DateFormat(pattern);
     DateTime dateTime = inputFormat.parse(sanitizedInputTime, isUtc);
     DateTime convertedDate =
-        isUtc ? tz.TZDateTime.from(dateTime, location) : dateTime;
+    isUtc ? tz.TZDateTime.from(dateTime, location) : dateTime;
     DateFormat outputFormat = DateFormat('hh:mm a', locale);
     String formattedTime = outputFormat.format(convertedDate);
     return formattedTime;
@@ -89,9 +89,13 @@ bool isFutureDate(String dateStr) {
 
 String getDurationString(String otherDateStr, [String language = 'ar']) {
   if (otherDateStr.isEmpty) return "";
-  DateTime today = DateTime.now();
-  DateTime otherDate = DateTime.parse(otherDateStr);
+  print("getDurationString: $otherDateStr");
+  DateTime today = DateTime.now().toUtc();
+  DateTime otherDate = DateTime.parse(otherDateStr).toUtc();
   Duration difference = today.difference(otherDate);
+  print("difference: $difference");
+  print("today: $today");
+  print("otherDate: $otherDate");
   if (language == 'ar') {
     if (difference.inDays > 0) {
       if (difference.inDays == 1) {
@@ -187,14 +191,15 @@ int compareDate(String date1, String date2, [String pattern = 'hh:mm a']) {
   DateFormat inputFormat = DateFormat(pattern);
   DateTime dateTime1 = inputFormat.parse(date1.replaceFirst(' UTC', ''));
   DateTime dateTime2 = inputFormat.parse(date2.replaceFirst(' UTC', ''));
-  return dateTime2.difference(dateTime1).inMilliseconds;
+  return dateTime2
+      .difference(dateTime1)
+      .inMilliseconds;
 }
 
-bool isActiveDate(
-    {required String date,
-    required Duration duration,
-    String pattern = 'hh:mm a',
-    required Days day}) {
+bool isActiveDate({required String date,
+  required Duration duration,
+  String pattern = 'hh:mm a',
+  required Days day}) {
   DateFormat inputFormat = DateFormat(pattern);
   bool isUtc = date.isCaseInsensitiveContains("utc");
   tz.Location yemenLocation = tz.getLocation(Config.timeZoneName);
@@ -206,15 +211,31 @@ bool isActiveDate(
     now = tz.TZDateTime.from(DateTime.now(), yemenLocation);
     dateTime = tz.TZDateTime.from(dateTime, yemenLocation);
   }
-  DateTime start = DateTime(0, 1, 1, dateTime.hour, dateTime.minute,
-      dateTime.second, dateTime.millisecond, dateTime.microsecond);
-  DateTime timeNow = DateTime(0, 1, 1, now.hour, now.minute, now.second,
-      now.millisecond, now.microsecond);
+  DateTime start = DateTime(
+      0,
+      1,
+      1,
+      dateTime.hour,
+      dateTime.minute,
+      dateTime.second,
+      dateTime.millisecond,
+      dateTime.microsecond);
+  DateTime timeNow = DateTime(
+      0,
+      1,
+      1,
+      now.hour,
+      now.minute,
+      now.second,
+      now.millisecond,
+      now.microsecond);
   bool isToday = day == Days.getDayEnum(now.weekday);
   DateTime end = start.add(duration);
   return isToday && timeNow.isAfter(start) && timeNow.isBefore(end);
 }
 
 String makeSharedUrl(BuildContext context, NewsEntity news) {
-  return "${Config.webUrl}/${Localizations.localeOf(context).toLanguageTag()}/sections/${news.dataType}/${news.category!.nameEn}/${news.uuid}";
+  return "${Config.webUrl}/${Localizations.localeOf(context)
+      .toLanguageTag()}/sections/${news.dataType}/${news.category!
+      .nameEn}/${news.uuid}";
 }
