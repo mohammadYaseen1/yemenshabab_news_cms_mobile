@@ -1,4 +1,5 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +9,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/news_cubit.dart';
+import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/data.dart';
+import 'package:yemenshabab_news_cms_mobile/services/home/models/landing/item.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/image_component.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/loading.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/share_button.dart';
@@ -38,7 +41,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
 
   @override
   void initState() {
-    _values = SfRangeValues(10.0, 24.0);
+    _values = const SfRangeValues(10.0, 24.0);
     super.initState();
   }
 
@@ -70,7 +73,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                           ),
                         ));
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         FontAwesomeIcons.glasses,
                       ))
                 ],
@@ -96,14 +99,14 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                             padding: MediaQuery.of(context).viewInsets,
                             child: SizedBox(
                               child: ListView(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 15, left: 15, right: 15),
                                 physics: const NeverScrollableScrollPhysics(),
                                 children: [
                                   Text(
                                     AppLocalizations.of(context)!
                                         .settingContent,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -111,10 +114,10 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                     color:
                                         Theme.of(context).colorScheme.secondary,
                                   ),
-                                  SizedBox(height: 10),
+                                  const SizedBox(height: 10),
                                   Text(
                                     AppLocalizations.of(context)!.fontSize,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -128,10 +131,10 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                       });
                                     },
                                   ),
-                                  SizedBox(height: 10),
+                                  const SizedBox(height: 10),
                                   Text(
                                     AppLocalizations.of(context)!.language,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -143,8 +146,8 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                     indicatorSize: const Size.fromWidth(300),
                                     borderWidth: 4.0,
                                     iconList: [
-                                      Text('العربية'),
-                                      Text('English'),
+                                      const Text('العربية'),
+                                      const Text('English'),
                                     ],
                                     iconAnimationType: AnimationType.onHover,
                                     style: ToggleStyle(
@@ -172,7 +175,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                         ),
                       );
                     },
-                    icon: Icon(Icons.settings)),
+                    icon: const Icon(Icons.settings)),
               ],
             ),
             body: state is NewsLoaded
@@ -180,7 +183,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                     child: Container(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 30, vertical: 20),
+                            horizontal: 10, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -189,8 +192,8 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                 children: [
                                   if (state.newsEntity.extras!.writerLinks ==
                                       'true')
-                                    buildwriterName(context, state),
-                                  SizedBox(height: 15),
+                                    buildWriterName(context, state),
+                                  const SizedBox(height: 15),
                                   Container(
                                     width: double.infinity,
                                     height: 120,
@@ -219,7 +222,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                         if (state.newsEntity.extras!
                                                 .writerLinks ==
                                             'false')
-                                          SizedBox(width: 15),
+                                          const SizedBox(width: 15),
                                         Expanded(
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
@@ -231,7 +234,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                                   if (state.newsEntity.extras!
                                                           .writerLinks ==
                                                       'false')
-                                                    buildwriterName(
+                                                    buildWriterName(
                                                         context, state),
                                                   Wrap(
                                                     // alignment: WrapAlignment.center,
@@ -323,7 +326,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   ),
                                 ],
                               ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
@@ -331,13 +334,19 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                 isArabicLang
                                     ? state.newsEntity.titleAr!
                                     : state.newsEntity.titleEn!,
-                                style: TextStyle(
+                                textDirection: isArabicLang
+                                    ? TextDirection.rtl
+                                    : TextDirection.ltr,
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
                                 ),
                               ),
                             ),
                             Row(
+                              textDirection: isArabicLang
+                                  ? TextDirection.rtl
+                                  : TextDirection.ltr,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -379,7 +388,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                             ),
                             if ((state.newsEntity.extras?.source ?? '')
                                 .isNotEmpty) ...[
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               SizedBox(
                                 width: double.infinity,
                                 child: Text(
@@ -395,7 +404,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              SizedBox(height: 20)
+                              const SizedBox(height: 20)
                             ],
                             if (state.newsEntity.image != null &&
                                 state.newsEntity.image!.isNotEmpty)
@@ -431,7 +440,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   ],
                                 ),
                               ),
-                            SizedBox(height: 25),
+                            const SizedBox(height: 25),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
@@ -463,51 +472,72 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 25),
+                            const SizedBox(height: 25),
+                            if (state.newsEntity.keywords != null)
+                              SizedBox(
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        AppLocalizations.of(context)!.keywords,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 10),
+                                      Wrap(
+                                        textDirection: isArabicLang
+                                            ? TextDirection.rtl
+                                            : TextDirection.ltr,
+                                        children: (isArabicLang
+                                                ? state.newsEntity.keywords!
+                                                        .ar ??
+                                                    []
+                                                : state.newsEntity.keywords!
+                                                        .en ??
+                                                    [])
+                                            .map(
+                                              (e) => Padding(
+                                                padding:
+                                                    const EdgeInsets.all(4),
+                                                child: Chip(
+                                                  label: Text(e),
+                                                  side: const BorderSide(
+                                                      color: Colors.grey,
+                                                      width: 1),
+                                                ),
+                                              ),
+                                            )
+                                            .toList(),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            const SizedBox(height: 25),
                             if (state.extraNews != null &&
                                 state.extraNews!.items != null &&
                                 state.extraNews!.items!.isNotEmpty)
-                              buildExtraNews(state, context),
-                            SizedBox(height: 25),
-                            if (state.newsEntity.keywords != null) ...[
-                              Text(
-                                AppLocalizations.of(context)!.keywords,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Wrap(
-                                children: (isArabicLang
-                                        ? state.newsEntity.keywords!.ar ?? []
-                                        : state.newsEntity.keywords!.en ?? [])
-                                    .map(
-                                      (e) => Padding(
-                                        padding: EdgeInsets.all(4),
-                                        child: Chip(
-                                          label: Text(e),
-                                          side: BorderSide(
-                                              color: Colors.grey, width: 1),
-                                        ),
-                                      ),
-                                    )
-                                    .toList(),
-                              ),
-                            ],
-                            SizedBox(height: 100),
+                              buildExtraNews(state.extraNews!, context),
+                            const SizedBox(height: 30),
                           ],
                         ),
                       ),
                     ),
                   )
-                : LoadingScreen(),
+                : const LoadingScreen(),
           );
         },
       ),
     );
   }
 
-  InkWell buildwriterName(BuildContext context, NewsLoaded state) {
+  InkWell buildWriterName(BuildContext context, NewsLoaded state) {
     return InkWell(
       splashColor: Colors.transparent,
       hoverColor: Colors.transparent,
@@ -530,9 +560,125 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
     );
   }
 
-  InkWell buildExtraNews(NewsLoaded state, BuildContext context) {
+  Widget buildExtraNews(Data extraNews, BuildContext context) {
+    List<Item> items = extraNews.items!
+        .skipWhile(
+          (value) => value.uuid == widget.dataModel.uuid!,
+        )
+        .toList();
+    if (items.isEmpty) return const SizedBox();
+    return Column(
+      children: [
+        Divider(
+          color: Theme.of(context).cardColor,
+        ),
+        const SizedBox(height: 10),
+        Text(
+          AppLocalizations.of(context)!.relatedNews,
+          style: const TextStyle(
+            fontSize: 20,
+          ),
+        ),
+        const SizedBox(height: 10),
+        ...List.generate(
+          items.length,
+          (index) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            child: InkWell(
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {
+                Navigator.of(context).push(createRoute(
+                  () => NewsDetailsPage(
+                      dataModel: DataModel(
+                    uuid: items[index].uuid,
+                    dataType: extraNews.dataType,
+                    color: parseColorString(items[index].categoryColor!),
+                  )),
+                ));
+              },
+              child: Container(
+                constraints: const BoxConstraints(
+                  maxHeight: double.infinity,
+                ),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      constraints: const BoxConstraints(maxHeight: 100),
+                      width: 150,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ImageComponent(imageUrl: items[index].image!),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                isArabic(context)
+                                    ? items[index].category!
+                                    : items[index].categoryEn!,
+                                style: TextStyle(
+                                    color: parseColorString(
+                                        items[index].categoryColor!)),
+                              ),
+                              const SizedBox(width: 5),
+                              Container(
+                                width: 2,
+                                height: 13,
+                                decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                    borderRadius: BorderRadius.circular(50)),
+                              ),
+                              const SizedBox(width: 5),
+                              AutoSizeText(
+                                getFormattedDate(items[index].date!),
+                                maxLines: 2,
+                                style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                ),
+                              )
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            isArabic(context)
+                                ? items[index].title!
+                                : items[index].subtitle!,
+                            style: const TextStyle(
+                              // fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  InkWell buildExtraNews1(NewsLoaded state, BuildContext context) {
     var items = state.extraNews!.items!;
-    print(items);
     var item = (items..shuffle()).first;
     return InkWell(
       splashColor: Colors.transparent,
@@ -550,7 +696,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
         }));
       },
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         height: 120,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
@@ -567,7 +713,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                   items.first.image!,
                   fit: BoxFit.cover,
                 )),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -575,7 +721,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                 children: [
                   Text(
                     isArabicLang ? item.title! : item.subtitle!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       overflow: TextOverflow.ellipsis,
@@ -593,7 +739,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(5),
                         width: 5,
                         height: 5,
                         decoration: BoxDecoration(

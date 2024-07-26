@@ -70,17 +70,20 @@ class ProgramView extends StatelessWidget {
                   child: buildProgram(firstProgram, context),
                 ),
               ),
-              SizedBox(height: 15),
-              SizedBox(
-                height: 140 * (otherPrograms.length / 2),
+              SizedBox(height: 10),
+              Container(
+                constraints: BoxConstraints(
+                  maxHeight: double.infinity,
+                ),
                 child: GridView.builder(
+                  padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   primary: false,
                   itemCount: otherPrograms.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 1.5,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                     crossAxisCount: 2,
                   ),
                   itemBuilder: (BuildContext context, int index) {
@@ -116,11 +119,13 @@ class ProgramView extends StatelessWidget {
 
   Container buildProgram(DataModel model, BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    print(width);
+    ProgramStatus status = ProgramStatus.valueOf(model.subTitle!);
     return Container(
       // height: 120,
       child: BannerBasicPage(
-        title: ProgramStatus.titleOf(context, statusString: model.subTitle)!,
+        title: ProgramStatus.titleOf(context, status: status)!,
+        color: status.color,
+        fontSize: status == ProgramStatus.AIRING ? 12 : 15,
         widget: Stack(
           alignment: Alignment.bottomCenter,
           children: [

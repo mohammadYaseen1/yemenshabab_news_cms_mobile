@@ -1,21 +1,19 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_convert_content.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/program_schedule_entity.dart';
-import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
-
+import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_convert_content.dart';
 
 ProgramScheduleEntity $ProgramScheduleEntityFromJson(
     Map<String, dynamic> json) {
   final ProgramScheduleEntity programScheduleEntity = ProgramScheduleEntity();
-  final List<ProgramSchedulePrograms>? programs = (json['programs'] as List<
-      dynamic>?)?.map(
-          (e) =>
-      jsonConvert.convert<ProgramSchedulePrograms>(
-          e) as ProgramSchedulePrograms).toList();
+  final List<ProgramSchedulePrograms>? programs =
+      (json['programs'] as List<dynamic>?)
+          ?.map((e) => jsonConvert.convert<ProgramSchedulePrograms>(e)
+              as ProgramSchedulePrograms)
+          .toList();
   if (programs != null) {
     programScheduleEntity.programs = programs;
   }
-  final String? totalRecords = jsonConvert.convert<String>(
-      json['totalRecords']);
+  final String? totalRecords =
+      jsonConvert.convert<String>(json['totalRecords']);
   if (totalRecords != null) {
     programScheduleEntity.totalRecords = totalRecords;
   }
@@ -43,7 +41,8 @@ extension ProgramScheduleEntityExtension on ProgramScheduleEntity {
 
 ProgramSchedulePrograms $ProgramScheduleProgramsFromJson(
     Map<String, dynamic> json) {
-  final ProgramSchedulePrograms programSchedulePrograms = ProgramSchedulePrograms();
+  final ProgramSchedulePrograms programSchedulePrograms =
+      ProgramSchedulePrograms();
   final String? uuid = jsonConvert.convert<String>(json['uuid']);
   if (uuid != null) {
     programSchedulePrograms.uuid = uuid;
@@ -64,14 +63,19 @@ ProgramSchedulePrograms $ProgramScheduleProgramsFromJson(
   if (releaseDays != null) {
     programSchedulePrograms.releaseDays = releaseDays;
   }
-  final String? programImage = jsonConvert.convert<String>(
-      json['programImage']);
+  final String? programImage =
+      jsonConvert.convert<String>(json['programImage']);
   if (programImage != null) {
     programSchedulePrograms.programImage = programImage;
   }
   final String? programUuid = jsonConvert.convert<String>(json['programUuid']);
   if (programUuid != null) {
     programSchedulePrograms.programUuid = programUuid;
+  }
+  final String? showDuration =
+      jsonConvert.convert<String>(json['showDuration']);
+  if (showDuration != null) {
+    programSchedulePrograms.showDuration = showDuration;
   }
   return programSchedulePrograms;
 }
@@ -86,6 +90,7 @@ Map<String, dynamic> $ProgramScheduleProgramsToJson(
   data['releaseDays'] = entity.releaseDays;
   data['programImage'] = entity.programImage;
   data['programUuid'] = entity.programUuid;
+  data['showDuration'] = entity.showDuration;
   return data;
 }
 
@@ -98,6 +103,7 @@ extension ProgramScheduleProgramsExtension on ProgramSchedulePrograms {
     String? releaseDays,
     String? programImage,
     String? programUuid,
+    String? showDuration,
   }) {
     return ProgramSchedulePrograms()
       ..uuid = uuid ?? this.uuid
@@ -106,6 +112,7 @@ extension ProgramScheduleProgramsExtension on ProgramSchedulePrograms {
       ..showTime = showTime ?? this.showTime
       ..releaseDays = releaseDays ?? this.releaseDays
       ..programImage = programImage ?? this.programImage
-      ..programUuid = programUuid ?? this.programUuid;
+      ..programUuid = programUuid ?? this.programUuid
+      ..showDuration = showDuration ?? this.showDuration;
   }
 }

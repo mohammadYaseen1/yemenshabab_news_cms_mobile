@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_model.dart';
@@ -60,7 +61,7 @@ class CustomGridView extends StatelessWidget {
           ),
         SizedBox(height: 20),
         Container(
-          height: 270,
+          constraints: BoxConstraints(maxHeight: 330),
           child: ListView.builder(
             itemCount: newsModel.data!.length,
             scrollDirection: Axis.horizontal,
@@ -82,7 +83,7 @@ class CustomGridView extends StatelessWidget {
                       height: 150,
                       clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: ImageComponent(
                         imageUrl: newsModel.data![index].image!,
@@ -90,13 +91,13 @@ class CustomGridView extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
+                      child: AutoSizeText(
                         newsModel.data![index].title!,
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
-                        maxLines: 2,
+                        maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

@@ -21,20 +21,11 @@ class ProgramTabScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BuildCondition(
       condition: programs.isNotEmpty,
-      builder: (context) => Padding(
-        padding: const EdgeInsets.only(top: 20.0, left: 5, right: 5),
-        child: ListView.separated(
-          itemBuilder: (context, index) => index == programs.length - 1
-              ? Column(
-                  children: [
-                    buildProgramCard(context, index),
-                    const SizedBox(height: 40),
-                  ],
-                )
-              : buildProgramCard(context, index),
-          separatorBuilder: (context, index) => const SizedBox(height: 15),
-          itemCount: programs.length,
-        ),
+      builder: (context) => ListView.separated(
+        itemBuilder: (context, index) => buildProgramCard(context, index),
+        separatorBuilder: (context, index) => const SizedBox(height: 15),
+        padding: const EdgeInsets.only(top: 15, bottom: 100, left: 5, right: 5),
+        itemCount: programs.length,
       ),
       fallback: (context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +60,8 @@ class ProgramTabScreen extends StatelessWidget {
       highlightColor: Colors.transparent,
       child: isActiveDate(
         date: programs[index].showTime!,
-        duration: const Duration(hours: 1),
+        duration:
+            Duration(minutes: int.parse(programs[index].showDuration ?? "60")),
         day: day,
       )
           ? BannerBasicPage(

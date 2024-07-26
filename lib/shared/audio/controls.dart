@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 class Controls extends StatelessWidget {
-  const Controls({super.key, required this.audioPlayer});
+  const Controls({
+    super.key,
+    required this.audioPlayer,
+    this.iconColor,
+    this.iconSize = 80.0,
+  });
 
   final AudioPlayer audioPlayer;
-  final iconSize = 80.0;
+  final double iconSize;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +25,25 @@ class Controls extends StatelessWidget {
           return IconButton(
             padding: EdgeInsets.zero,
             onPressed: audioPlayer.play,
-            color: Theme.of(context).colorScheme.secondary,
+            color: iconColor,
             iconSize: iconSize,
-            icon: Icon(Icons.play_arrow_rounded),
+            icon: const Icon(Icons.play_arrow_rounded),
           );
         } else if (processingState != ProcessingState.completed) {
           return IconButton(
             padding: EdgeInsets.zero,
             onPressed: audioPlayer.pause,
-            color: Theme.of(context).colorScheme.secondary,
+            color: iconColor,
             iconSize: iconSize,
-            icon: Icon(Icons.pause_rounded),
+            icon: const Icon(Icons.pause_rounded),
           );
         }
         return IconButton(
           padding: EdgeInsets.zero,
           onPressed: audioPlayer.load,
-          color: Theme.of(context).colorScheme.secondary,
+          color: iconColor,
           iconSize: iconSize,
-          icon: Icon(Icons.refresh_rounded),
+          icon: const Icon(Icons.refresh_rounded),
         );
       },
     );

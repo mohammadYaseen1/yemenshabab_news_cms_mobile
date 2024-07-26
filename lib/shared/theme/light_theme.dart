@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
 
 /*
@@ -34,6 +33,10 @@ ThemeData lightTheme = ThemeData(
   )),
   drawerTheme: DrawerThemeData(
     backgroundColor: Colors.grey.shade400,
+  ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    // backgroundColor: "#D3D3D3".toColor,
+    unselectedItemColor: Colors.grey.shade500,
   ),
   cardColor: Colors.grey.shade50,
   toggleButtonsTheme: ToggleButtonsThemeData(

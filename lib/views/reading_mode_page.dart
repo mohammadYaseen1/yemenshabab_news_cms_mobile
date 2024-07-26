@@ -138,7 +138,7 @@ class _ReadingModePageState extends State<ReadingModePage> {
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -168,7 +168,9 @@ class _ReadingModePageState extends State<ReadingModePage> {
                         isArabicLang
                             ? widget.content.category!.nameAr!
                             : widget.content.category!.nameEn!,
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
                     ),
                     Container(

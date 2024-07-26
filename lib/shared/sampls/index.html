@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet"/>
+    <script defer src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+</head>
+<body>
+<video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        autoplay
+        poster="https://yemenshabab.org/assets/images/logo-ys.png"
+        data-setup="{}"
+>
+    <source src="https://master.starmena-cloud.com/hls/yemenshabab.m3u8" type="application/x-mpegURL"/>
+</video>
+<script>
+    videojs('my-player', {
+      sources: [{
+        src: '//path/to/video.mp4',
+        type: 'video/mp4'
+      }, {
+        src: '//path/to/video.webm',
+        type: 'video/webm'
+      }]
+    });
+
+</script>
+</body>
+
+</html>

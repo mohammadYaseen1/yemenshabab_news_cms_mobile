@@ -48,9 +48,10 @@
   "followUs": "تابعونا",
   "soon": "قريبا",
   "finished": "انتهى العرض",
-  "airing": "يعرض حاليا",
+  "airing": "يعرض الفترة الحالية",
   "settingContent": "اعدادت المحتوى",
   "fontSize": "حجم الخط",
   "readingMode": "وضع القراءة",
-  "articles": "مقالات"
+  "articles": "مقالات",
+  "relatedNews": "أخبار ذات صلة"
 }

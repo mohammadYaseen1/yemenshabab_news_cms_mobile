@@ -1,46 +1,15 @@
 {
-  "uuid": "87577c5f-4539-11ef-ad88-168a0f7d1cdb",
-  "image": "https://yemenshabab-test.sgp1.digitaloceanspaces.com/images/847213909b9448808eec7e26ebb02e32.jpeg",
-  "creationDate": "2024-07-18T19:11:05Z",
-  "views": "0",
-  "titleAr": "وفاة الشاعر اليمني عامر بلعيد عطشاً في صحراء شبوة",
-  "titleEn": "The Yemeni poet Amer Belaid died of thirst in the Shabwa desert",
-  "descriptionAr": "",
-  "descriptionEn": "",
-  "contentAr": "",
-  "contentEn": "",
-  "dataType": "NEWS",
-  "category": {
-    "nameAr": "",
-    "nameEn": "Society and culture",
-    "categoryColor": "rgb(40,125,44)"
-  },
-  "keywords": {
-    "ar": [
-      "اليمن",
-      "شبوة",
-      "عامر بلعيد"
-    ],
-    "en": [
-      "Yemen",
-      " Shabwa",
-      " Amer Belaid"
-    ]
-  },
-  "extras": {
-    "imageCaption": "الشاعر اليمني، عامر بلعيد",
-    "imageCaptionEn": "Yemeni poet, Amer Belaid",
-    "source": "شبوة - يمن شباب نت",
-    "sourceEn": "Shabwa - Yemen Shabab Net",
-    "writerId": "d9faaec7-3a62-11ef-82d4-76095ebee270",
-    "writerImage": "https://yemenshabab-test.sgp1.digitaloceanspaces.com/images/9b85ff2c096f43c381aafe94794a00e7.png",
-    "writerLinks": "false",
-    "writerName": "محمد جميح",
-    "writerNameEn": "Mohammed Jameeh",
-    "writerFacebook": "",
-    "writerInstagram": "",
-    "writerLinkedin": "",
-    "writerTelegram": "",
-    "writerTwitter": "https://x.com/GhasanCharbel"
-  }
+  "programs": [
+    {
+      "uuid": "ce4468de-1935-4704-a556-ce7e24bc2f64",
+      "title": "Expatriates Cafe",
+      "titleAr": "كافيه المغتربين",
+      "showTime": "08:05 PM",
+      "releaseDays": "thursday",
+      "programImage": "https://yemenshabab-spaces.fra1.cdn.digitaloceanspaces.com/images/bb4c64ebf1a047fb93b2902609e68090.jpeg",
+      "programUuid": "98390f74-d091-4d9f-a276-3b02978b740d",
+      "showDuration": "60"
+    }
+  ],
+  "totalRecords": "8"
 }

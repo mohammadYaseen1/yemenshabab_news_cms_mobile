@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:yemenshabab_news_cms_mobile/services/home/models/news/news_entity.dart';
@@ -22,9 +23,12 @@ Color parseColorString(String colorString) {
   int red = int.parse(components[0].trim());
   int green = int.parse(components[1].trim());
   int blue = int.parse(components[2].trim());
+  double opacity = 1;
+  opacity = components.length == 4 ? double.parse(components[2].trim()) : 1;
 
   // Create and return a Color object
-  return Color.fromARGB(255, red, green, blue); // 255 is for fully opaque color
+  return Color.fromRGBO(
+      red, green, blue, opacity); // 255 is for fully opaque color
 }
 
 String getFormattedDate(String dateStr, [String locale = 'ar']) {
@@ -33,22 +37,45 @@ String getFormattedDate(String dateStr, [String locale = 'ar']) {
   return DateFormat.yMMMd(locale).add_jm().format(data);
 }
 
+// String getFormattedTime(String inputTime,
+//     {String locale = 'ar', String pattern = 'hh:mm a'}) {
+//   try {
+//     String sanitizedInputTime = inputTime
+//         .replaceAll(RegExp(r'\u200B|\u00A0'), '')
+//         .replaceAll('UTC', '')
+//         .trim();
+//     tz.Location location = tz.getLocation(Config.timeZoneName);
+//     DateFormat inputFormat = DateFormat(pattern);
+//     DateTime dateTime = inputFormat.parse(sanitizedInputTime, true);
+//     tz.TZDateTime convertedDate = tz.TZDateTime.from(dateTime, location);
+//     DateFormat outputFormat = DateFormat('hh:mm a', "ar");
+//     String formattedTime = outputFormat.format(convertedDate);
+//     return formattedTime;
+//   } catch (e) {
+//     debugPrint('Error ParseTime: $e');
+//     return '';
+//   }
+// }
+
 String getFormattedTime(String inputTime,
     {String locale = 'ar', String pattern = 'hh:mm a'}) {
   try {
+    bool isUtc = inputTime.isCaseInsensitiveContains("utc");
     String sanitizedInputTime = inputTime
         .replaceAll(RegExp(r'\u200B|\u00A0'), '')
         .replaceAll('UTC', '')
         .trim();
+
     tz.Location location = tz.getLocation(Config.timeZoneName);
     DateFormat inputFormat = DateFormat(pattern);
-    DateTime dateTime = inputFormat.parse(sanitizedInputTime, true);
-    tz.TZDateTime convertedDate = tz.TZDateTime.from(dateTime, location);
-    DateFormat outputFormat = DateFormat('hh:mm a', "ar");
+    DateTime dateTime = inputFormat.parse(sanitizedInputTime, isUtc);
+    DateTime convertedDate =
+        isUtc ? tz.TZDateTime.from(dateTime, location) : dateTime;
+    DateFormat outputFormat = DateFormat('hh:mm a', locale);
     String formattedTime = outputFormat.format(convertedDate);
     return formattedTime;
   } catch (e) {
-    debugPrint('Error: ${e.toString()}');
+    debugPrint('Error ParseTime: $e');
     return '';
   }
 }
@@ -168,18 +195,24 @@ bool isActiveDate(
     required Duration duration,
     String pattern = 'hh:mm a',
     required Days day}) {
-  DateTime now = DateTime.now().toUtc();
-  int dayNow = now.weekday;
   DateFormat inputFormat = DateFormat(pattern);
+  bool isUtc = date.isCaseInsensitiveContains("utc");
+  tz.Location yemenLocation = tz.getLocation(Config.timeZoneName);
+  late DateTime now;
   DateTime dateTime = inputFormat.parse(date.replaceFirst(' UTC', ''));
-  DateTime timeOnly = DateTime(0, 1, 1, dateTime.hour, dateTime.minute,
+  if (isUtc) {
+    now = DateTime.now().toUtc();
+  } else {
+    now = tz.TZDateTime.from(DateTime.now(), yemenLocation);
+    dateTime = tz.TZDateTime.from(dateTime, yemenLocation);
+  }
+  DateTime start = DateTime(0, 1, 1, dateTime.hour, dateTime.minute,
       dateTime.second, dateTime.millisecond, dateTime.microsecond);
-  DateTime timeOnlyNow = DateTime(0, 1, 1, now.hour, now.minute, now.second,
+  DateTime timeNow = DateTime(0, 1, 1, now.hour, now.minute, now.second,
       now.millisecond, now.microsecond);
-
-  return day == Days.getDayEnum(dayNow) &&
-      timeOnly.isAfter(timeOnlyNow) &&
-      timeOnly.isBefore(timeOnlyNow.add(duration));
+  bool isToday = day == Days.getDayEnum(now.weekday);
+  DateTime end = start.add(duration);
+  return isToday && timeNow.isAfter(start) && timeNow.isBefore(end);
 }
 
 String makeSharedUrl(BuildContext context, NewsEntity news) {

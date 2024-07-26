@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
 import 'package:yemenshabab_news_cms_mobile/gen/fonts.gen.dart';
-import 'package:yemenshabab_news_cms_mobile/generated/assets.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/extension/string.dart';
 
 ThemeData darkTheme = ThemeData(
@@ -20,6 +17,9 @@ ThemeData darkTheme = ThemeData(
   appBarTheme: AppBarTheme(
     surfaceTintColor: Colors.white,
     color: "#262626".toColor,
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    foregroundColor: "#262626".toColor.withOpacity(0.9),
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: "#525252".toColor,

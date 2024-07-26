@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
@@ -26,7 +27,7 @@ class CategoryGridView extends StatelessWidget {
       ViewType.NEWS => (SectionDataData item) => buildNews(item, context),
       ViewType.ARTICLE => (SectionDataData item) => buildArticle(item, context),
       ViewType.STORY => throw UnimplementedError(),
-      ViewType.VIDEO => (SectionDataData item) => buildVideos(item, context),
+      ViewType.VIDEO => (SectionDataData item) => buildNews(item, context),
       ViewType.PROGRAM => (SectionDataData item) => buildNews(item, context),
     };
     return PagedGridView<int, SectionDataData>(
@@ -35,50 +36,48 @@ class CategoryGridView extends StatelessWidget {
       showNoMoreItemsIndicatorAsGridChild: false,
       pagingController: _pagingController,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 100 / getRatio(width),
+        childAspectRatio: MediaQuery.of(context).size.width /
+            (MediaQuery.of(context).size.height / 1.28),
         crossAxisSpacing: 8,
-        mainAxisSpacing: 0,
+        mainAxisSpacing: 8,
         crossAxisCount: crossAxisCount(width),
       ),
       builderDelegate: PagedChildBuilderDelegate<SectionDataData>(
-        itemBuilder: (context, item, index) => Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: InkWell(
-              splashColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  createRoute(
-                    () => dataType == ViewType.VIDEO
-                        ? VideoDetailsPage(
-                            dataModel: DataModel(
-                            uuid: item.uuid,
-                            dataType: dataType.name,
-                            color: parseColorString(
-                              item.categoryColor!,
-                            ),
-                          ))
-                        : NewsDetailsPage(
-                            dataModel: DataModel(
-                            uuid: item.uuid,
-                            dataType: dataType.name,
-                            color: parseColorString(
-                              item.categoryColor!,
-                            ),
-                          )),
-                  ),
-                );
-              },
-              child: widgetFunc(item),
-            ),
+        itemBuilder: (context, item, index) => Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: InkWell(
+            splashColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () {
+              Navigator.push(
+                context,
+                createRoute(
+                  () => dataType == ViewType.VIDEO
+                      ? VideoDetailsPage(
+                          dataModel: DataModel(
+                          uuid: item.uuid,
+                          dataType: dataType.name,
+                          color: parseColorString(
+                            item.categoryColor!,
+                          ),
+                        ))
+                      : NewsDetailsPage(
+                          dataModel: DataModel(
+                          uuid: item.uuid,
+                          dataType: dataType.name,
+                          color: parseColorString(
+                            item.categoryColor!,
+                          ),
+                        )),
+                ),
+              );
+            },
+            child: widgetFunc(item),
           ),
         ),
       ),
@@ -89,12 +88,12 @@ class CategoryGridView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 250,
+        // width: 200,
         child: Column(
           children: [
             Container(
-              height: 150,
-              width: 250,
+              height: 120,
+              // width: 150,
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
@@ -109,107 +108,16 @@ class CategoryGridView extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
+                    child: AutoSizeText(
                       isArabic(context) ? item.titleAr! : item.titleEn!,
                       style: const TextStyle(
-                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
-                      maxLines: 2,
+                      maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                      textDirection: isArabic(context)
-                          ? TextDirection.rtl
-                          : TextDirection.ltr,
-                      children: [
-                        const Icon(
-                          Icons.access_time_rounded,
-                          size: 18,
-                          color: Colors.grey,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          getFormattedDate(item.creationDate!,
-                              Localizations.localeOf(context).toLanguageTag()),
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildVideos(SectionDataData item, BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: 250,
-        child: Column(
-          children: [
-            Container(
-              height: 150,
-              width: 250,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-              ),
-              child: ImageComponent(
-                imageUrl: item.image!,
-              ),
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      isArabic(context) ? item.titleAr! : item.titleEn!,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                      textDirection: isArabic(context)
-                          ? TextDirection.rtl
-                          : TextDirection.ltr,
-                      children: [
-                        const Icon(
-                          Icons.access_time_rounded,
-                          size: 18,
-                          color: Colors.grey,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          getFormattedDate(item.creationDate!,
-                              Localizations.localeOf(context).toLanguageTag()),
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  buildCreationDate(context, item),
                 ],
               ),
             ),
@@ -224,81 +132,73 @@ class CategoryGridView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Container(
-                  height: 80,
-                  width: 80,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: ImageComponent(
-                    imageUrl: item.writerImage!,
-                  ),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    isArabic(context) ? item.writerName! : item.writerName!,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
+            Container(
+              height: 80,
+              width: 80,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: ImageComponent(
+                imageUrl: item.writerImage!,
+              ),
+            ),
+            SizedBox(height: 10),
+            AutoSizeText(
+              isArabic(context) ? item.writerName! : item.writerName!,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.primary.withRed(210),
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 20),
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      isArabic(context) ? item.titleAr! : item.titleEn!,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                      textDirection: isArabic(context)
-                          ? TextDirection.rtl
-                          : TextDirection.ltr,
-                      children: [
-                        const Icon(
-                          Icons.access_time_rounded,
-                          size: 18,
-                          color: Colors.grey,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          getFormattedDate(item.creationDate!,
-                              Localizations.localeOf(context).toLanguageTag()),
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              child: AutoSizeText(
+                isArabic(context) ? item.titleAr! : item.titleEn!,
+                minFontSize: 18,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
             ),
+            SizedBox(height: 20),
+            buildCreationDate(context, item, true),
           ],
         ),
       ),
+    );
+  }
+
+  Row buildCreationDate(BuildContext context, SectionDataData item,
+      [bool center = false]) {
+    return Row(
+      mainAxisAlignment:
+          center ? MainAxisAlignment.center : MainAxisAlignment.start,
+      textDirection: isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
+      children: [
+        const Icon(
+          Icons.access_time_rounded,
+          size: 18,
+          color: Colors.grey,
+        ),
+        const SizedBox(width: 10),
+        AutoSizeText(
+          getFormattedDate(item.creationDate!,
+              Localizations.localeOf(context).toLanguageTag()),
+          style: const TextStyle(
+            color: Colors.grey,
+            // fontSize: 18,
+          ),
+        ),
+      ],
     );
   }
 
@@ -338,5 +238,5 @@ class CategoryGridView extends StatelessWidget {
                                               ? 100
                                               : width >= 600
                                                   ? 115
-                                                  : 170;
+                                                  : 175;
 }

@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:toastification/toastification.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/loading.dart';
@@ -34,16 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return state is LandingLoaded
             ? Scaffold(
+                extendBody: true,
                 floatingActionButton: FloatingActionButton(
-                  child: Icon(Icons.play_arrow_rounded),
+                  child: Icon(FontAwesomeIcons.podcast),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        createRoute(
-                          () => LiveScreen()
-                        ));
+                    Navigator.push(context, createRoute(() => LiveScreen()));
                   },
                 ),
                 floatingActionButtonLocation:
@@ -82,6 +80,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Theme.of(context)
                       .bottomNavigationBarTheme
                       .backgroundColor,
+                  borderColor:
+                      Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+                  shadow: Shadow(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Theme.of(context)
+                            .colorScheme
+                            .secondary
+                            .withOpacity(0.1)
+                        : Colors.transparent,
+                    blurRadius: 50,
+                  ),
+
                   activeIndex: activeIndex,
                   // notchAndCornersAnimation: borderRadiusAnimation,
                   splashSpeedInMilliseconds: 300,

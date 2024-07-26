@@ -24,96 +24,93 @@ class CustomTabScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const SizedBox(height: 16),
-            if (homeModel.indicator.isNotEmpty)
-              Indicator(indicators: homeModel.indicator),
-            ...List.generate(
-              homeModel.news.length,
-              (index) => switch (homeModel.news[index].type!) {
-                ViewType.NEWS => CustomGridView(
-                    newsModel: homeModel.news[index],
-                    category: getCategory(context, index),
-                  ),
-                ViewType.ARTICLE => ArticleView(
-                    newsModel: homeModel.news[index],
-                    category: getCategory(context, index),
-                  ),
-                ViewType.VIDEO => CustomGridView(
-                    newsModel: homeModel.news[index],
-                    category: getCategory(context, index),
-                  ),
-                ViewType.PROGRAM =>
-                  ProgramView(newsModel: homeModel.news[index]),
-                ViewType.STORY => CustomGridView(
-                    newsModel: homeModel.news[index],
-                    category: getCategory(context, index),
-                  ),
-              },
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                textDirection:
-                    isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.followUs,
-                    style: const TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const SizedBox(height: 16),
+          if (homeModel.indicator.isNotEmpty)
+            Indicator(indicators: homeModel.indicator),
+          ...List.generate(
+            homeModel.news.length,
+            (index) => switch (homeModel.news[index].type!) {
+              ViewType.NEWS => CustomGridView(
+                  newsModel: homeModel.news[index],
+                  category: getCategory(context, index),
+                ),
+              ViewType.ARTICLE => ArticleView(
+                  newsModel: homeModel.news[index],
+                  category: getCategory(context, index),
+                ),
+              ViewType.VIDEO => CustomGridView(
+                  newsModel: homeModel.news[index],
+                  category: getCategory(context, index),
+                ),
+              ViewType.PROGRAM => ProgramView(newsModel: homeModel.news[index]),
+              ViewType.STORY => CustomGridView(
+                  newsModel: homeModel.news[index],
+                  category: getCategory(context, index),
+                ),
+            },
+          ),
+          SizedBox(height: 40),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              textDirection:
+                  isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
               children: [
-                if (Config.settings!.facebook != null)
-                  buildSocialMediaButton(
-                    icon: FontAwesomeIcons.squareFacebook,
-                    url: Config.settings!.facebook!,
-                    context: context,
+                Text(
+                  AppLocalizations.of(context)!.followUs,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
                   ),
-                if (Config.settings!.instagram != null)
-                  buildSocialMediaButton(
-                    icon: FontAwesomeIcons.instagram,
-                    url: Config.settings!.instagram!,
-                    context: context,
-                  ),
-                if (Config.settings!.twitter != null)
-                  buildSocialMediaButton(
-                    icon: FontAwesomeIcons.xTwitter,
-                    url: Config.settings!.twitter!,
-                    context: context,
-                  ),
-                if (Config.settings!.telegram != null)
-                  buildSocialMediaButton(
-                    icon: FontAwesomeIcons.telegram,
-                    url: Config.settings!.telegram!,
-                    context: context,
-                  ),
-                if (Config.settings!.youtube != null)
-                  buildSocialMediaButton(
-                    icon: FontAwesomeIcons.youtube,
-                    url: Config.settings!.youtube!,
-                    context: context,
-                  ),
+                ),
               ],
             ),
-            SizedBox(height: 50),
-          ],
-        ),
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (Config.settings!.facebook != null)
+                buildSocialMediaButton(
+                  icon: FontAwesomeIcons.squareFacebook,
+                  url: Config.settings!.facebook!,
+                  context: context,
+                ),
+              if (Config.settings!.instagram != null)
+                buildSocialMediaButton(
+                  icon: FontAwesomeIcons.instagram,
+                  url: Config.settings!.instagram!,
+                  context: context,
+                ),
+              if (Config.settings!.twitter != null)
+                buildSocialMediaButton(
+                  icon: FontAwesomeIcons.xTwitter,
+                  url: Config.settings!.twitter!,
+                  context: context,
+                ),
+              if (Config.settings!.telegram != null)
+                buildSocialMediaButton(
+                  icon: FontAwesomeIcons.telegram,
+                  url: Config.settings!.telegram!,
+                  context: context,
+                ),
+              if (Config.settings!.youtube != null)
+                buildSocialMediaButton(
+                  icon: FontAwesomeIcons.youtube,
+                  url: Config.settings!.youtube!,
+                  context: context,
+                ),
+            ],
+          ),
+          SizedBox(height: 100),
+        ],
       ),
     );
   }

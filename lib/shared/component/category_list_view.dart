@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:yemenshabab_news_cms_mobile/data/models/home/news/data.dart';
@@ -31,181 +32,80 @@ class CategoryListView extends StatelessWidget {
     return PagedListView<int, SectionDataData>(
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<SectionDataData>(
-        itemBuilder: (context, item, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            padding: const EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: InkWell(
-              splashColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () {
-                Navigator.push(
-                    context,
-                    createRoute(
-                      () => dataType == ViewType.VIDEO
-                          ? VideoDetailsPage(
-                              dataModel: DataModel(
-                              uuid: item.uuid,
-                              dataType: dataType.name,
-                              color: parseColorString(
-                                item.categoryColor!,
-                              ),
-                            ))
-                          : NewsDetailsPage(
-                              dataModel: DataModel(
-                              uuid: item.uuid,
-                              dataType: dataType.name,
-                              color: parseColorString(
-                                item.categoryColor!,
-                              ),
-                            )),
-                    ));
-              },
-              child: widgetFunc(item),
-            ),
-          ),
-        ),
-        animateTransitions: true
-      ),
-
+          itemBuilder: (context, item, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxHeight: double.infinity,
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          createRoute(
+                            () => dataType == ViewType.VIDEO
+                                ? VideoDetailsPage(
+                                    dataModel: DataModel(
+                                    uuid: item.uuid,
+                                    dataType: dataType.name,
+                                    color: parseColorString(
+                                      item.categoryColor!,
+                                    ),
+                                  ))
+                                : NewsDetailsPage(
+                                    dataModel: DataModel(
+                                    uuid: item.uuid,
+                                    dataType: dataType.name,
+                                    color: parseColorString(
+                                      item.categoryColor!,
+                                    ),
+                                  )),
+                          ));
+                    },
+                    child: widgetFunc(item),
+                  ),
+                ),
+              ),
+          animateTransitions: true),
     );
   }
 
   Widget buildArticle(SectionDataData item, BuildContext context) {
-    return SizedBox(
-      child: Row(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: ImageComponent(
-              imageUrl: item.writerImage!,
-            ),
-          ),
-          SizedBox(width: 30),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(height: 20),
-                Text(
-                  isArabic(context) ? item.titleAr! : item.titleEn!,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  item.writerName!,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildVideo(SectionDataData item, BuildContext context) {
     return Row(
       children: [
         Container(
-          width: 150,
+          width: 100,
           height: 100,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(50),
           ),
-          child: ImageComponent(imageUrl:
-            item.image!,
-
+          child: ImageComponent(
+            imageUrl: item.writerImage!,
           ),
         ),
-        SizedBox(width: 10),
+        SizedBox(width: 30),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                isArabic(context) ? item.titleAr! : item.titleEn!,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
+              SizedBox(height: 20),
+              titleBox(context, item),
               SizedBox(height: 10),
               Text(
-                getFormattedDate(item.creationDate!,
-                    Localizations.localeOf(context).toLanguageTag()),
+                item.writerName!,
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 18,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget buildProgram(SectionDataData item, BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 150,
-          height: 100,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: ImageComponent(imageUrl:
-            item.image!,
-
-          ),
-        ),
-        SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                isArabic(context) ? item.titleAr! : item.titleEn!,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              SizedBox(height: 10),
-              Text(
-                getFormattedDate(item.creationDate!,
-                    Localizations.localeOf(context).toLanguageTag()),
-                style: TextStyle(
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 18,
                 ),
               ),
@@ -219,46 +119,65 @@ class CategoryListView extends StatelessWidget {
   Widget buildNews(SectionDataData item, BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 150,
-          height: 100,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: ImageComponent(imageUrl:
-            item.image!,
-
-          ),
-        ),
+        buildImage(item),
         SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                isArabic(context) ? item.titleAr! : item.titleEn!,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              SizedBox(height: 10),
-              Text(
-                getFormattedDate(item.creationDate!,
-                    Localizations.localeOf(context).toLanguageTag()),
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 18,
-                ),
-              ),
-            ],
-          ),
-        ),
+        buildContent(context, item),
       ],
+    );
+  }
+
+  Widget buildContent(BuildContext context, SectionDataData item) {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          titleBox(context, item),
+          SizedBox(height: 10),
+          publishedDate(item, context),
+        ],
+      ),
+    );
+  }
+
+  Widget buildImage(SectionDataData item) {
+    return Expanded(
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: 150,
+        ),
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ImageComponent(
+          imageUrl: item.image!,
+          height: 120,
+        ),
+      ),
+    );
+  }
+
+  Text publishedDate(SectionDataData item, BuildContext context) {
+    return Text(
+      getFormattedDate(
+          item.creationDate!, Localizations.localeOf(context).toLanguageTag()),
+      style: const TextStyle(
+        color: Colors.grey,
+        fontSize: 18,
+      ),
+    );
+  }
+
+  AutoSizeText titleBox(BuildContext context, SectionDataData item) {
+    return AutoSizeText(
+      isArabic(context) ? item.titleAr! : item.titleEn!,
+      maxFontSize: 20,
+      minFontSize: 14,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+      maxLines: 5,
     );
   }
 }

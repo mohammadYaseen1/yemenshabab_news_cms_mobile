@@ -4,13 +4,18 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:widget_zoom/widget_zoom.dart';
 import 'package:yemenshabab_news_cms_mobile/gen/assets.gen.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/utils.dart';
 
 class ImageComponent extends StatelessWidget {
   const ImageComponent(
-      {super.key, required this.imageUrl, this.clickable = false});
+      {super.key,
+      required this.imageUrl,
+      this.clickable = false,
+      this.height = 250});
 
   final String imageUrl;
   final bool clickable;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class ImageComponent extends StatelessWidget {
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) {
         return Container(
-          height: 250,
+          height: height,
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -36,16 +41,20 @@ class ImageComponent extends StatelessWidget {
         );
       },
       placeholder: (context, url) => SizedBox(
-          height: 250,
+          height: height,
           child: const Center(child: CircularProgressIndicator.adaptive())),
-      errorWidget: (context, url, error) => Container(
-          padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-              border: Border.all(color: Theme.of(context).cardColor),
-              borderRadius: BorderRadius.circular(25)),
-          height: 250,
-          child:
-              Center(child: Assets.images.logoGrey.image(fit: BoxFit.cover))),
+      errorWidget: (context, url, error) {
+        debugPrint("error loadImage: \n error: $error, \n url: $url");
+        deleteImageFromCache(url);
+        return Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+                border: Border.all(color: Theme.of(context).cardColor),
+                borderRadius: BorderRadius.circular(15)),
+            height: height,
+            child:
+                Center(child: Assets.images.logoGrey.image(fit: BoxFit.cover)));
+      },
     );
   }
 }

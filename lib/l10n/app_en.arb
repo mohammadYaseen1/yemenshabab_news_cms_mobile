@@ -15,6 +15,7 @@
   "@home": {
     "description": "Link to the homepage"
   },
+  "relatedNews": "Related News",
   "settings": "Settings",
   "@settings": {
     "description": "Settings for customization"

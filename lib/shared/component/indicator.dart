@@ -116,6 +116,7 @@ class Indicator extends StatelessWidget {
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 25,
+                        fontWeight: FontWeight.w500,
                         overflow: TextOverflow.ellipsis,
                       ),
                       maxLines: 2,

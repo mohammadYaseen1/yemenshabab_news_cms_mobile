@@ -8,6 +8,7 @@ import 'package:qyplayer/interface/qyplayer_interface.dart';
 import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/audio/audio_player_widget.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/audio/controls.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/component/web_view.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/config/config.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
@@ -87,7 +88,7 @@ class _LiveScreenState extends State<LiveScreen> {
   }
 
   void enable() async {
-    await floating.enable(OnLeavePiP());
+    await floating.enable(const OnLeavePiP());
   }
 
   void disable() async {
@@ -136,13 +137,13 @@ class _LiveScreenState extends State<LiveScreen> {
                 children: [
                   Text(
                     AppLocalizations.of(context)!.liveNow,
-                    style: TextStyle(fontSize: 24),
+                    style: const TextStyle(fontSize: 24),
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               liveStream(),
-              SizedBox(height: 30),
+              const SizedBox(height: 40),
               FloatingActionButton.extended(
                 onPressed: () async {
                   print(_audioPlayer.processingState);
@@ -156,10 +157,19 @@ class _LiveScreenState extends State<LiveScreen> {
                     print("play");
                   }
                 },
-                icon: Icon(Icons.podcasts_rounded),
-                label: Text(AppLocalizations.of(context)!.audioBroadcast),
+                icon: Controls(
+                  audioPlayer: _audioPlayer,
+                  iconSize: 50,
+                  // iconColor: Theme.of(context).textTheme.labelLarge!.color,
+                ),
+                label: Text(
+                  AppLocalizations.of(context)!.audioBroadcast,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              Expanded(flex: (value - 1).abs(), child: SizedBox()),
+              Expanded(flex: (value - 1).abs(), child: const SizedBox()),
               Expanded(
                 child: Container(
                   alignment: Alignment.bottomCenter,
@@ -207,7 +217,7 @@ class _LiveScreenState extends State<LiveScreen> {
                             ],
                           ),
                         ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       Expanded(
                         flex: 1,
                         child: Text(
@@ -218,7 +228,7 @@ class _LiveScreenState extends State<LiveScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),

@@ -1,8 +1,9 @@
-import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_field.dart';
-import 'package:yemenshabab_news_cms_mobile/generated/json/program_schedule_entity.g.dart';
 import 'dart:convert';
 
+import 'package:yemenshabab_news_cms_mobile/generated/json/base/json_field.dart';
+import 'package:yemenshabab_news_cms_mobile/generated/json/program_schedule_entity.g.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
+
 export 'package:yemenshabab_news_cms_mobile/generated/json/program_schedule_entity.g.dart';
 
 @JsonSerializable()
@@ -23,7 +24,7 @@ class ProgramScheduleEntity {
   }
 
   void sortPrograms() {
-    programs?.sort((a, b) => compareDate(a.showTime!, b.showTime!));
+    programs?.sort((a, b) => compareDate(b.showTime!, a.showTime!));
   }
 }
 
@@ -36,6 +37,7 @@ class ProgramSchedulePrograms {
   String? releaseDays;
   String? programImage;
   String? programUuid;
+  String? showDuration;
 
   ProgramSchedulePrograms();
 

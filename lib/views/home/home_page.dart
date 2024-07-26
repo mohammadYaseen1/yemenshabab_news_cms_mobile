@@ -7,6 +7,7 @@ import 'package:yemenshabab_news_cms_mobile/data/models/home/news/news_type.dart
 import 'package:yemenshabab_news_cms_mobile/data/models/section/category.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab_news_cms_mobile/services/home/models/section/section_entity.dart';
+import 'package:yemenshabab_news_cms_mobile/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/constants/constants.dart';
 import 'package:yemenshabab_news_cms_mobile/shared/utils/utils.dart';
 import 'package:yemenshabab_news_cms_mobile/views/home/custom_tab_screen.dart';
@@ -26,18 +27,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     tabController = TabController(
       length: homeController.homeCubit.allSections.length + 1,
       vsync: this,
-    )..addListener(
-        () {
-          setState(() {
-            isSelected = isSelected
-                .map(
-                  (e) => false,
-                )
-                .toList();
-          });
-        },
-      );
-
+    );
     super.initState();
   }
 
@@ -45,7 +35,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   SectionSectionsCategories? category;
   int categoryIndex = 0;
   SectionDate? sectionDate;
-  List<bool> isSelected = [];
+  late List<bool> isSelected = [];
 
   @override
   Widget build(BuildContext context) {
@@ -61,133 +51,142 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           initialIndex: 1,
           length: allSections.length + 1,
           child: Scaffold(
-            appBar: AppBar(
-              toolbarHeight: 30,
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(30),
-                child: TabBar(
+            body: CustomAppBar(
+              bottom: TabBar(
+                controller: tabController,
+                isScrollable: true,
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.zero,
+                tabAlignment: TabAlignment.start,
+                dividerColor: Theme.of(context).cardColor,
+                unselectedLabelColor: Colors.grey,
+                onTap: (value) {
+                  setState(() {
+                    isSelected = isSelected
+                        .map(
+                          (e) => false,
+                        )
+                        .toList();
+                  });
+                },
+                labelStyle:
+                    TextStyle(fontWeight: FontWeight.w900, fontSize: 19),
+                unselectedLabelStyle:
+                    TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+                tabs: <Widget>[
+                  Tab(
+                    text: AppLocalizations.of(context)!.you,
+                  ),
+                  ...List.generate(
+                    allSections.length,
+                    (index) {
+                      if (allSections[index].section.categories!.length > 1) {
+                        return Tab(
+                          child: DropdownButton<SectionSectionsCategories>(
+                            elevation: 0,
+                            underline: SizedBox(),
+                            borderRadius: BorderRadius.circular(10),
+                            hint: Text(isArabic(context)
+                                ? allSections[index].section.nameAr!
+                                : allSections[index].section.nameEn!),
+                            value: allSections[index].data,
+                            focusColor: Colors.green,
+                            style: TextStyle(
+                                fontWeight: isSelected[index]
+                                    ? FontWeight.w900
+                                    : FontWeight.normal,
+                                fontSize: isSelected[index] ? 18 : 14,
+                                color: Theme.of(context).iconTheme.color),
+                            dropdownColor:
+                                Theme.of(context).cardColor.withOpacity(0.7),
+                            items: allSections[index]
+                                .section
+                                .categories!
+                                .map(
+                                  (category) => DropdownMenuItem(
+                                    child: Text(
+                                      isArabic(context)
+                                          ? category.nameAr!
+                                          : category.nameEn!,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                    value: category,
+                                  ),
+                                )
+                                .toList(),
+                            onTap: () async {
+                              tabController.animateTo(allSections[index].index);
+                              isSelected = unSelected(allSections);
+                              setState(() {
+                                isSelected[index] = true;
+                              });
+                            },
+                            onChanged: (category) {
+                              print(category!.nameAr);
+                              var categorySection = CategorySection(
+                                dataType: ViewType.valueOf(
+                                    allSections[index].section.dataType!),
+                                color: category.color,
+                                layout: Layout.valueOf(category.layout!),
+                                nameAr: category.nameAr,
+                                nameEn: category.nameEn,
+                              );
+                              homeController.categoryCubit
+                                  .navigate(categorySection);
+                              section = null;
+                              sectionDate = null;
+                              setState(() {
+                                section = categorySection;
+                                sectionDate = allSections[index];
+                              });
+                              // setState(() {
+                              //   categoryIndex = allSections[index]
+                              //       .section
+                              //       .categories!
+                              //       .indexOf(category!);
+                              //   homeController.homeCubit.categoryIndex =
+                              //       categoryIndex = categoryIndex;
+                              //   allSections[index].data = category;
+                              //   section = CategorySection(
+                              //     dataType: ViewType.valueOf(
+                              //         allSections[index].section.dataType!),
+                              //     color: category!.color,
+                              //     layout: Layout.valueOf(category.layout!),
+                              //     nameAr: category.nameAr,
+                              //     nameEn: category.nameEn,
+                              //   );
+                              // });
+                            },
+                          ),
+                        );
+                      } else {
+                        return Tab(
+                          text: isArabic(context)
+                              ? allSections[index].section.nameAr
+                              : allSections[index].section.nameEn,
+                        );
+                      }
+                    },
+                  )
+                ],
+              ),
+              body: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: TabBarView(
                   controller: tabController,
-                  isScrollable: true,
-                  physics: BouncingScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  tabAlignment: TabAlignment.start,
-                  dividerColor: Theme.of(context).cardColor,
-                  unselectedLabelColor: Colors.grey,
-                  labelStyle:
-                      TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
-                  unselectedLabelStyle:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
-                  tabs: <Widget>[
-                    Tab(
-                      text: AppLocalizations.of(context)!.you,
-                    ),
+                  children: <Widget>[
+                    CustomTabScreen(
+                        homeModel: widget.homeModel, category: allSections),
                     ...List.generate(
                       allSections.length,
                       (index) {
-                        if (allSections[index].section.categories!.length > 1) {
-                          return Tab(
-                            child: DropdownButton<SectionSectionsCategories>(
-                              elevation: 0,
-                              underline: SizedBox(),
-                              borderRadius: BorderRadius.circular(10),
-                              hint: Text(isArabic(context)
-                                  ? allSections[index].section.nameAr!
-                                  : allSections[index].section.nameEn!),
-                              value: allSections[index].data,
-                              focusColor: Colors.green,
-                              style: TextStyle(
-                                  fontWeight: isSelected[index]
-                                      ? FontWeight.w900
-                                      : FontWeight.normal,
-                                  fontSize: isSelected[index] ? 18 : 14,
-                                  color: Theme.of(context).iconTheme.color),
-                              dropdownColor:
-                                  Theme.of(context).cardColor.withOpacity(0.7),
-                              items: allSections[index]
-                                  .section
-                                  .categories!
-                                  .map(
-                                    (category) => DropdownMenuItem(
-                                      child: Text(isArabic(context)
-                                          ? category.nameAr!
-                                          : category.nameEn!),
-                                      value: category,
-                                    ),
-                                  )
-                                  .toList(),
-                              onTap: () async {
-                                tabController
-                                    .animateTo(allSections[index].index);
-                                isSelected = unSelected(allSections);
-                                setState(() {
-                                  isSelected[index] = true;
-                                });
-                              },
-                              onChanged: (category) {
-                                print(category!.nameAr);
-                                var categorySection = CategorySection(
-                                  dataType: ViewType.valueOf(
-                                      allSections[index].section.dataType!),
-                                  color: category.color,
-                                  layout: Layout.valueOf(category.layout!),
-                                  nameAr: category.nameAr,
-                                  nameEn: category.nameEn,
-                                );
-                                homeController.categoryCubit
-                                    .navigate(categorySection);
-                                section = null;
-                                sectionDate = null;
-                                setState(() {
-                                  section = categorySection;
-                                  sectionDate = allSections[index];
-                                });
-                                // setState(() {
-                                //   categoryIndex = allSections[index]
-                                //       .section
-                                //       .categories!
-                                //       .indexOf(category!);
-                                //   homeController.homeCubit.categoryIndex =
-                                //       categoryIndex = categoryIndex;
-                                //   allSections[index].data = category;
-                                //   section = CategorySection(
-                                //     dataType: ViewType.valueOf(
-                                //         allSections[index].section.dataType!),
-                                //     color: category!.color,
-                                //     layout: Layout.valueOf(category.layout!),
-                                //     nameAr: category.nameAr,
-                                //     nameEn: category.nameEn,
-                                //   );
-                                // });
-                              },
-                            ),
-                          );
-                        } else {
-                          return Tab(
-                            text: isArabic(context)
-                                ? allSections[index].section.nameAr
-                                : allSections[index].section.nameEn,
-                          );
-                        }
+                        return allSections[index].tab(categoryIndex);
                       },
                     )
                   ],
                 ),
-              ),
-            ),
-            body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: TabBarView(
-                controller: tabController,
-                children: <Widget>[
-                  CustomTabScreen(
-                      homeModel: widget.homeModel, category: allSections),
-                  ...List.generate(
-                    allSections.length,
-                    (index) {
-                      return allSections[index].tab(categoryIndex);
-                    },
-                  )
-                ],
               ),
             ),
           ),
