@@ -28,3 +28,7 @@ class SettingsError extends AppState {
   @override
   List<Object?> get props => [message];
 }
+
+class OnlineInternet extends AppState {}
+
+class OfflineInternet extends AppState {}

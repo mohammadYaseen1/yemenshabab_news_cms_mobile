@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:yemenshabab/layout/app_layout.dart';
-import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
-import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/local/cache_helper.dart';
 import 'package:yemenshabab/shared/theme/dark_theme.dart';
 import 'package:yemenshabab/shared/theme/light_theme.dart';
-import 'package:yemenshabab/views/auth/login_screen.dart';
-import 'package:yemenshabab/views/auth/register_screen.dart';
-import 'package:yemenshabab/views/writer_page.dart';
 
 class App extends StatefulWidget {
   const App({
@@ -64,24 +59,7 @@ class _AppState extends State<App> {
       themeMode: _themeMode,
       initialRoute: '/',
       routes: {
-        '/image': (context) => Scaffold(
-              body: Center(
-                child: Container(
-                  height: 200,
-                  child: ImageComponent(
-                    imageUrl: "http://via.placeholder.com/200x150",
-                    clickable: false,
-                  ),
-                ),
-              ),
-            ),
         '/': (context) => AppLayout(),
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/writer': (context) =>
-            WriterPage(uuid: "adcedb52-4239-11ef-a569-02f52df354b1"),
-        '/live': (context) => AudioPlayerWidget(
-            url: 'http://webaudioapi.com/samples/audio-tag/chrono.mp3'),
       },
     );
   }

@@ -17,8 +17,7 @@ class NewsScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is NewsLoading) {
               return Center(child: CircularProgressIndicator());
-            }
-            else if (state is NewsLoaded) {
+            } else if (state is NewsLoaded) {
               return ListView.builder(
                 itemCount: state.news.length,
                 itemBuilder: (context, index) {

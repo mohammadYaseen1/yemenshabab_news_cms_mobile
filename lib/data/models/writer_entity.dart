@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:yemenshabab/generated/json/base/json_field.dart';
 import 'package:yemenshabab/generated/json/writer_entity.g.dart';
-import 'dart:convert';
+
 export 'package:yemenshabab/generated/json/writer_entity.g.dart';
 
 @JsonSerializable()

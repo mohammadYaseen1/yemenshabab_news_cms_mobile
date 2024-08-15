@@ -1,30 +1,27 @@
-import 'package:yemenshabab/generated/json/base/json_convert_content.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/generated/json/base/json_convert_content.dart';
 
 SectionDataEntity $SectionDataEntityFromJson(Map<String, dynamic> json) {
   final SectionDataEntity sectionDataEntity = SectionDataEntity();
   final List<SectionDataData>? data = (json['data'] as List<dynamic>?)
-      ?.map(
-          (e) => jsonConvert.convert<SectionDataData>(e) as SectionDataData)
+      ?.map((e) => jsonConvert.convert<SectionDataData>(e) as SectionDataData)
       .toList();
   if (data != null) {
     sectionDataEntity.data = data;
   }
-  final List<SectionDataLatestData>? latestData = (json['latestData'] as List<
-      dynamic>?)
-      ?.map(
-          (e) =>
-      jsonConvert.convert<SectionDataLatestData>(e) as SectionDataLatestData)
-      .toList();
+  final List<SectionDataLatestData>? latestData =
+      (json['latestData'] as List<dynamic>?)
+          ?.map((e) => jsonConvert.convert<SectionDataLatestData>(e)
+              as SectionDataLatestData)
+          .toList();
   if (latestData != null) {
     sectionDataEntity.latestData = latestData;
   }
-  final List<SectionDataMostViewed>? mostViewed = (json['mostViewed'] as List<
-      dynamic>?)
-      ?.map(
-          (e) =>
-      jsonConvert.convert<SectionDataMostViewed>(e) as SectionDataMostViewed)
-      .toList();
+  final List<SectionDataMostViewed>? mostViewed =
+      (json['mostViewed'] as List<dynamic>?)
+          ?.map((e) => jsonConvert.convert<SectionDataMostViewed>(e)
+              as SectionDataMostViewed)
+          .toList();
   if (mostViewed != null) {
     sectionDataEntity.mostViewed = mostViewed;
   }
@@ -32,8 +29,8 @@ SectionDataEntity $SectionDataEntityFromJson(Map<String, dynamic> json) {
   if (layoutType != null) {
     sectionDataEntity.layoutType = layoutType;
   }
-  final String? totalRecords = jsonConvert.convert<String>(
-      json['totalRecords']);
+  final String? totalRecords =
+      jsonConvert.convert<String>(json['totalRecords']);
   if (totalRecords != null) {
     sectionDataEntity.totalRecords = totalRecords;
   }
@@ -44,6 +41,14 @@ SectionDataEntity $SectionDataEntityFromJson(Map<String, dynamic> json) {
   final String? categoryAr = jsonConvert.convert<String>(json['categoryAr']);
   if (categoryAr != null) {
     sectionDataEntity.categoryAr = categoryAr;
+  }
+  final bool? extra = jsonConvert.convert<bool>(json['extra']);
+  if (extra != null) {
+    sectionDataEntity.extra = extra;
+  }
+  final dynamic add = json['add'];
+  if (add != null) {
+    sectionDataEntity.add = add;
   }
   return sectionDataEntity;
 }
@@ -57,6 +62,8 @@ Map<String, dynamic> $SectionDataEntityToJson(SectionDataEntity entity) {
   data['totalRecords'] = entity.totalRecords;
   data['color'] = entity.color;
   data['categoryAr'] = entity.categoryAr;
+  data['extra'] = entity.extra;
+  data['add'] = entity.add;
   return data;
 }
 
@@ -69,6 +76,8 @@ extension SectionDataEntityExtension on SectionDataEntity {
     String? totalRecords,
     String? color,
     String? categoryAr,
+    bool? extra,
+    dynamic add,
   }) {
     return SectionDataEntity()
       ..data = data ?? this.data
@@ -77,7 +86,9 @@ extension SectionDataEntityExtension on SectionDataEntity {
       ..layoutType = layoutType ?? this.layoutType
       ..totalRecords = totalRecords ?? this.totalRecords
       ..color = color ?? this.color
-      ..categoryAr = categoryAr ?? this.categoryAr;
+      ..categoryAr = categoryAr ?? this.categoryAr
+      ..extra = extra ?? this.extra
+      ..add = add ?? this.add;
   }
 }
 
@@ -99,18 +110,18 @@ SectionDataData $SectionDataDataFromJson(Map<String, dynamic> json) {
   if (titleEn != null) {
     sectionDataData.titleEn = titleEn;
   }
-  final String? descriptionAr = jsonConvert.convert<String>(
-      json['descriptionAr']);
+  final String? descriptionAr =
+      jsonConvert.convert<String>(json['descriptionAr']);
   if (descriptionAr != null) {
     sectionDataData.descriptionAr = descriptionAr;
   }
-  final String? descriptionEn = jsonConvert.convert<String>(
-      json['descriptionEn']);
+  final String? descriptionEn =
+      jsonConvert.convert<String>(json['descriptionEn']);
   if (descriptionEn != null) {
     sectionDataData.descriptionEn = descriptionEn;
   }
-  final String? creationDate = jsonConvert.convert<String>(
-      json['creationDate']);
+  final String? creationDate =
+      jsonConvert.convert<String>(json['creationDate']);
   if (creationDate != null) {
     sectionDataData.creationDate = creationDate;
   }
@@ -126,8 +137,8 @@ SectionDataData $SectionDataDataFromJson(Map<String, dynamic> json) {
   if (categoryAr != null) {
     sectionDataData.categoryAr = categoryAr;
   }
-  final String? categoryColor = jsonConvert.convert<String>(
-      json['categoryColor']);
+  final String? categoryColor =
+      jsonConvert.convert<String>(json['categoryColor']);
   if (categoryColor != null) {
     sectionDataData.categoryColor = categoryColor;
   }
@@ -142,6 +153,14 @@ SectionDataData $SectionDataDataFromJson(Map<String, dynamic> json) {
   final String? writerName = jsonConvert.convert<String>(json['writerName']);
   if (writerName != null) {
     sectionDataData.writerName = writerName;
+  }
+  final String? sourceAr = jsonConvert.convert<String>(json['sourceAr']);
+  if (sourceAr != null) {
+    sectionDataData.sourceAr = sourceAr;
+  }
+  final String? sourceEn = jsonConvert.convert<String>(json['sourceEn']);
+  if (sourceEn != null) {
+    sectionDataData.sourceEn = sourceEn;
   }
   return sectionDataData;
 }
@@ -162,6 +181,8 @@ Map<String, dynamic> $SectionDataDataToJson(SectionDataData entity) {
   data['section'] = entity.section;
   data['writerImage'] = entity.writerImage;
   data['writerName'] = entity.writerName;
+  data['sourceAr'] = entity.sourceAr;
+  data['sourceEn'] = entity.sourceEn;
   return data;
 }
 
@@ -181,6 +202,8 @@ extension SectionDataDataExtension on SectionDataData {
     String? section,
     String? writerImage,
     String? writerName,
+    String? sourceAr,
+    String? sourceEn,
   }) {
     return SectionDataData()
       ..uuid = uuid ?? this.uuid
@@ -196,7 +219,9 @@ extension SectionDataDataExtension on SectionDataData {
       ..categoryColor = categoryColor ?? this.categoryColor
       ..section = section ?? this.section
       ..writerImage = writerImage ?? this.writerImage
-      ..writerName = writerName ?? this.writerName;
+      ..writerName = writerName ?? this.writerName
+      ..sourceAr = sourceAr ?? this.sourceAr
+      ..sourceEn = sourceEn ?? this.sourceEn;
   }
 }
 
@@ -219,18 +244,18 @@ SectionDataLatestData $SectionDataLatestDataFromJson(
   if (titleEn != null) {
     sectionDataLatestData.titleEn = titleEn;
   }
-  final String? descriptionAr = jsonConvert.convert<String>(
-      json['descriptionAr']);
+  final String? descriptionAr =
+      jsonConvert.convert<String>(json['descriptionAr']);
   if (descriptionAr != null) {
     sectionDataLatestData.descriptionAr = descriptionAr;
   }
-  final String? descriptionEn = jsonConvert.convert<String>(
-      json['descriptionEn']);
+  final String? descriptionEn =
+      jsonConvert.convert<String>(json['descriptionEn']);
   if (descriptionEn != null) {
     sectionDataLatestData.descriptionEn = descriptionEn;
   }
-  final String? creationDate = jsonConvert.convert<String>(
-      json['creationDate']);
+  final String? creationDate =
+      jsonConvert.convert<String>(json['creationDate']);
   if (creationDate != null) {
     sectionDataLatestData.creationDate = creationDate;
   }
@@ -246,8 +271,8 @@ SectionDataLatestData $SectionDataLatestDataFromJson(
   if (categoryAr != null) {
     sectionDataLatestData.categoryAr = categoryAr;
   }
-  final String? categoryColor = jsonConvert.convert<String>(
-      json['categoryColor']);
+  final String? categoryColor =
+      jsonConvert.convert<String>(json['categoryColor']);
   if (categoryColor != null) {
     sectionDataLatestData.categoryColor = categoryColor;
   }
@@ -262,6 +287,14 @@ SectionDataLatestData $SectionDataLatestDataFromJson(
   final String? writerName = jsonConvert.convert<String>(json['writerName']);
   if (writerName != null) {
     sectionDataLatestData.writerName = writerName;
+  }
+  final String? sourceAr = jsonConvert.convert<String>(json['sourceAr']);
+  if (sourceAr != null) {
+    sectionDataLatestData.sourceAr = sourceAr;
+  }
+  final String? sourceEn = jsonConvert.convert<String>(json['sourceEn']);
+  if (sourceEn != null) {
+    sectionDataLatestData.sourceEn = sourceEn;
   }
   return sectionDataLatestData;
 }
@@ -283,6 +316,8 @@ Map<String, dynamic> $SectionDataLatestDataToJson(
   data['section'] = entity.section;
   data['writerImage'] = entity.writerImage;
   data['writerName'] = entity.writerName;
+  data['sourceAr'] = entity.sourceAr;
+  data['sourceEn'] = entity.sourceEn;
   return data;
 }
 
@@ -302,6 +337,8 @@ extension SectionDataLatestDataExtension on SectionDataLatestData {
     String? section,
     String? writerImage,
     String? writerName,
+    String? sourceAr,
+    String? sourceEn,
   }) {
     return SectionDataLatestData()
       ..uuid = uuid ?? this.uuid
@@ -317,7 +354,9 @@ extension SectionDataLatestDataExtension on SectionDataLatestData {
       ..categoryColor = categoryColor ?? this.categoryColor
       ..section = section ?? this.section
       ..writerImage = writerImage ?? this.writerImage
-      ..writerName = writerName ?? this.writerName;
+      ..writerName = writerName ?? this.writerName
+      ..sourceAr = sourceAr ?? this.sourceAr
+      ..sourceEn = sourceEn ?? this.sourceEn;
   }
 }
 
@@ -340,18 +379,18 @@ SectionDataMostViewed $SectionDataMostViewedFromJson(
   if (titleEn != null) {
     sectionDataMostViewed.titleEn = titleEn;
   }
-  final String? descriptionAr = jsonConvert.convert<String>(
-      json['descriptionAr']);
+  final String? descriptionAr =
+      jsonConvert.convert<String>(json['descriptionAr']);
   if (descriptionAr != null) {
     sectionDataMostViewed.descriptionAr = descriptionAr;
   }
-  final String? descriptionEn = jsonConvert.convert<String>(
-      json['descriptionEn']);
+  final String? descriptionEn =
+      jsonConvert.convert<String>(json['descriptionEn']);
   if (descriptionEn != null) {
     sectionDataMostViewed.descriptionEn = descriptionEn;
   }
-  final String? creationDate = jsonConvert.convert<String>(
-      json['creationDate']);
+  final String? creationDate =
+      jsonConvert.convert<String>(json['creationDate']);
   if (creationDate != null) {
     sectionDataMostViewed.creationDate = creationDate;
   }
@@ -367,8 +406,8 @@ SectionDataMostViewed $SectionDataMostViewedFromJson(
   if (categoryAr != null) {
     sectionDataMostViewed.categoryAr = categoryAr;
   }
-  final String? categoryColor = jsonConvert.convert<String>(
-      json['categoryColor']);
+  final String? categoryColor =
+      jsonConvert.convert<String>(json['categoryColor']);
   if (categoryColor != null) {
     sectionDataMostViewed.categoryColor = categoryColor;
   }
@@ -383,6 +422,14 @@ SectionDataMostViewed $SectionDataMostViewedFromJson(
   final String? writerName = jsonConvert.convert<String>(json['writerName']);
   if (writerName != null) {
     sectionDataMostViewed.writerName = writerName;
+  }
+  final String? sourceAr = jsonConvert.convert<String>(json['sourceAr']);
+  if (sourceAr != null) {
+    sectionDataMostViewed.sourceAr = sourceAr;
+  }
+  final String? sourceEn = jsonConvert.convert<String>(json['sourceEn']);
+  if (sourceEn != null) {
+    sectionDataMostViewed.sourceEn = sourceEn;
   }
   return sectionDataMostViewed;
 }
@@ -404,6 +451,8 @@ Map<String, dynamic> $SectionDataMostViewedToJson(
   data['section'] = entity.section;
   data['writerImage'] = entity.writerImage;
   data['writerName'] = entity.writerName;
+  data['sourceAr'] = entity.sourceAr;
+  data['sourceEn'] = entity.sourceEn;
   return data;
 }
 
@@ -423,6 +472,8 @@ extension SectionDataMostViewedExtension on SectionDataMostViewed {
     String? section,
     String? writerImage,
     String? writerName,
+    String? sourceAr,
+    String? sourceEn,
   }) {
     return SectionDataMostViewed()
       ..uuid = uuid ?? this.uuid
@@ -438,6 +489,8 @@ extension SectionDataMostViewedExtension on SectionDataMostViewed {
       ..categoryColor = categoryColor ?? this.categoryColor
       ..section = section ?? this.section
       ..writerImage = writerImage ?? this.writerImage
-      ..writerName = writerName ?? this.writerName;
+      ..writerName = writerName ?? this.writerName
+      ..sourceAr = sourceAr ?? this.sourceAr
+      ..sourceEn = sourceEn ?? this.sourceEn;
   }
 }

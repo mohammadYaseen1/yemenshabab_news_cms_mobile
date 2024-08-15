@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class IconBrokenData extends IconData {
   const IconBrokenData(int codePoint)
       : super(
-    codePoint,
-    fontFamily: 'IconBroken',
-    fontPackage: 'icon_broken',
-  );
+          codePoint,
+          fontFamily: 'IconBroken',
+          fontPackage: 'icon_broken',
+        );
 }
 
 /// ```

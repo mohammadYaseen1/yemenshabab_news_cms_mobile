@@ -169,8 +169,7 @@ class _ReadingModePageState extends State<ReadingModePage> {
                             ? widget.content.category!.nameAr!
                             : widget.content.category!.nameEn!,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                     Container(

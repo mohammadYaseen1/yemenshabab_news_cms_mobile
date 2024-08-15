@@ -7,19 +7,24 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
 import 'package:yemenshabab/services/home/models/landing/data.dart';
 import 'package:yemenshabab/services/home/models/landing/item.dart';
+import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
+import 'package:yemenshabab/shared/component/youtube_view.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/social_media.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/my_slider.dart';
+import 'package:yemenshabab/views/keyword_details_page.dart';
 import 'package:yemenshabab/views/reading_mode_page.dart';
 import 'package:yemenshabab/views/writer_page.dart';
 
@@ -187,7 +192,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (state.newsEntity.dataType == "ARTICLE")
+                            if (state.newsEntity.dataType == ViewType.ARTICLE)
                               Column(
                                 children: [
                                   if (state.newsEntity.extras!.writerLinks ==
@@ -356,7 +361,8 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                         ? state.newsEntity.category!.nameAr!
                                         : state.newsEntity.category!.nameEn!,
                                     style: TextStyle(
-                                        color: widget.dataModel.color),
+                                        color: parseColorString(state.newsEntity
+                                            .category!.categoryColor!)),
                                   ),
                                 ),
                                 Container(
@@ -449,10 +455,31 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                     CupertinoTextSelectionControls(),
                                 child: HtmlWidget(
                                   customStylesBuilder: (element) {
-                                    return {'font-size': '${fontSize}px'};
+                                    if (element.outerHtml.contains("<li")) {
+                                      return {"padding": "10px"};
+                                    }
+                                    if (element.outerHtml.contains("<span")) {
+                                      return {"line-height": "normal"};
+                                    }
+                                    return null;
                                   },
                                   customWidgetBuilder: (element) {
-                                    if (element.attributes.containsKey("src")) {
+                                    if (element.localName == "blockquote" &&
+                                        element.classes
+                                            .contains("twitter-tweet")) {
+                                      print("element-twitter: $element");
+                                    }
+                                    if (element.localName == "iframe" &&
+                                        element.attributes["src"]!
+                                            .contains("youtube")) {
+                                      var src = element.attributes["src"]!;
+                                      print("iframe: $src");
+                                      var index = src.lastIndexOf("d/") + 2;
+                                      var id = src.substring(index);
+                                      print("id: $id");
+                                      return YoutubeView(id: id);
+                                    }
+                                    if (element.localName == "img") {
                                       var src = element.attributes["src"]!;
                                       return Padding(
                                         padding: const EdgeInsets.symmetric(
@@ -468,6 +495,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                       ? state.newsEntity.contentAr!
                                       : state.newsEntity.contentEn!,
                                   renderMode: RenderMode.column,
+                                  onTapUrl: (url) => launchUrl(Uri.parse(url)),
                                   textStyle: TextStyle(fontSize: fontSize),
                                 ),
                               ),
@@ -505,11 +533,31 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                               (e) => Padding(
                                                 padding:
                                                     const EdgeInsets.all(4),
-                                                child: Chip(
-                                                  label: Text(e),
-                                                  side: const BorderSide(
-                                                      color: Colors.grey,
-                                                      width: 1),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () {
+                                                    Navigator.of(context)
+                                                        .push(createRoute(
+                                                      () => KeywordDetailsPage(
+                                                          dataType: widget
+                                                              .dataModel
+                                                              .dataType!,
+                                                          keyword: e),
+                                                    ));
+                                                  },
+                                                  child: Chip(
+                                                    label: Text(e),
+                                                    side: const BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1),
+                                                  ),
                                                 ),
                                               ),
                                             )
@@ -530,7 +578,12 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                       ),
                     ),
                   )
-                : const LoadingScreen(),
+                : state is NewsError
+                    ? CustomFirstPageErrorIndicator(
+                        onTryAgain: () => homeController.newsCubit.getNews(
+                            widget.dataModel.uuid!, widget.dataModel.dataType!),
+                      )
+                    : const LoadingScreen(),
           );
         },
       ),
@@ -594,7 +647,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                   () => NewsDetailsPage(
                       dataModel: DataModel(
                     uuid: items[index].uuid,
-                    dataType: extraNews.dataType,
+                    dataType: ViewType.valueOf(extraNews.dataType),
                     color: parseColorString(items[index].categoryColor!),
                   )),
                 ));
@@ -691,7 +744,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
               dataModel: DataModel(
             uuid: item.uuid,
             color: parseColorString(state.extraNews!.color!),
-            dataType: state.extraNews!.dataType,
+            dataType: ViewType.valueOf(state.extraNews!.dataType),
           ));
         }));
       },

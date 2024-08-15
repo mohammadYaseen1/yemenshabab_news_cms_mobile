@@ -11,8 +11,8 @@ NewsEntity $NewsEntityFromJson(Map<String, dynamic> json) {
   if (image != null) {
     newsEntity.image = image;
   }
-  final String? creationDate = jsonConvert.convert<String>(
-      json['creationDate']);
+  final String? creationDate =
+      jsonConvert.convert<String>(json['creationDate']);
   if (creationDate != null) {
     newsEntity.creationDate = creationDate;
   }
@@ -28,13 +28,13 @@ NewsEntity $NewsEntityFromJson(Map<String, dynamic> json) {
   if (titleEn != null) {
     newsEntity.titleEn = titleEn;
   }
-  final String? descriptionAr = jsonConvert.convert<String>(
-      json['descriptionAr']);
+  final String? descriptionAr =
+      jsonConvert.convert<String>(json['descriptionAr']);
   if (descriptionAr != null) {
     newsEntity.descriptionAr = descriptionAr;
   }
-  final String? descriptionEn = jsonConvert.convert<String>(
-      json['descriptionEn']);
+  final String? descriptionEn =
+      jsonConvert.convert<String>(json['descriptionEn']);
   if (descriptionEn != null) {
     newsEntity.descriptionEn = descriptionEn;
   }
@@ -50,13 +50,13 @@ NewsEntity $NewsEntityFromJson(Map<String, dynamic> json) {
   if (dataType != null) {
     newsEntity.dataType = dataType;
   }
-  final NewsCategory? category = jsonConvert.convert<NewsCategory>(
-      json['category']);
+  final NewsCategory? category =
+      jsonConvert.convert<NewsCategory>(json['category']);
   if (category != null) {
     newsEntity.category = category;
   }
-  final NewsKeywords? keywords = jsonConvert.convert<NewsKeywords>(
-      json['keywords']);
+  final NewsKeywords? keywords =
+      jsonConvert.convert<NewsKeywords>(json['keywords']);
   if (keywords != null) {
     newsEntity.keywords = keywords;
   }
@@ -131,8 +131,8 @@ NewsCategory $NewsCategoryFromJson(Map<String, dynamic> json) {
   if (nameEn != null) {
     newsCategory.nameEn = nameEn;
   }
-  final String? categoryColor = jsonConvert.convert<String>(
-      json['categoryColor']);
+  final String? categoryColor =
+      jsonConvert.convert<String>(json['categoryColor']);
   if (categoryColor != null) {
     newsCategory.categoryColor = categoryColor;
   }
@@ -162,13 +162,15 @@ extension NewsCategoryExtension on NewsCategory {
 
 NewsKeywords $NewsKeywordsFromJson(Map<String, dynamic> json) {
   final NewsKeywords newsKeywords = NewsKeywords();
-  final List<String>? ar = (json['ar'] as List<dynamic>?)?.map(
-          (e) => jsonConvert.convert<String>(e) as String).toList();
+  final List<String>? ar = (json['ar'] as List<dynamic>?)
+      ?.map((e) => jsonConvert.convert<String>(e) as String)
+      .toList();
   if (ar != null) {
     newsKeywords.ar = ar;
   }
-  final List<String>? en = (json['en'] as List<dynamic>?)?.map(
-          (e) => jsonConvert.convert<String>(e) as String).toList();
+  final List<String>? en = (json['en'] as List<dynamic>?)
+      ?.map((e) => jsonConvert.convert<String>(e) as String)
+      .toList();
   if (en != null) {
     newsKeywords.en = en;
   }
@@ -195,13 +197,13 @@ extension NewsKeywordsExtension on NewsKeywords {
 
 NewsExtras $NewsExtrasFromJson(Map<String, dynamic> json) {
   final NewsExtras newsExtras = NewsExtras();
-  final String? imageCaption = jsonConvert.convert<String>(
-      json['imageCaption']);
+  final String? imageCaption =
+      jsonConvert.convert<String>(json['imageCaption']);
   if (imageCaption != null) {
     newsExtras.imageCaption = imageCaption;
   }
-  final String? imageCaptionEn = jsonConvert.convert<String>(
-      json['imageCaptionEn']);
+  final String? imageCaptionEn =
+      jsonConvert.convert<String>(json['imageCaptionEn']);
   if (imageCaptionEn != null) {
     newsExtras.imageCaptionEn = imageCaptionEn;
   }
@@ -229,33 +231,33 @@ NewsExtras $NewsExtrasFromJson(Map<String, dynamic> json) {
   if (writerName != null) {
     newsExtras.writerName = writerName;
   }
-  final String? writerNameEn = jsonConvert.convert<String>(
-      json['writerNameEn']);
+  final String? writerNameEn =
+      jsonConvert.convert<String>(json['writerNameEn']);
   if (writerNameEn != null) {
     newsExtras.writerNameEn = writerNameEn;
   }
-  final String? writerFacebook = jsonConvert.convert<String>(
-      json['writerFacebook']);
+  final String? writerFacebook =
+      jsonConvert.convert<String>(json['writerFacebook']);
   if (writerFacebook != null) {
     newsExtras.writerFacebook = writerFacebook;
   }
-  final String? writerInstagram = jsonConvert.convert<String>(
-      json['writerInstagram']);
+  final String? writerInstagram =
+      jsonConvert.convert<String>(json['writerInstagram']);
   if (writerInstagram != null) {
     newsExtras.writerInstagram = writerInstagram;
   }
-  final String? writerLinkedin = jsonConvert.convert<String>(
-      json['writerLinkedin']);
+  final String? writerLinkedin =
+      jsonConvert.convert<String>(json['writerLinkedin']);
   if (writerLinkedin != null) {
     newsExtras.writerLinkedin = writerLinkedin;
   }
-  final String? writerTelegram = jsonConvert.convert<String>(
-      json['writerTelegram']);
+  final String? writerTelegram =
+      jsonConvert.convert<String>(json['writerTelegram']);
   if (writerTelegram != null) {
     newsExtras.writerTelegram = writerTelegram;
   }
-  final String? writerTwitter = jsonConvert.convert<String>(
-      json['writerTwitter']);
+  final String? writerTwitter =
+      jsonConvert.convert<String>(json['writerTwitter']);
   if (writerTwitter != null) {
     newsExtras.writerTwitter = writerTwitter;
   }

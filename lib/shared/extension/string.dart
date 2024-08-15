@@ -6,5 +6,6 @@ extension Format on String {
     return substring(0, length);
   }
 
-   Color get toColor => Color(int.parse(substring(1, 7), radix: 16) + 0xFF000000);
+  Color get toColor =>
+      Color(int.parse(substring(1, 7), radix: 16) + 0xFF000000);
 }

@@ -51,7 +51,11 @@ class LayoutData {
 
   Data? get side => _side;
 
-  String? get type => _type;
+  String get type => _type ?? "";
+
+  set type(String value) {
+    _type = value;
+  }
 
   String? get order => _order;
 

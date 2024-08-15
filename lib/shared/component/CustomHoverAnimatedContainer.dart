@@ -94,6 +94,11 @@ class _CustomHoverAnimatedContainerState
           _isHover = true;
         });
       },
+      onHover: (event) {
+        setState(() {
+          _isHover = !_isHover;
+        });
+      },
       cursor: widget.cursor,
       onExit: (event) {
         setState(() {

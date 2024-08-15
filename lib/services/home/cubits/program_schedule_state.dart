@@ -23,10 +23,9 @@ class ProgramsScheduleLoaded extends ProgramScheduleState {
 class ProgramsScheduleError extends ProgramScheduleState {
   final String message;
   final String description;
-  
+
   const ProgramsScheduleError(this.message, this.description);
 
   @override
-  List<Object?> get props => [message,description];
+  List<Object?> get props => [message, description];
 }
-

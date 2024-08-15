@@ -12,15 +12,6 @@
   "myList": "قائمتي",
   "profile": "الشخصية",
   "live": "مباشر",
-  "username": "اسم المستخدم",
-  "password": "كلمة المرور",
-  "forgotPassword": "نسيت كلمة المرور؟",
-  "login": "تسجيل الدخول",
-  "logout": "تسجيل الخروج",
-  "register": "تسجيل",
-  "createAccount": "إنشاء حساب",
-  "usernameErrorMessage": "اسم مستخدم مطلوب",
-  "passwordErrorMessage": "كلمة المرور مطلوبة",
   "keywords": "كلمات مفتاحية",
   "since": "منذ",
   "emptyMyList": "قائمتك فارعة",
@@ -53,5 +44,10 @@
   "fontSize": "حجم الخط",
   "readingMode": "وضع القراءة",
   "articles": "مقالات",
-  "relatedNews": "أخبار ذات صلة"
+  "relatedNews": "أخبار ذات صلة",
+  "noInternet": "لا يوجد اتصال بالانترنت",
+  "noInternetDesc": "الرجاء التحقق من انترنت الجهاز",
+  "try_again": "إعادة المحاولة",
+  "and": "و",
+  "noItemsFound": "لم يتم العثور على نتائج"
 }

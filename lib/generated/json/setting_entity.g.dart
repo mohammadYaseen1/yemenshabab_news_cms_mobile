@@ -15,8 +15,8 @@ SettingEntity $SettingEntityFromJson(Map<String, dynamic> json) {
   if (siteTags != null) {
     settingEntity.siteTags = siteTags;
   }
-  final String? siteDescription =
-      jsonConvert.convert<String>(json['siteDescription']);
+  final String? siteDescription = jsonConvert.convert<String>(
+      json['siteDescription']);
   if (siteDescription != null) {
     settingEntity.siteDescription = siteDescription;
   }
@@ -44,23 +44,23 @@ SettingEntity $SettingEntityFromJson(Map<String, dynamic> json) {
   if (instagram != null) {
     settingEntity.instagram = instagram;
   }
-  final String? liveStreamUrl =
-      jsonConvert.convert<String>(json['liveStreamUrl']);
+  final String? liveStreamUrl = jsonConvert.convert<String>(
+      json['liveStreamUrl']);
   if (liveStreamUrl != null) {
     settingEntity.liveStreamUrl = liveStreamUrl;
   }
-  final String? radioLiveStream =
-      jsonConvert.convert<String>(json['radioLiveStream']);
+  final String? radioLiveStream = jsonConvert.convert<String>(
+      json['radioLiveStream']);
   if (radioLiveStream != null) {
     settingEntity.radioLiveStream = radioLiveStream;
   }
-  final String? creationDate =
-      jsonConvert.convert<String>(json['creationDate']);
+  final String? creationDate = jsonConvert.convert<String>(
+      json['creationDate']);
   if (creationDate != null) {
     settingEntity.creationDate = creationDate;
   }
-  final String? siteDescriptionEn =
-      jsonConvert.convert<String>(json['siteDescriptionEn']);
+  final String? siteDescriptionEn = jsonConvert.convert<String>(
+      json['siteDescriptionEn']);
   if (siteDescriptionEn != null) {
     settingEntity.siteDescriptionEn = siteDescriptionEn;
   }
@@ -80,8 +80,8 @@ SettingEntity $SettingEntityFromJson(Map<String, dynamic> json) {
   if (appStore != null) {
     settingEntity.appStore = appStore;
   }
-  final SettingProgramStatusColor? programStatusColor = jsonConvert
-      .convert<SettingProgramStatusColor>(json['programStatusColor']);
+  final SettingProgramStatusColor? programStatusColor = jsonConvert.convert<
+      SettingProgramStatusColor>(json['programStatusColor']);
   if (programStatusColor != null) {
     settingEntity.programStatusColor = programStatusColor;
   }
@@ -159,8 +159,7 @@ extension SettingEntityExtension on SettingEntity {
 
 SettingProgramStatusColor $SettingProgramStatusColorFromJson(
     Map<String, dynamic> json) {
-  final SettingProgramStatusColor settingProgramStatusColor =
-      SettingProgramStatusColor();
+  final SettingProgramStatusColor settingProgramStatusColor = SettingProgramStatusColor();
   final String? aIRING = jsonConvert.convert<String>(json['AIRING']);
   if (aIRING != null) {
     settingProgramStatusColor.aIRING = aIRING;

@@ -29,7 +29,6 @@ class ListProgramsError extends ProgramState {
   List<Object?> get props => [message];
 }
 
-
 class ProgramLoading extends ProgramState {}
 
 class ProgramLoaded extends ProgramState {

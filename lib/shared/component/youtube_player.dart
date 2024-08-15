@@ -34,6 +34,7 @@ class _CustomYouTubePlayerState extends State<CustomYouTubePlayer> {
       ),
     );
   }
+
   //
   @override
   void deactivate() {
@@ -48,8 +49,6 @@ class _CustomYouTubePlayerState extends State<CustomYouTubePlayer> {
     _controller.close();
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +72,7 @@ class _CustomYouTubePlayerState extends State<CustomYouTubePlayer> {
                     DeviceOrientation.landscapeLeft,
                   ]);
                   Navigator.of(context).push(createRoute(
-                    () => CustomYouTubePlayerFull( controller: _controller),
+                    () => CustomYouTubePlayerFull(controller: _controller),
                   ));
                   print("onTap");
                 },

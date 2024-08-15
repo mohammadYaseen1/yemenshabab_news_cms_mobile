@@ -65,44 +65,36 @@ PreferredSize buildAppBar(BuildContext context) {
   return PreferredSize(
     preferredSize: Size.fromHeight(70.0),
     child: AppBar(
-        toolbarHeight: 150,
-        title: Center(
-          child: Assets.images.logo.image(
-            fit: BoxFit.contain,
-            height: 65,
-          ),
+      toolbarHeight: 150,
+      title: Center(
+        child: Assets.images.logo.image(
+          fit: BoxFit.contain,
+          height: 65,
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              customLaunchUrl(Uri.parse(Config.archiveSite));
-            },
-            style: ButtonStyle(
-              backgroundColor: WidgetStateColor.transparent,
-              overlayColor: WidgetStateColor.transparent,
-              foregroundColor: WidgetStateColor.transparent,
-              // splashColor: Colors.transparent,
-              // hoverColor: Colors.transparent,
-              // focusColor: Colors.transparent,
-              // highlightColor: Colors.transparent,
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            customLaunchUrl(Uri.parse(Config.archiveSite));
+          },
+          style: ButtonStyle(
+            backgroundColor: WidgetStateColor.transparent,
+            overlayColor: WidgetStateColor.transparent,
+            foregroundColor: WidgetStateColor.transparent,
+            // splashColor: Colors.transparent,
+            // hoverColor: Colors.transparent,
+            // focusColor: Colors.transparent,
+            // highlightColor: Colors.transparent,
+          ),
+          child: Text(
+            AppLocalizations.of(context)!.archive,
+            style: TextStyle(
+              color: "#d97706".toColor,
             ),
-            child: Text(
-              AppLocalizations.of(context)!.archive,
-              style: TextStyle(
-                color: "#d97706".toColor,
-              ),
-            ),
-          )
-        ],
-        leading: true
-            ? SizedBox()
-            : IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(createSideRoute(
-                    () => SearchPage(),
-                  ));
-                },
-                icon: Icon(FontAwesomeIcons.magnifyingGlass))),
+          ),
+        )
+      ],
+    ),
   );
 }
 

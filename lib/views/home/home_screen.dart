@@ -1,6 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/utils.dart';
 import 'package:toastification/toastification.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
@@ -8,6 +10,7 @@ import 'package:yemenshabab/shared/component/toast.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/views/home/live_screen.dart';
+import 'package:yemenshabab/views/home/no_internet_page.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -27,7 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
           toast(
               context: context,
               title: state.message,
-              description: state.description,
+              description: state.description!
+                          .isCaseInsensitiveContains('network') ||
+                      state.description!.isCaseInsensitiveContains('connection')
+                  ? AppLocalizations.of(context)!.noInternet
+                  : state.description,
               toastType: ToastificationType.error);
         }
       },
@@ -36,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Scaffold(
                 extendBody: true,
                 floatingActionButton: FloatingActionButton(
-                  child: Icon(Icons.play_arrow_rounded),
+                  child: const Icon(Icons.play_arrow_rounded),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
                   onPressed: () {
@@ -104,7 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     .bottomNavData(context)[activeIndex]
                     .screen(state.props.first),
               )
-            : LoadingScreen();
+            : state is LandingLoading
+                ? const LoadingScreen()
+                : const NoInternetPage();
       },
     );
   }

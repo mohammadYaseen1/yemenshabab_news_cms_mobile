@@ -16,6 +16,8 @@
     "description": "Link to the homepage"
   },
   "relatedNews": "Related News",
+  "noInternet": "No Internet Connection",
+  "noInternetDesc": "Please check your device's internet connection",
   "settings": "Settings",
   "@settings": {
     "description": "Settings for customization"
@@ -36,7 +38,8 @@
   "@copyright": {
     "description": "©YemenShabab"
   },
-  "you": "You",
+  "try_again": "Try Again",
+  "you": "For You",
   "@you": {
     "description": "section with name you"
   },
@@ -56,45 +59,9 @@
   "@live": {
     "description": "live"
   },
-  "username": "username",
-  "@username": {
-    "description": "Username"
-  },
   "followUs": "Follow Us",
   "@followUs": {
     "description": "Follow Us"
-  },
-  "password": "password",
-  "@password": {
-    "description": "Username"
-  },
-  "forgotPassword": "Forgot Password?",
-  "@forgotPassword": {
-    "description": "Forgot Password"
-  },
-  "login": "Login",
-  "@login": {
-    "description": "Login"
-  },
-  "logout": "Logout",
-  "@logout": {
-    "description": "Logout"
-  },
-  "register": "Register",
-  "@register": {
-    "description": "Register"
-  },
-  "usernameErrorMessage": "username is required !",
-  "@usernameErrorMessage": {
-    "description": "A valid username is required !"
-  },
-  "passwordErrorMessage": "password is required !",
-  "@passwordErrorMessage": {
-    "description": "A valid password is required !"
-  },
-  "createAccount": "Create Account",
-  "@createAccount": {
-    "description": "Create Account"
   },
   "keywords": "Keywords",
   "@keywords": {
@@ -195,6 +162,8 @@
     "description": "Finished Airing"
   },
   "soon": "Soon",
+  "noItemsFound": "No items found",
+  "and": "And",
   "@soon": {
     "description": "Airing Soon"
   }

@@ -84,11 +84,13 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void fillCategorySection(SectionEntity section) {
-    (section.sections ?? []).sort((a, b) => a.order!.compareTo(b.order!));
+    (section.sections ?? [])
+        .sort((a, b) => int.parse(a.order!).compareTo(int.parse(b.order!)));
     sectionCategory = section.sections ?? [];
     int index = 1;
     for (var section in (section.sections ?? <SectionSections>[])) {
-      if('PROGRAM' != section.dataType) {
+      var dataType = ViewType.valueOf(section.dataType);
+      if (ViewType.PROGRAM != dataType) {
         allSections.add(SectionDate(
           index: index++,
           section: section,
@@ -96,7 +98,7 @@ class HomeCubit extends Cubit<HomeState> {
             return TabScreen(
               categoryData: section.categories!.map((cat) {
                 return CategorySection(
-                  dataType: ViewType.valueOf(section.dataType!),
+                  dataType: dataType,
                   color: cat.color,
                   layout: Layout.valueOf(cat.layout!),
                   nameAr: cat.nameAr,
@@ -111,23 +113,10 @@ class HomeCubit extends Cubit<HomeState> {
       }
     }
     for (var sec in section.sections ?? []) {
-      if ('VIDEO' == sec.dataType) {
-        sec.categories?.forEach((category) => videoSection.add(CategorySection(
-              dataType: ViewType.valueOf(sec.dataType!),
-              color: category.color,
-              layout: Layout.valueOf(category.layout!),
-              nameAr: category.nameAr,
-              nameEn: category.nameEn,
-            )));
-        this.section.add(CategorySection(
-              layout: Layout.GRID,
-              dataType: ViewType.valueOf(sec.dataType!),
-              nameAr: sec.nameAr,
-              nameEn: sec.nameEn,
-            ));
-      } else if ('PROGRAM' != sec.dataType) {
-        sec.categories?.forEach((category) => this.section.add(CategorySection(
-              dataType: ViewType.valueOf(sec.dataType!),
+      if ('PROGRAM' != sec.dataType) {
+        sec.categories?.forEach((category) =>
+            this.section.add(CategorySection(
+              dataType: ViewType.valueOf(sec.dataType),
               color: category.color,
               layout: Layout.valueOf(category.layout!),
               nameAr: category.nameAr,
@@ -194,7 +183,8 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-  List<BottomNavModel> bottomNavData(BuildContext context) => [
+  List<BottomNavModel> bottomNavData(BuildContext context) =>
+      [
         BottomNavModel(
           icon: Icons.home_filled,
           title: AppLocalizations.of(context)!.home,

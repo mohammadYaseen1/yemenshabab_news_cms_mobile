@@ -6,7 +6,6 @@ import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/component/tag.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
@@ -139,77 +138,69 @@ class ProgramDetailsPage extends StatelessWidget {
                             Divider(
                               color: Theme.of(context).cardColor,
                             ),
-                            Container(
-                              width: double.infinity,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                // color: Theme.of(context).cardColor,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '${AppLocalizations.of(context)!.timeShow}:  ',
-                                      style: const TextStyle(
-                                        fontSize: 20,
-                                      ),
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${AppLocalizations.of(context)!.timeShow}:  ',
+                                    style: const TextStyle(
+                                      fontSize: 20,
                                     ),
-                                    const SizedBox(height: 20),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '${AppLocalizations.of(context)!.broadcastsHour}:  ',
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                        Text(
-                                          getFormattedTime(
-                                            (state).program.time!,
-                                            locale:
-                                                Localizations.localeOf(context)
-                                                    .toLanguageTag(),
-                                          ),
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Text(
-                                      '${AppLocalizations.of(context)!.daysShow}:  ',
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Wrap(
-                                      spacing: 10,
-                                      children: List.generate(
-                                        (state).program.days!.split(',').length,
-                                        (index) => Chip(
-                                          side: BorderSide(
-                                              color: Theme.of(context)
-                                                  .colorScheme
-                                                  .secondary),
-                                          backgroundColor:
-                                              Theme.of(context).cardColor,
-                                          // label: Text((state as ProgramLoaded).program.days!.split(',')[index]),
-                                          label: Text(getDay(
-                                              context,
-                                              (state)
-                                                  .program
-                                                  .days!
-                                                  .split(',')[index])),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        '${AppLocalizations.of(context)!.broadcastsHour}:  ',
+                                        style: const TextStyle(
+                                          fontSize: 18,
                                         ),
                                       ),
+                                      Text(
+                                        getFormattedTime(
+                                          (state).program.time!,
+                                          locale:
+                                              Localizations.localeOf(context)
+                                                  .toLanguageTag(),
+                                        ),
+                                        style: const TextStyle(
+                                          fontSize: 18,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Text(
+                                    '${AppLocalizations.of(context)!.daysShow}:  ',
+                                    style: const TextStyle(
+                                      fontSize: 18,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Wrap(
+                                    spacing: 10,
+                                    children: List.generate(
+                                      (state).program.days!.split(',').length,
+                                      (index) => Chip(
+                                        side: BorderSide(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                        backgroundColor:
+                                            Theme.of(context).cardColor,
+                                        // label: Text((state as ProgramLoaded).program.days!.split(',')[index]),
+                                        label: Text(getDay(
+                                            context,
+                                            (state)
+                                                .program
+                                                .days!
+                                                .split(',')[index])),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

@@ -273,8 +273,7 @@ class _DynamicTabBarWidgetState extends State<DynamicTabBarWidget>
   @override
   Widget build(BuildContext context) {
     if (isInit) {
-      _tabController =
-          getTabController(initialIndex: widget.initialIndex);
+      _tabController = getTabController(initialIndex: widget.initialIndex);
       isInit = false;
     }
     return ScrollConfiguration(

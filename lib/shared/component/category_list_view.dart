@@ -4,7 +4,10 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
+import 'package:yemenshabab/shared/component/loading.dart';
+import 'package:yemenshabab/shared/component/no_items_found_indicator.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
@@ -28,6 +31,7 @@ class CategoryListView extends StatelessWidget {
       ViewType.STORY => throw UnimplementedError(),
       ViewType.VIDEO => (SectionDataData item) => buildNews(item, context),
       ViewType.PROGRAM => (SectionDataData item) => buildNews(item, context),
+      ViewType.ADS => throw UnimplementedError(),
     };
     return PagedListView<int, SectionDataData>(
       pagingController: _pagingController,
@@ -56,7 +60,7 @@ class CategoryListView extends StatelessWidget {
                                 ? VideoDetailsPage(
                                     dataModel: DataModel(
                                     uuid: item.uuid,
-                                    dataType: dataType.name,
+                                    dataType: ViewType.valueOf(dataType.name),
                                     color: parseColorString(
                                       item.categoryColor!,
                                     ),
@@ -64,7 +68,7 @@ class CategoryListView extends StatelessWidget {
                                 : NewsDetailsPage(
                                     dataModel: DataModel(
                                     uuid: item.uuid,
-                                    dataType: dataType.name,
+                                    dataType: ViewType.valueOf(dataType.name),
                                     color: parseColorString(
                                       item.categoryColor!,
                                     ),
@@ -74,6 +78,13 @@ class CategoryListView extends StatelessWidget {
                     child: widgetFunc(item),
                   ),
                 ),
+              ),
+          noItemsFoundIndicatorBuilder: (context) =>
+              const CustomNoItemsFoundIndicator(),
+          firstPageProgressIndicatorBuilder: (context) => LoadingScreen(),
+          firstPageErrorIndicatorBuilder: (context) =>
+              CustomFirstPageErrorIndicator(
+                onTryAgain: _pagingController.retryLastFailedRequest,
               ),
           animateTransitions: true),
     );

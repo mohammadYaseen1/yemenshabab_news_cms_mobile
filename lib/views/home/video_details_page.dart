@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
@@ -184,7 +185,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                 dataModel: DataModel(
               uuid: state.extraNews!.items!.first.uuid,
               color: parseColorString(state.extraNews!.color!),
-              dataType: state.extraNews!.dataType,
+              dataType: ViewType.valueOf(state.extraNews!.dataType),
             ))));
       },
       child: Container(

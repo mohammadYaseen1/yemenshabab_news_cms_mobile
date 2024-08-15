@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart' show debugPrint;
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/data/models/search_entity.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 import 'package:yemenshabab/data/models/writer_entity.dart';
 import 'package:yemenshabab/services/app/models/setting_entity.dart';
@@ -245,6 +246,18 @@ class JsonConvert {
               (Map<String, dynamic> e) => ProgramSchedulePrograms.fromJson(e))
           .toList() as M;
     }
+    if (<SearchEntity>[] is M) {
+      return data
+          .map<SearchEntity>(
+              (Map<String, dynamic> e) => SearchEntity.fromJson(e))
+          .toList() as M;
+    }
+    if (<SearchSearchItems>[] is M) {
+      return data
+          .map<SearchSearchItems>(
+              (Map<String, dynamic> e) => SearchSearchItems.fromJson(e))
+          .toList() as M;
+    }
     if (<SectionDataEntity>[] is M) {
       return data
           .map<SectionDataEntity>(
@@ -401,6 +414,8 @@ class JsonConvertClassCollection {
     (PlaylistPageInfo).toString(): PlaylistPageInfo.fromJson,
     (ProgramScheduleEntity).toString(): ProgramScheduleEntity.fromJson,
     (ProgramSchedulePrograms).toString(): ProgramSchedulePrograms.fromJson,
+    (SearchEntity).toString(): SearchEntity.fromJson,
+    (SearchSearchItems).toString(): SearchSearchItems.fromJson,
     (SectionDataEntity).toString(): SectionDataEntity.fromJson,
     (SectionDataData).toString(): SectionDataData.fromJson,
     (SectionDataLatestData).toString(): SectionDataLatestData.fromJson,

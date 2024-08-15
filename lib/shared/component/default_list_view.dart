@@ -1,3 +1,4 @@
+import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:yemenshabab/data/models/home/data_type.dart';
@@ -5,8 +6,9 @@ import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/section/category.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
-import 'package:yemenshabab/shared/component/category_grid_view.dart';
-import 'package:yemenshabab/shared/component/category_list_view.dart';
+import 'package:yemenshabab/shared/component/playlist_view.dart';
+
+import 'category_grid_view.dart';
 
 class DefaultListView extends StatefulWidget {
   final HomeService homeService;
@@ -38,30 +40,21 @@ class _DefaultListViewState extends State<DefaultListView> {
     super.initState();
   }
 
+  bool isPlayList = false;
+
   Future<void> _fetchPage(int pageKey) async {
     try {
       List<SectionDataData> newItems = [];
-
-      if (ViewType.VIDEO == widget.categoryData.dataType) {
-        for (var sec in widget.videoSection) {
-          final category = await widget.homeService.fetchCategoryData(
-            dataType: widget.categoryData.dataType.name,
-            category: sec.nameEn,
-            rows: _pageSize,
-            first: pageKey,
-          );
-          newItems.addAll(category.data ?? []);
-        }
-      } else {
-        final category = await widget.homeService.fetchCategoryData(
-          dataType: widget.categoryData.dataType.name,
-          category: widget.categoryData.nameEn,
-          rows: _pageSize,
-          first: pageKey,
-        );
-
-        newItems = category.data ?? [];
-      }
+      final category = await widget.homeService.fetchCategoryData(
+        dataType: widget.categoryData.dataType.name,
+        category: widget.categoryData.nameEn,
+        rows: _pageSize,
+        first: pageKey,
+      );
+      setState(() {
+        isPlayList = category.extra ?? false;
+      });
+      newItems = category.data ?? [];
 
       final isLastPage = newItems.length < _pageSize;
       if (isLastPage) {
@@ -78,13 +71,28 @@ class _DefaultListViewState extends State<DefaultListView> {
   @override
   Widget build(BuildContext context) {
     return switch (widget.categoryData.layout) {
-      Layout.LIST => CategoryListView(
-          pagingController: _pagingController,
-          dataType: widget.categoryData.dataType),
-      Layout.GRID => CategoryGridView(
-          pagingController: _pagingController,
-          dataType: widget.categoryData.dataType),
+      Layout.LIST => buildCategoryContent(
+          (PagingController<int, SectionDataData> controller, ViewType type) =>
+              CategoryGridView(pagingController: controller, dataType: type)),
+      Layout.GRID => buildCategoryContent(
+          (PagingController<int, SectionDataData> controller, ViewType type) =>
+              CategoryGridView(pagingController: controller, dataType: type)),
     };
+  }
+
+  BuildCondition buildCategoryContent(
+      Widget Function(PagingController<int, SectionDataData>, ViewType) view) {
+    print("dataType: ${widget.categoryData.dataType}");
+    print("isPlayList: $isPlayList");
+    return BuildCondition(
+      condition: widget.categoryData.dataType == ViewType.VIDEO && isPlayList,
+      builder: (context) => PlaylistView(
+        homeService: widget.homeService,
+        playlistId: _pagingController.itemList!.first.sourceEn!,
+      ),
+      fallback: (context) =>
+          view(_pagingController, widget.categoryData.dataType),
+    );
   }
 
   @override

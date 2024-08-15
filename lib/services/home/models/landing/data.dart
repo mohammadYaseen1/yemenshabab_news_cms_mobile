@@ -39,7 +39,7 @@ class Data {
     _sectionId = json['sectionId'];
     _color = json['color'];
     _categories =
-    json['categories'] != null ? json['categories'].cast<String>() : [];
+        json['categories'] != null ? json['categories'].cast<String>() : [];
     if (json['items'] != null) {
       _items = [];
       json['items'].forEach((v) {

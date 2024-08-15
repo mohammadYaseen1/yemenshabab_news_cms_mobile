@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
@@ -136,7 +137,7 @@ class CustomGridView extends StatelessWidget {
 
   Route _createRoute(DataModel dataModel) {
     return createRoute(
-      () => dataModel.dataType == 'VIDEO'
+      () => dataModel.dataType == ViewType.VIDEO
           ? VideoDetailsPage(dataModel: dataModel)
           : NewsDetailsPage(dataModel: dataModel),
     );

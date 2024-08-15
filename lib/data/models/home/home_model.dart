@@ -26,6 +26,7 @@ class HomeModel {
   List<NewsModel> get news => _news ?? [];
 
   ProgramEntity get program => _program!;
+
   List<SectionSections> get section => _section ?? [];
 
   set program(ProgramEntity value) {

@@ -6,6 +6,7 @@ import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/data/models/program_schedule.dart';
 import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/data/models/search_entity.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 import 'package:yemenshabab/data/models/writer_entity.dart';
 import 'package:yemenshabab/services/home/models/landing/data.dart';
@@ -16,6 +17,7 @@ import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/services/home/repositories/home_repository.dart';
+import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/days.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 
@@ -55,15 +57,24 @@ class HomeService {
 
   NewsModel buildNewsModel(Data data, String language) => NewsModel(
         title: language == "ar" ? data.headerAr : data.header,
-        type: ViewType.valueOf(data.dataType!),
+        type: handleDataType(data),
         name: data.header,
         data: (data.items ?? [])
             .where((item) => !isFutureDate(item.date ?? ""))
-            .map((item) => buildDataModel(item, data.dataType!, language))
-            .toList(),
+            .map((item) {
+          return buildDataModel(item, handleDataType(data), language);
+        }).toList(),
       );
 
-  DataModel buildDataModel(Item item, String dataType, String language) {
+  ViewType handleDataType(Data data) {
+    var dataType = ViewType.valueOf(data.dataType);
+    if (adsLayouts.contains(data.name)) {
+      dataType = ViewType.valueOf(data.name);
+    }
+    return dataType;
+  }
+
+  DataModel buildDataModel(Item item, ViewType dataType, String language) {
     var dataModel = DataModel(
         image: item.image,
         title: item.title,
@@ -163,6 +174,18 @@ class HomeService {
     return await homeRepository.fetchCategoryData(
       dataType: dataType,
       category: category,
+      rows: rows,
+      first: first,
+    );
+  }
+
+  Future<SearchEntity> search({
+    required String searchTarget,
+    int rows = 10,
+    int first = 0,
+  }) async {
+    return await homeRepository.search(
+      searchTarget: searchTarget,
       rows: rows,
       first: first,
     );

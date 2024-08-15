@@ -22,7 +22,6 @@ class Item {
     String? shortDescription,
     String? categoryColor,
     String? uuid,
-
   }) {
     _title = title;
     _subtitle = subtitle;
@@ -68,6 +67,7 @@ class Item {
   String? get subtitle => _subtitle;
 
   String? get category => _category;
+
   String? get categoryEn => _categoryEn;
 
   String? get date => _date;
@@ -81,8 +81,8 @@ class Item {
   String? get shortDescription => _shortDescription;
 
   String? get categoryColor => _categoryColor;
-  String? get uuid => _uuid;
 
+  String? get uuid => _uuid;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -114,5 +114,5 @@ class Item {
                 categoryColor: $categoryColor,
                 uuid: $uuid,
     """;
-     }
+  }
 }

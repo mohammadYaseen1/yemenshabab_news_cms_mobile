@@ -1,4 +1,3 @@
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -25,6 +24,7 @@ class CacheHelper {
   }
 
   static dynamic getData({required String key}) => sharedPreferences.get(key);
+  static dynamic getListData({required String key}) => sharedPreferences.getStringList(key);
 
   static Future<bool> removeData({required String key}) async =>
       await sharedPreferences.remove(key);

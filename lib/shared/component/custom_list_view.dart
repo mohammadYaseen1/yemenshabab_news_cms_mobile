@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/tag.dart';
 import 'package:yemenshabab/shared/utils.dart';
@@ -54,7 +55,8 @@ class CustomsListView extends StatelessWidget {
                         Navigator.push(
                             context,
                             createRoute(
-                              () => newsModel.data![index].dataType == 'VIDEO'
+                              () => newsModel.data![index].dataType ==
+                                      ViewType.VIDEO
                                   ? VideoDetailsPage(
                                       dataModel: newsModel.data![index])
                                   : NewsDetailsPage(

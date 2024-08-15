@@ -17,7 +17,10 @@ toast({
     autoCloseDuration: const Duration(seconds: 5),
     title: Text(title),
     description: description != null
-        ? RichText(text: TextSpan(text: description))
+        ? RichText(
+            text: TextSpan(
+                text: description,
+                style: Theme.of(context).textTheme.bodyMedium))
         : null,
     alignment: Alignment.bottomCenter,
     direction: TextDirection.ltr,
@@ -36,8 +39,7 @@ toast({
     // dragToClose: true,
     applyBlurEffect: true,
     callbacks: ToastificationCallbacks(
-      onTap: (toastItem) =>
-          print('Toast ${toastItem.id} tapped'),
+      onTap: (toastItem) => print('Toast ${toastItem.id} tapped'),
       onCloseButtonTap: (toastItem) =>
           print('Toast ${toastItem.id} close button tapped'),
       onAutoCompleteCompleted: (toastItem) =>

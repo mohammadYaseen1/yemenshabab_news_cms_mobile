@@ -1,18 +1,17 @@
 import 'dart:ui';
 
-import 'package:yemenshabab/services/home/models/news/news_entity.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 
 class DataModel {
-  DataModel({
-    String? uuid,
-    String? image,
-    String? title,
-    String? subTitle,
-    String? time,
-    String? tag,
-    Color? color,
-    String? dataType
-  }) {
+  DataModel(
+      {String? uuid,
+      String? image,
+      String? title,
+      String? subTitle,
+      String? time,
+      String? tag,
+      Color? color,
+      ViewType? dataType}) {
     _image = image;
     _subTitle = subTitle;
     _title = title;
@@ -30,7 +29,7 @@ class DataModel {
   String? _tag;
   Color? _color;
   String? _uuid;
-  String? _dataType;
+  ViewType? _dataType;
 
   String? get image => _image;
 
@@ -46,5 +45,5 @@ class DataModel {
 
   String? get uuid => _uuid;
 
-  String? get dataType => _dataType;
+  ViewType? get dataType => _dataType;
 }

@@ -63,7 +63,7 @@ class AnimationSearchBar extends StatelessWidget {
   final Function(String) onChanged;
   final VoidCallback? onPressedCustom;
   final Widget? customIcon;
-final ValueChanged<String>? onSubmit;
+  final ValueChanged<String>? onSubmit;
 
   @override
   Widget build(BuildContext context) {
@@ -178,10 +178,8 @@ final ValueChanged<String>? onSubmit;
                     duration: _duration,
                     child: FittedBox(
                       child: KCustomButton(
-                        widget: Icon(Icons.close,
-                            size: 28,
-                            color:
-                                closeIconColor),
+                        widget:
+                            Icon(Icons.close, size: 28, color: closeIconColor),
                         onPressed: () {
                           _searchNotifier.state = false;
                           searchTextEditingController.clear();
@@ -224,8 +222,7 @@ final ValueChanged<String>? onSubmit;
                         contentPadding: EdgeInsets.zero,
                         hintText: hintText,
                         hintStyle: hintStyle ??
-                            const TextStyle(
-                                fontWeight: FontWeight.w300),
+                            const TextStyle(fontWeight: FontWeight.w300),
                         disabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide.none),
                         focusedBorder: const OutlineInputBorder(
@@ -254,8 +251,7 @@ final ValueChanged<String>? onSubmit;
                           widget: Padding(
                               padding: const EdgeInsets.all(5),
                               child: Icon(Icons.search,
-                                  size: 35,
-                                  color: searchIconColor)),
+                                  size: 35, color: searchIconColor)),
                           onPressed: () => _searchNotifier.state = true),
                     ),
                   ),
@@ -338,7 +334,6 @@ class KBackButton extends StatelessWidget {
                         width: 30,
                         height: 30,
                         child: Icon(icon ?? Icons.arrow_back_ios_new,
-                            color: iconColor,
-                            size: 25))))));
+                            color: iconColor, size: 25))))));
   }
 }

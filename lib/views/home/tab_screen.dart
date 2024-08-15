@@ -47,15 +47,13 @@ class _TabScreenState extends State<TabScreen> {
           }
         },
         builder: (context, state) {
-          var categoryCubit = CategoryCubit.get(context);
-          return Container(
-            child: DefaultListView(
-              homeService: homeController.newsCubit.homeService,
-              categoryData: (state is NavigateCategory)
-                  ? category!
-                  : widget.categoryData.first,
-              videoSection: widget.videoSection,
-            ),
+          CategorySection categoryData = (state is NavigateCategory)
+              ? category!
+              : widget.categoryData.first;
+          return DefaultListView(
+            homeService: homeController.newsCubit.homeService,
+            categoryData: categoryData,
+            videoSection: widget.videoSection,
           );
         },
       ),

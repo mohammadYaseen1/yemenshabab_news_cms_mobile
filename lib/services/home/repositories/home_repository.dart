@@ -1,5 +1,6 @@
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/data/models/program_schedule_entity.dart';
+import 'package:yemenshabab/data/models/search_entity.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 import 'package:yemenshabab/data/models/writer_entity.dart';
 import 'package:yemenshabab/services/home/models/landing/data.dart';
@@ -49,7 +50,7 @@ class HomeRepository {
       'part': 'snippet',
       'playlistId': id,
       'maxResults': '$count',
-      'key': Config.API_KEY,
+      'key': Config.apiKey,
     };
 
     final response =
@@ -80,8 +81,8 @@ class HomeRepository {
   Future<WriterEntity> fetchWriters(
       {required int rows, required int first, required String uuid}) async {
     var dio = await dioFactory.getDio();
-    final response =
-        await dio.get(HomeRoutes.fetchWriters(rows: rows, first: first, uuid: uuid));
+    final response = await dio
+        .get(HomeRoutes.fetchWriters(rows: rows, first: first, uuid: uuid));
 
     if (response.statusCode == 200) {
       return WriterEntity.fromJson(response.data);
@@ -140,6 +141,25 @@ class HomeRepository {
       return SectionDataEntity.fromJson(response.data);
     } else {
       throw Exception('Failed to load category data [$category]');
+    }
+  }
+
+  Future<SearchEntity> search({
+    required String searchTarget,
+    required int rows,
+    required int first,
+  }) async {
+    var dio = await dioFactory.getDio();
+    final response = await dio.get(HomeRoutes.search(
+      searchTarget: searchTarget,
+      rows: rows,
+      first: first,
+    ));
+
+    if (response.statusCode == 200) {
+      return SearchEntity.fromJson(response.data);
+    } else {
+      throw Exception('Failed to search [$searchTarget]');
     }
   }
 

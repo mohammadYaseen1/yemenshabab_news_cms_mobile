@@ -1,11 +1,11 @@
-
 import 'package:yemenshabab/data/models/home/data_type.dart';
 
 class CategoryData {
   CategoryData({
     String? category,
     Layout? layout,
-    String? dataType,}){
+    String? dataType,
+  }) {
     _category = category;
     _layout = layout;
     _dataType = dataType;
@@ -16,7 +16,8 @@ class CategoryData {
   String? _dataType;
 
   String? get category => _category;
-  Layout? get layout => _layout;
-  String? get dataType => _dataType;
 
+  Layout? get layout => _layout;
+
+  String? get dataType => _dataType;
 }

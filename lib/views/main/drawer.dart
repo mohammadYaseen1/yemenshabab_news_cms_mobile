@@ -3,7 +3,6 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:yemenshabab/layout/navigation_cubit.dart';
-import 'package:yemenshabab/views/main/user_info_tile.dart';
 
 class DrawerList extends StatelessWidget {
   final AdvancedDrawerController controller;
@@ -27,14 +26,6 @@ class DrawerList extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              // UserInfoTile(
-              //   avatarUrl: "https://www.w3schools.com/howto/img_avatar.png",
-              //   name: "mohammad yaseen",
-              //   username: "mohammad.yaseen",
-              //   onTab: () {
-              //     context.read<NavigationCubit>().selectProfile();
-              //   },
-              // ),
               const Spacer(flex: 1),
               ListTile(
                 onTap: () {

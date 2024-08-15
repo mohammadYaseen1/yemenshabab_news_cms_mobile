@@ -52,7 +52,7 @@ class CategoryGridView extends StatelessWidget {
                       () => NewsDetailsPage(
                           dataModel: DataModel(
                         uuid: item.uuid,
-                        dataType: ViewType.NEWS.name,
+                        dataType: ViewType.NEWS,
                         color: parseColorString(item.categoryColor!),
                       )),
                     ));
@@ -79,9 +79,8 @@ class CategoryGridView extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
               ),
-              child: ImageComponent(imageUrl:
-                item.image!,
-
+              child: ImageComponent(
+                imageUrl: item.image!,
               ),
             ),
             Expanded(
@@ -133,43 +132,41 @@ class CategoryGridView extends StatelessWidget {
     );
   }
 
-
   int crossAxisCount(double width) {
     return width >= 1500
         ? 6
         : width >= 1300
-        ? 5
-        : width >= 1000
-        ? 4
-        : width >= 725
-        ? 3
-        : 2;
+            ? 5
+            : width >= 1000
+                ? 4
+                : width >= 725
+                    ? 3
+                    : 2;
   }
 
   int getRatio(double width) => width >= 1750
       ? 110
       : width >= 1600
-      ? 120
-      : width >= 1500
-      ? 130
-      : width >= 1400
-      ? 120
-      : width >= 1300
-      ? 130
-      : width >= 1200
-      ? 120
-      : width >= 1000
-      ? 130
-      : width >= 900
-      ? 110
-      : width >= 850
-      ? 120
-      : width >= 725
-      ? 135
-      : width >= 700
-      ? 100
-      : width >= 600
-      ? 115
-      : 135;
-
+          ? 120
+          : width >= 1500
+              ? 130
+              : width >= 1400
+                  ? 120
+                  : width >= 1300
+                      ? 130
+                      : width >= 1200
+                          ? 120
+                          : width >= 1000
+                              ? 130
+                              : width >= 900
+                                  ? 110
+                                  : width >= 850
+                                      ? 120
+                                      : width >= 725
+                                          ? 135
+                                          : width >= 700
+                                              ? 100
+                                              : width >= 600
+                                                  ? 115
+                                                  : 135;
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
+import 'package:yemenshabab/services/app/controllers/app_controller.dart';
 import 'package:yemenshabab/services/home/controllers/home_controller.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 
@@ -13,6 +14,8 @@ enum themeColor { error, warning, success, info, background }
 
 enum ToastTheme { error, warning, success, info }
 
+List<String> adsLayouts = ["L_MAB", "L_SAB"];
+
 String uuid = '';
 bool isLoggedIn = false;
 bool isGuest = true;
@@ -24,4 +27,4 @@ HomeModel? homeModelConst;
 late TabController tabController;
 WebViewController? viewController;
 final HomeController homeController = HomeController();
-
+final AppController appController = AppController();

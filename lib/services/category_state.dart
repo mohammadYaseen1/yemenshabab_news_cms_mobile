@@ -7,7 +7,7 @@ abstract class CategoryState extends Equatable {
   List<Object?> get props => [];
 }
 
- class CategoryInitial extends CategoryState {}
+class CategoryInitial extends CategoryState {}
 
 class NavigateCategory extends CategoryState {
   final CategorySection category;
@@ -15,5 +15,5 @@ class NavigateCategory extends CategoryState {
   const NavigateCategory(this.category);
 
   @override
-  List<Object?> get props => [category,category.nameEn];
+  List<Object?> get props => [category, category.nameEn];
 }

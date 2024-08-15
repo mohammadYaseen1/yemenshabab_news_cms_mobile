@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/models/landing/data.dart';
 import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
@@ -13,16 +14,16 @@ class NewsCubit extends Cubit<NewsState> {
 
   bool isLoadedNews = false;
 
-  Future<void> getNews(String uuid, String dataType) async {
+  Future<void> getNews(String uuid, ViewType dataType) async {
     try {
       emit(NewsLoading());
-      final news = await homeService.fetchNews(uuid, dataType);
+      final news = await homeService.fetchNews(uuid, dataType.name);
       var keywards = news.keywords?.ar ?? [];
       if (keywards.length > 1) {
         keywards.removeWhere((element) => element.contains('يمن'));
       }
       final data = news.keywords != null
-          ? await fetchNewsByKeywords(dataType, keywards)
+          ? await fetchNewsByKeywords(dataType.name, keywards)
           : null;
       emit(NewsLoaded(news, data));
       isLoadedNews = true;

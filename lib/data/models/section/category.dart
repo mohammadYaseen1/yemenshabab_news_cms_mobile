@@ -16,15 +16,6 @@ class CategorySection {
     _dataType = dataType;
   }
 
-  CategorySection.defaultData()
-      : this(
-          nameAr: null,
-          nameEn: null,
-          layout: null,
-          color: null,
-          dataType: null,
-        );
-
   String? _nameAr;
   String? _nameEn;
   Layout? _layout;

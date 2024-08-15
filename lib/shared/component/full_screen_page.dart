@@ -7,9 +7,10 @@ class FullScreenPage extends StatelessWidget {
   const FullScreenPage(this.controller, {super.key});
 
   final YoutubePlayerController controller;
+
   @override
   Widget build(BuildContext context) {
-    return  YoutubePlayerScaffold(
+    return YoutubePlayerScaffold(
       enableFullScreenOnVerticalDrag: true,
       autoFullScreen: true,
       fullscreenOrientations: [

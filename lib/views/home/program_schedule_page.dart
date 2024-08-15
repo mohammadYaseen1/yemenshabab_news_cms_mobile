@@ -2,6 +2,7 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yemenshabab/services/home/cubits/program_schedule_cubit.dart';
+import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab/shared/component/dynamic_tabbar.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
@@ -47,10 +48,11 @@ class ProgramSchedulePage extends StatelessWidget {
                       },
                     )
                   ],
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   viewportFractionTabBarView: 1,
-                  labelStyle: TextStyle(fontWeight: FontWeight.w900),
-                  unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+                  labelStyle: const TextStyle(fontWeight: FontWeight.w900),
+                  unselectedLabelStyle:
+                      const TextStyle(fontWeight: FontWeight.w500),
                   unselectedLabelColor: Colors.grey,
                   dividerColor: Theme.of(context).cardColor,
                   isScrollable: true,
@@ -71,10 +73,17 @@ class ProgramSchedulePage extends StatelessWidget {
             ),
             fallback: (context) => BuildCondition(
               condition: state is ProgramsScheduleError,
-              builder: (context) => Center(
-                child: Text(state.props.toString()),
+              builder: (context) => const Column(
+                children: [
+                  SizedBox(height: 150),
+                  Expanded(
+                    child: Center(
+                      child: CustomFirstPageErrorIndicator(),
+                    ),
+                  ),
+                ],
               ),
-              fallback: (context) => LoadingScreen(),
+              fallback: (context) => const LoadingScreen(),
             ),
           );
         },

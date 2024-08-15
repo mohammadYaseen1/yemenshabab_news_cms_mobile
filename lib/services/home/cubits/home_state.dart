@@ -85,7 +85,6 @@ class ProgramsError extends HomeState {
   List<Object?> get props => [message];
 }
 
-
 class ProgramsScheduleLoading extends HomeState {}
 
 class ProgramsScheduleLoaded extends HomeState {
@@ -105,7 +104,6 @@ class ProgramsScheduleError extends HomeState {
   @override
   List<Object?> get props => [message];
 }
-
 
 class CategoryDataLoading extends HomeState {}
 

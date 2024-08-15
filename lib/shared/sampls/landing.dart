@@ -16,10 +16,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -31,10 +31,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -46,10 +46,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -61,10 +61,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -76,10 +76,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -91,10 +91,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -118,10 +118,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -133,10 +133,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -148,10 +148,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -163,10 +163,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -178,10 +178,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -193,10 +193,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -229,10 +229,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -244,10 +244,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -259,10 +259,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -274,10 +274,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -289,10 +289,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -304,10 +304,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -331,10 +331,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -346,10 +346,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -361,10 +361,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -376,10 +376,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -391,10 +391,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -406,10 +406,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -473,10 +473,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -488,10 +488,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -503,10 +503,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -518,10 +518,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -533,10 +533,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -548,10 +548,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -575,10 +575,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -590,10 +590,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -605,10 +605,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -620,10 +620,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -635,10 +635,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -650,10 +650,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -686,10 +686,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -701,10 +701,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -716,10 +716,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -731,10 +731,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -746,10 +746,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -761,10 +761,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -798,10 +798,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -813,10 +813,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -828,10 +828,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -843,10 +843,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -858,10 +858,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -873,10 +873,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -910,10 +910,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -925,10 +925,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -940,10 +940,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -955,10 +955,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -970,10 +970,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -985,10 +985,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -1022,10 +1022,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -1037,10 +1037,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -1052,10 +1052,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -1067,10 +1067,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -1082,10 +1082,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -1097,10 +1097,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -1134,10 +1134,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -1149,10 +1149,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -1164,10 +1164,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -1179,10 +1179,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -1194,10 +1194,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -1209,10 +1209,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -1246,10 +1246,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -1261,10 +1261,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -1276,10 +1276,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -1291,10 +1291,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -1306,10 +1306,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -1321,10 +1321,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",
@@ -1358,10 +1358,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-26T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "Urgent update regarding the latest events in the region, more details will be available soon.",
+                "Urgent update regarding the latest events in the region, more details will be available soon.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "1",
@@ -1373,10 +1373,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-06-02T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1649999920973-ab6bfd0c0017?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "video": "",
             "description":
-            "News from around the world and comprehensive coverage of significant events.",
+                "News from around the world and comprehensive coverage of significant events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "8",
@@ -1388,10 +1388,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-31T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+                "https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
             "video": "",
             "description":
-            "Global economic news, market analysis, and economic growth forecasts.",
+                "Global economic news, market analysis, and economic growth forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "6",
@@ -1403,10 +1403,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-30T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+                "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
             "video": "",
             "description":
-            "Political news and analysis of current political situations and future forecasts.",
+                "Political news and analysis of current political situations and future forecasts.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "5",
@@ -1418,10 +1418,10 @@ const landingJson = {
             "category": "World",
             "date": "2024-05-29T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "video": "",
             "description":
-            "Top news today from around the world, comprehensive coverage of ongoing events.",
+                "Top news today from around the world, comprehensive coverage of ongoing events.",
             "shortDescription": "",
             "categoryColor": "rgb(128, 0, 128)",
             "uuid": "4",
@@ -1433,10 +1433,10 @@ const landingJson = {
             "category": "Sports",
             "date": "2024-06-04T00:00:00Z",
             "image":
-            "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
+                "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80",
             "video": "",
             "description":
-            "Comprehensive coverage of global and local sports news.",
+                "Comprehensive coverage of global and local sports news.",
             "shortDescription": "",
             "categoryColor": "rgb(57,12,12)",
             "uuid": "10",

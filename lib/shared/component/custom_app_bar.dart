@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/component/custom_search_delegate.dart';
 import 'package:yemenshabab/shared/config/config.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
@@ -30,13 +32,14 @@ class CustomAppBar extends StatelessWidget {
     return static
         ? Scaffold(
             appBar: PreferredSize(
-                preferredSize: Size.fromHeight(73.0),
+                preferredSize: const Size.fromHeight(73.0),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 7.0),
                   child: AppBar(
                     toolbarHeight: 90,
                     title: getLogo(),
                     centerTitle: true,
+                    leading: searchButton(context),
                     actions: [
                       ...defaultActions,
                       ...actions,
@@ -49,7 +52,7 @@ class CustomAppBar extends StatelessWidget {
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) => [
               PreferredSize(
-                preferredSize: Size.fromHeight(70.0),
+                preferredSize: const Size.fromHeight(70.0),
                 child: SliverAppBar(
                   toolbarHeight: 80,
                   title: getLogo(),
@@ -62,6 +65,7 @@ class CustomAppBar extends StatelessWidget {
                   pinned: pinned,
                   snap: true,
                   bottom: bottom,
+                  leading: searchButton(context),
                   actions: [...defaultActions, ...actions],
                 ),
               ),
@@ -69,6 +73,15 @@ class CustomAppBar extends StatelessWidget {
             body: body,
           );
   }
+
+  Widget searchButton(BuildContext context) => IconButton(
+      onPressed: () {
+        showSearch(
+          context: context,
+          delegate: CustomSearchDelegate(),
+        );
+      },
+      icon: const Icon(FontAwesomeIcons.magnifyingGlass));
 
   Image getLogo() => Assets.images.logo.image(
         fit: BoxFit.contain,

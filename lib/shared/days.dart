@@ -20,7 +20,7 @@ enum Days {
     };
   }
 
-  static int getIndex({String? name, Days? day, int? dayOfWeek})  {
+  static int getIndex({String? name, Days? day, int? dayOfWeek}) {
     if (name != null) return values.indexOf(valueOf(name));
     if (day != null) return values.indexOf(day);
     if (dayOfWeek != null) return values.indexOf(getDayEnum(dayOfWeek));

@@ -7,14 +7,13 @@ class CustomYouTubePlayerFull extends StatefulWidget {
   const CustomYouTubePlayerFull({super.key, required this.controller});
 
   @override
-  State<CustomYouTubePlayerFull> createState() => _CustomYouTubePlayerFullState();
+  State<CustomYouTubePlayerFull> createState() =>
+      _CustomYouTubePlayerFullState();
 }
 
 class _CustomYouTubePlayerFullState extends State<CustomYouTubePlayerFull> {
-
- @override
+  @override
   void initState() {
-
     super.initState();
   }
 
@@ -24,7 +23,7 @@ class _CustomYouTubePlayerFullState extends State<CustomYouTubePlayerFull> {
   }
 
   void play() async {
-   await widget.controller.playVideo();
+    await widget.controller.playVideo();
   }
 
   @override
