@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -64,6 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Icon(
                           homeController.homeCubit
@@ -73,12 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: color,
                         ),
                         const SizedBox(height: 4),
-                        Text(
-                          homeController.homeCubit
-                              .bottomNavData(context)[index]
-                              .title,
-                          maxLines: 1,
-                          style: TextStyle(color: color, fontSize: 12),
+                        Container(
+                          constraints:
+                              BoxConstraints(maxWidth: double.infinity),
+                          child: AutoSizeText(
+                            homeController.homeCubit
+                                .bottomNavData(context)[index]
+                                .title,
+                            maxLines: 1,
+                            minFontSize: 5,
+                            style: TextStyle(color: color),
+                          ),
                         )
                       ],
                     );

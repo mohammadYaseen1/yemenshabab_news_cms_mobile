@@ -98,16 +98,34 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               // elevation: 0,
                               underline: SizedBox(),
                               // borderRadius: BorderRadius.circular(10),
-                              hint: Text(isArabic(context)
-                                  ? allSections[index].section.nameAr!
-                                  : allSections[index].section.nameEn!),
+                              hint: Text(
+                                isArabic(context)
+                                    ? allSections[index].section.nameAr!
+                                    : allSections[index].section.nameEn!,
+                                style: TextStyle(
+                                    color: isSelected[index]
+                                        ? Theme.of(context).colorScheme.primary
+                                        : Colors.grey),
+                              ),
+                              iconStyleData: IconStyleData(
+                                  iconEnabledColor: isSelected[index]
+                                      ? Theme.of(context).colorScheme.primary
+                                      : Colors.grey),
                               value: allSections[index].data,
                               style: TextStyle(
                                   fontWeight: isSelected[index]
                                       ? FontWeight.w900
-                                      : FontWeight.normal,
-                                  fontSize: isSelected[index] ? 18 : 14,
+                                      : FontWeight.w600,
+                                  fontSize: isSelected[index] ? 19 : 17,
                                   color: Theme.of(context).iconTheme.color),
+                              menuItemStyleData: MenuItemStyleData(
+                                  // padding: EdgeInsets.zero
+                                  ),
+                              buttonStyleData: ButtonStyleData(
+                                elevation: 0,
+                                padding: EdgeInsets.zero,
+                              ),
+
                               dropdownStyleData: DropdownStyleData(
                                   decoration: BoxDecoration(
                                 color: Theme.of(context)
@@ -204,127 +222,4 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       (index) => false,
     );
   }
-
-// Widget buildDynamicTabBarWidget(
-//     BuildContext context, List<CategorySection> sections) {
-//   return DynamicTabBarWidget(
-//     tabAlignment: TabAlignment.start,
-//     dynamicTabs: [
-//       TabData(
-//         index: 0,
-//         title: Tab(
-//           text: AppLocalizations.of(context)!.you,
-//         ),
-//         content: CustomTabScreen(homeModel: widget.homeModel),
-//       ),
-//       ...List.generate(
-//         sections.length,
-//         (index) {
-//           return TabData(
-//             index: index,
-//             title: Tab(
-//               text: isArabic(context)
-//                   ? sections[index].nameAr
-//                   : sections[index].nameEn,
-//             ),
-//             content: TabScreen(
-//               categoryData: sections[index],
-//               videoSection: homeController.homeCubit.videoSection,
-//             ),
-//           );
-//         },
-//       )
-//     ],
-//     padding: EdgeInsets.all(0),
-//     viewportFractionTabBarView: 1,
-//     labelStyle: TextStyle(fontWeight: FontWeight.w900),
-//     unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
-//     unselectedLabelColor: Colors.grey,
-//     dividerColor: Theme.of(context).cardColor,
-//     isScrollable: true,
-//     dividerHeight: 0.5,
-//     onTabControllerUpdated: (controller) {
-//       debugPrint("onTabControllerUpdated");
-//     },
-//     onTabChanged: (index) {
-//       debugPrint("Tab changed: $index");
-//     },
-//     showBackIcon: false,
-//     showNextIcon: false,
-//     indicatorColor: Colors.red,
-//     automaticIndicatorColorAdjustment: true,
-//   );
-// }
-//
-// Widget buildTabBarWidget(
-//     BuildContext context, List<CategorySection> sections) {
-//   return TabBar(tabs: [
-//     Tab(
-//       text: AppLocalizations.of(context)!.you,
-//       // child: CustomTabScreen(homeModel: homeModel),
-//     ),
-//     ...List.generate(
-//       sections.length,
-//       (index) {
-//         return Tab(
-//           text: isArabic(context)
-//               ? sections[index].nameAr
-//               : sections[index].nameEn,
-//           // child: TabScreen(
-//           //   categoryData: sections[index],
-//           //   videoSection: homeController.homeCubit.videoSection,
-//           // ),
-//         );
-//       },
-//     )
-//   ]);
-//
-//   return DynamicTabBarWidget(
-//     tabAlignment: TabAlignment.start,
-//     dynamicTabs: [
-//       TabData(
-//         index: 0,
-//         title: Tab(
-//           text: AppLocalizations.of(context)!.you,
-//         ),
-//         content: CustomTabScreen(homeModel: widget.homeModel),
-//       ),
-//       ...List.generate(
-//         sections.length,
-//         (index) {
-//           return TabData(
-//             index: index,
-//             title: Tab(
-//               text: isArabic(context)
-//                   ? sections[index].nameAr
-//                   : sections[index].nameEn,
-//             ),
-//             content: TabScreen(
-//               categoryData: sections[index],
-//               videoSection: homeController.homeCubit.videoSection,
-//             ),
-//           );
-//         },
-//       )
-//     ],
-//     padding: EdgeInsets.all(0),
-//     viewportFractionTabBarView: 1,
-//     labelStyle: TextStyle(fontWeight: FontWeight.w900),
-//     unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
-//     unselectedLabelColor: Colors.grey,
-//     dividerColor: Theme.of(context).cardColor,
-//     isScrollable: true,
-//     dividerHeight: 0.5,
-//     onTabControllerUpdated: (controller) {
-//       debugPrint("onTabControllerUpdated");
-//     },
-//     onTabChanged: (index) {
-//       debugPrint("Tab changed: $index");
-//     },
-//     showBackIcon: false,
-//     showNextIcon: false,
-//     indicatorColor: Colors.red,
-//     automaticIndicatorColorAdjustment: true,
-//   );
-// }
 }
