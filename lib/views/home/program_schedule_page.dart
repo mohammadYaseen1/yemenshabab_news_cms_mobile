@@ -1,14 +1,14 @@
 import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/services/home/cubits/program_schedule_cubit.dart';
 import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab/shared/component/dynamic_tabbar.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/days.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_tab_screen.dart';
 
 class ProgramSchedulePage extends StatelessWidget {

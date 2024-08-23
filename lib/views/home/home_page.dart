@@ -1,7 +1,9 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/data_type.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
@@ -9,8 +11,6 @@ import 'package:yemenshabab/data/models/section/category.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/custom_tab_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,7 +52,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {},
       builder: (context, state) {
-        var sections = homeController.homeCubit.section;
         var allSections = homeController.homeCubit.allSections;
         if (isSelected.isEmpty) isSelected = unSelected(allSections);
         return DefaultTabController(
@@ -63,7 +62,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               bottom: TabBar(
                 controller: tabController,
                 isScrollable: true,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.zero,
                 tabAlignment: TabAlignment.start,
                 dividerColor: Theme.of(context).cardColor,
@@ -74,12 +73,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   });
                 },
                 labelStyle:
-                    TextStyle(fontWeight: FontWeight.w900, fontSize: 19),
+                    const TextStyle(fontWeight: FontWeight.w900, fontSize: 19),
                 unselectedLabelStyle:
-                    TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                 tabs: <Widget>[
                   Tab(
-                    text: AppLocalizations.of(context)!.you,
+                    text: "you".tr,
                   ),
                   ...List.generate(
                     allSections.length,
@@ -96,7 +95,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             },
                             child: DropdownButton2<SectionSectionsCategories>(
                               // elevation: 0,
-                              underline: SizedBox(),
+                              underline: const SizedBox(),
                               // borderRadius: BorderRadius.circular(10),
                               hint: Text(
                                 isArabic(context)
@@ -118,10 +117,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       : FontWeight.w600,
                                   fontSize: isSelected[index] ? 19 : 17,
                                   color: Theme.of(context).iconTheme.color),
-                              menuItemStyleData: MenuItemStyleData(
+                              menuItemStyleData: const MenuItemStyleData(
                                   // padding: EdgeInsets.zero
                                   ),
-                              buttonStyleData: ButtonStyleData(
+                              buttonStyleData: const ButtonStyleData(
                                 elevation: 0,
                                 padding: EdgeInsets.zero,
                               ),
@@ -138,15 +137,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   .categories!
                                   .map(
                                     (category) => DropdownMenuItem(
+                                      value: category,
                                       child: Text(
                                         isArabic(context)
                                             ? category.nameAr!
                                             : category.nameEn!,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w900,
                                         ),
                                       ),
-                                      value: category,
                                     ),
                                   )
                                   .toList(),
@@ -157,11 +156,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 setState(() {
                                   isSelected[index] = true;
                                 });
-                                print(category!.nameAr);
                                 var categorySection = CategorySection(
                                   dataType: ViewType.valueOf(
                                       allSections[index].section.dataType),
-                                  color: category.color,
+                                  color: category!.color,
                                   layout: Layout.valueOf(category.layout!),
                                   nameAr: category.nameAr,
                                   nameEn: category.nameEn,

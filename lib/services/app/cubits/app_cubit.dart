@@ -1,8 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/config/config.dart';
 import 'package:yemenshabab/services/app/models/setting_entity.dart';
 import 'package:yemenshabab/services/app/service/app_service.dart';
-import 'package:yemenshabab/shared/config/config.dart';
 
 part 'app_state.dart';
 
@@ -18,7 +18,7 @@ class AppCubit extends Cubit<AppState> {
       Config.settings = settings;
       emit(SettingsLoaded(settings));
     } catch (e) {
-      emit(SettingsError('Failed to fetch settings'));
+      emit(const SettingsError('Failed to fetch settings'));
     }
   }
 }

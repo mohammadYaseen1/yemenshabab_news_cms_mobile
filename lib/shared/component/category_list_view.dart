@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
@@ -9,7 +10,6 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/no_items_found_indicator.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 import 'package:yemenshabab/views/home/video_details_page.dart';
 
@@ -39,7 +39,7 @@ class CategoryListView extends StatelessWidget {
           itemBuilder: (context, item, index) => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxHeight: double.infinity,
                   ),
                   padding: const EdgeInsets.all(8.0),
@@ -81,7 +81,7 @@ class CategoryListView extends StatelessWidget {
               ),
           noItemsFoundIndicatorBuilder: (context) =>
               const CustomNoItemsFoundIndicator(),
-          firstPageProgressIndicatorBuilder: (context) => LoadingScreen(),
+          firstPageProgressIndicatorBuilder: (context) => const LoadingScreen(),
           firstPageErrorIndicatorBuilder: (context) =>
               CustomFirstPageErrorIndicator(
                 onTryAgain: _pagingController.retryLastFailedRequest,
@@ -104,15 +104,15 @@ class CategoryListView extends StatelessWidget {
             imageUrl: item.writerImage!,
           ),
         ),
-        SizedBox(width: 30),
+        const SizedBox(width: 30),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               titleBox(context, item),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 item.writerName!,
                 style: TextStyle(
@@ -131,7 +131,7 @@ class CategoryListView extends StatelessWidget {
     return Row(
       children: [
         buildImage(item),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         buildContent(context, item),
       ],
     );
@@ -144,7 +144,7 @@ class CategoryListView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           titleBox(context, item),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           publishedDate(item, context),
         ],
       ),
@@ -154,7 +154,7 @@ class CategoryListView extends StatelessWidget {
   Widget buildImage(SectionDataData item) {
     return Expanded(
       child: Container(
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 150,
         ),
         clipBehavior: Clip.antiAlias,
@@ -185,7 +185,7 @@ class CategoryListView extends StatelessWidget {
       isArabic(context) ? item.titleAr! : item.titleEn!,
       maxFontSize: 20,
       minFontSize: 14,
-      style: TextStyle(
+      style: const TextStyle(
         fontWeight: FontWeight.bold,
       ),
       maxLines: 5,

@@ -2,19 +2,18 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/utils.dart';
 import 'package:toastification/toastification.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/toast.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/views/home/live_screen.dart';
 import 'package:yemenshabab/views/home/no_internet_page.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -34,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               description: state.description!
                           .isCaseInsensitiveContains('network') ||
                       state.description!.isCaseInsensitiveContains('connection')
-                  ? AppLocalizations.of(context)!.noInternet
+                  ? "noInternet".tr
                   : state.description,
               toastType: ToastificationType.error);
         }
@@ -44,12 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Scaffold(
                 extendBody: true,
                 floatingActionButton: FloatingActionButton(
-                  child: const Icon(Icons.play_arrow_rounded),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
                   onPressed: () {
-                    Navigator.push(context, createRoute(() => LiveScreen()));
+                    Navigator.push(
+                        context, createRoute(() => const LiveScreen()));
                   },
+                  child: const Icon(Icons.play_arrow_rounded),
                 ),
                 floatingActionButtonLocation:
                     FloatingActionButtonLocation.centerDocked,
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 4),
                         Container(
                           constraints:
-                              BoxConstraints(maxWidth: double.infinity),
+                              const BoxConstraints(maxWidth: double.infinity),
                           child: AutoSizeText(
                             homeController.homeCubit
                                 .bottomNavData(context)[index]

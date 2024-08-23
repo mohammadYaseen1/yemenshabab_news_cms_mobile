@@ -1,4 +1,4 @@
-import 'package:yemenshabab/shared/config/config.dart';
+import 'package:yemenshabab/core/config/config.dart';
 
 class HomeRoutes {
   static final String fetchSections =

@@ -1,8 +1,10 @@
 import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
@@ -10,12 +12,10 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
 import 'package:yemenshabab/shared/component/youtube_player.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class VideoDetailsPage extends StatefulWidget {
-  VideoDetailsPage({super.key, required this.dataModel});
+  const VideoDetailsPage({super.key, required this.dataModel});
 
   final DataModel dataModel;
 
@@ -34,7 +34,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
   }
 
   void enable() async {
-    await floating.enable(OnLeavePiP());
+    await floating.enable(const OnLeavePiP());
   }
 
   void disable() async {
@@ -61,114 +61,110 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                       id: convertUrlToId(state.newsEntity.contentAr!)!),
                   childWhenDisabled: Scaffold(
                       appBar: AppBar(
-                        actions: [ShareButton(url: "url")],
+                        actions: const [ShareButton(url: "url")],
                       ),
                       body: SingleChildScrollView(
-                        child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: Text(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  isArabic(context)
+                                      ? state.newsEntity.category!.nameAr!
+                                      : state.newsEntity.category!.nameEn!,
+                                  style:
+                                      TextStyle(color: widget.dataModel.color),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  isArabic(context)
+                                      ? state.newsEntity.titleAr!
+                                      : state.newsEntity.titleEn!,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: Text(
+                                  getFormattedDate(
+                                      state.newsEntity.creationDate!,
+                                      Localizations.localeOf(context)
+                                          .toLanguageTag()),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .color,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: CustomYouTubePlayer(
+                                    id: convertUrlToId(
+                                        state.newsEntity.contentAr!)!),
+                              ),
+                              const SizedBox(height: 25),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: SelectionArea(
+                                  child: HtmlWidget(
                                     isArabic(context)
-                                        ? state.newsEntity.category!.nameAr!
-                                        : state.newsEntity.category!.nameEn!,
-                                    style: TextStyle(
-                                        color: widget.dataModel.color),
+                                        ? state.newsEntity.descriptionAr!
+                                        : state.newsEntity.descriptionEn!,
+                                    renderMode: RenderMode.column,
+                                    textStyle: const TextStyle(fontSize: 18),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: Text(
-                                    isArabic(context)
-                                        ? state.newsEntity.titleAr!
-                                        : state.newsEntity.titleEn!,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                    ),
+                              ),
+                              const SizedBox(height: 25),
+                              if (state.newsEntity.keywords != null) ...[
+                                Text(
+                                  'keywords'.tr,
+                                  style: const TextStyle(
+                                    fontSize: 20,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 10),
-                                  child: Text(
-                                    getFormattedDate(
-                                        state.newsEntity.creationDate!,
-                                        Localizations.localeOf(context)
-                                            .toLanguageTag()),
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .bodySmall!
-                                          .color,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15)),
-                                  child: CustomYouTubePlayer(
-                                      id: convertUrlToId(
-                                          state.newsEntity.contentAr!)!),
-                                ),
-                                SizedBox(height: 25),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: SelectionArea(
-                                    child: HtmlWidget(
-                                      isArabic(context)
-                                          ? state.newsEntity.descriptionAr!
-                                          : state.newsEntity.descriptionEn!,
-                                      renderMode: RenderMode.column,
-                                      textStyle: TextStyle(fontSize: 18),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 25),
-                                if (state.newsEntity.keywords != null) ...[
-                                  Text(
-                                    AppLocalizations.of(context)!.keywords,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  SizedBox(height: 10),
-                                  Wrap(
-                                    children: (isArabic(context)
-                                            ? state.newsEntity.keywords!.ar ??
-                                                []
-                                            : state.newsEntity.keywords!.en ??
-                                                [])
-                                        .map(
-                                          (e) => Padding(
-                                            padding: EdgeInsets.all(4),
-                                            child: Chip(
-                                              label: Text(e),
-                                              side: BorderSide(
-                                                  color: Colors.grey, width: 1),
-                                            ),
+                                const SizedBox(height: 10),
+                                Wrap(
+                                  children: (isArabic(context)
+                                          ? state.newsEntity.keywords!.ar ?? []
+                                          : state.newsEntity.keywords!.en ?? [])
+                                      .map(
+                                        (e) => Padding(
+                                          padding: const EdgeInsets.all(4),
+                                          child: Chip(
+                                            label: Text(e),
+                                            side: const BorderSide(
+                                                color: Colors.grey, width: 1),
                                           ),
-                                        )
-                                        .toList(),
-                                  ),
-                                ]
-                              ],
-                            ),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              ]
+                            ],
                           ),
                         ),
                       )))
-              : LoadingScreen();
+              : const LoadingScreen();
         },
       ),
     );
@@ -189,7 +185,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
             ))));
       },
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         height: 120,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
@@ -205,7 +201,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                 child: ImageComponent(
                   imageUrl: state.extraNews!.items!.first.image!,
                 )),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,7 +211,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                     isArabic(context)
                         ? state.extraNews!.items!.first.title!
                         : state.extraNews!.items!.first.subtitle!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       overflow: TextOverflow.ellipsis,
@@ -235,7 +231,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(5),
                         width: 5,
                         height: 5,
                         decoration: BoxDecoration(
@@ -244,7 +240,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                         ),
                       ),
                       Text(
-                        "${AppLocalizations.of(context)!.since} ${getDurationString(state.newsEntity.creationDate!, Localizations.localeOf(context).toLanguageTag())}",
+                        "${'since'.tr} ${getDurationString(state.newsEntity.creationDate!, Localizations.localeOf(context).toLanguageTag())}",
                         style: TextStyle(
                           fontSize: 15,
                           color: Theme.of(context).textTheme.bodySmall!.color,

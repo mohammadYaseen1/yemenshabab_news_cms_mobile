@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/extension/string.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
 import 'package:yemenshabab/shared/component/custom_search_delegate.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -99,7 +99,7 @@ class CustomAppBar extends StatelessWidget {
             foregroundColor: WidgetStateColor.transparent,
           ),
           child: Text(
-            AppLocalizations.of(context)!.archive,
+            'archive'.tr,
             style: TextStyle(
               color: "#d97706".toColor,
             ),

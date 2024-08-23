@@ -1,16 +1,16 @@
 import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/days.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramTabScreen extends StatelessWidget {
-  const ProgramTabScreen({Key? key, required this.programs, required this.day})
-      : super(key: key);
+  const ProgramTabScreen(
+      {super.key, required this.programs, required this.day});
 
   final Days day;
 
@@ -35,7 +35,7 @@ class ProgramTabScreen extends StatelessWidget {
             color: Colors.grey.withOpacity(0.3),
           ),
           Text(
-            AppLocalizations.of(context)!.noPrograms,
+            'noPrograms'.tr,
             style: TextStyle(
               fontSize: 24,
               color: Colors.grey.withOpacity(0.6),

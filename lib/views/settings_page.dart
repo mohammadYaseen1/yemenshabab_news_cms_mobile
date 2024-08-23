@@ -1,16 +1,16 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:yemenshabab/app.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/extension/string.dart';
+import 'package:yemenshabab/core/utils/social_media.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
+import 'package:yemenshabab/features/app/presentation/bloc/theme_bloc/theme_bloc.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/extension/string.dart';
-import 'package:yemenshabab/shared/utils/social_media.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +21,16 @@ class SettingsPage extends StatelessWidget {
           Column(
             children: [
               Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.appearance,
-                      style: TextStyle(fontSize: 18),
+                      'appearance'.tr,
+                      style: const TextStyle(fontSize: 18),
                     ),
                     Divider(color: Theme.of(context).cardColor),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       textDirection: TextDirection.rtl,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,7 +59,7 @@ class SettingsPage extends StatelessWidget {
                           focusColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () {
-                            App.of(context)!.setThemeMode(ThemeMode.system);
+                            ThemeBloc.get(context).add(ThemeEvent.toggleSystem);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -68,7 +68,9 @@ class SettingsPage extends StatelessWidget {
                                     BorderRadiusDirectional.circular(15),
                                 border: Border.all(
                                     color: '#e7e7e7'.toColor,
-                                    width: App.of(context)!.themeMode ==
+                                    width: ThemeBloc.get(context)
+                                                .state
+                                                .themeMode ==
                                             ThemeMode.system
                                         ? 3
                                         : 0)),
@@ -82,8 +84,9 @@ class SettingsPage extends StatelessWidget {
                                       width: width / 2,
                                       decoration: BoxDecoration(
                                           color: '#f6f6f6'.toColor,
-                                          borderRadius: BorderRadiusDirectional
-                                              .horizontal(
+                                          borderRadius:
+                                              const BorderRadiusDirectional
+                                                  .horizontal(
                                                   start: Radius.circular(15)),
                                           border: Border.all(
                                               color: '#e7e7e7'.toColor)),
@@ -94,13 +97,14 @@ class SettingsPage extends StatelessWidget {
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                              BorderRadiusDirectional.only(
+                                              const BorderRadiusDirectional
+                                                  .only(
                                             topStart: Radius.circular(15),
                                           ),
                                           border: Border.all(
                                               color: '#e7e7e7'.toColor)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(10.0),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(10.0),
                                         child: Text(
                                           'Aa',
                                           style: TextStyle(
@@ -121,8 +125,9 @@ class SettingsPage extends StatelessWidget {
                                       width: width / 2,
                                       decoration: BoxDecoration(
                                           color: '#4e4e4e'.toColor,
-                                          borderRadius: BorderRadiusDirectional
-                                              .horizontal(
+                                          borderRadius:
+                                              const BorderRadiusDirectional
+                                                  .horizontal(
                                                   end: Radius.circular(15)),
                                           border: Border.all(
                                               color: '#959595'.toColor)),
@@ -133,14 +138,15 @@ class SettingsPage extends StatelessWidget {
                                       decoration: BoxDecoration(
                                           color: '#161616'.toColor,
                                           borderRadius:
-                                              BorderRadiusDirectional.only(
+                                              const BorderRadiusDirectional
+                                                  .only(
                                             topStart: Radius.circular(15),
                                             bottomEnd: Radius.circular(15),
                                           ),
                                           border: Border.all(
                                               color: '#959595'.toColor)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(10.0),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(10.0),
                                         child: Text(
                                           'Aa',
                                           style: TextStyle(
@@ -162,9 +168,9 @@ class SettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               buildLanguageToggle(context),
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -173,7 +179,7 @@ class SettingsPage extends StatelessWidget {
                       isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.followUs,
+                      'followUs'.tr,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
@@ -184,7 +190,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -229,23 +235,23 @@ class SettingsPage extends StatelessWidget {
 
   Container buildLanguageToggle(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.language,
-            style: TextStyle(fontSize: 18),
+            'language'.tr,
+            style: const TextStyle(fontSize: 18),
           ),
           Divider(color: Theme.of(context).cardColor),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           AnimatedToggleSwitch<Locale>.size(
             textDirection: TextDirection.rtl,
             current: Localizations.localeOf(context),
-            values: AppLocalizations.supportedLocales,
+            values: const [Locale('ar'), Locale('en')],
             indicatorSize: const Size.fromWidth(300),
             borderWidth: 4.0,
-            iconList: [
+            iconList: const [
               Text('العربية'),
               Text('English'),
             ],
@@ -257,7 +263,7 @@ class SettingsPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
             ),
             onChanged: (local) {
-              App.of(context)!.setLocale(local);
+              //   App.of(context)!.setLocale(local);
             },
           )
         ],
@@ -280,15 +286,16 @@ class SettingsPage extends StatelessWidget {
       focusColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () {
-        App.of(context)!.setThemeMode(themeMode);
+        // App.of(context)!.setThemeMode(themeMode);
       },
       child: Container(
         decoration: BoxDecoration(
             color: outsideColor,
             borderRadius: BorderRadius.circular(15),
             border: Border.all(
-                color: iconColor,
-                width: App.of(context)!.themeMode == themeMode ? 3 : 0)),
+              color: iconColor,
+              //   width: App.of(context)!.themeMode == themeMode ? 3 : 0,
+            )),
         child: Stack(
           alignment: AlignmentDirectional.bottomEnd,
           children: [
@@ -306,7 +313,7 @@ class SettingsPage extends StatelessWidget {
               width: width - 25,
               decoration: BoxDecoration(
                   color: insideColor,
-                  borderRadius: BorderRadiusDirectional.only(
+                  borderRadius: const BorderRadiusDirectional.only(
                     bottomEnd: Radius.circular(15),
                     topStart: Radius.circular(15),
                   ),

@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:yemenshabab/data/models/program_schedule.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 
 part 'program_state.dart';
 
@@ -19,7 +18,7 @@ class ProgramCubit extends Cubit<ProgramState> {
       programEntity = program;
       emit(ListProgramsLoaded(program));
     } catch (e) {
-      emit(ListProgramsError('Failed to fetch programs'));
+      emit(const ListProgramsError('Failed to fetch programs'));
     }
   }
 

@@ -1,3 +1,5 @@
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/helper/dio_helper.dart';
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/data/models/program_schedule_entity.dart';
 import 'package:yemenshabab/data/models/search_entity.dart';
@@ -9,20 +11,14 @@ import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/services/home/routes/home_routes.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/network/dio_factory.dart';
 
 class HomeRepository {
-  final dioFactory = DioFactory();
+  final dioFactory = DioHelper();
 
   Future<Landing> fetchLanding(String language) async {
-    // return Future.delayed(
-    //     Durations.extralong4, () => Landing.fromJson(landingJson));
-
     var dio = await dioFactory.getDio();
     final response = await dio.get(HomeRoutes.fetchLanding, queryParameters: {
       "language": language,
-      // "language": Localizations.localeOf(context).toLanguageTag(),
     });
 
     if (response.statusCode == 200) {
@@ -33,8 +29,6 @@ class HomeRepository {
   }
 
   Future<SectionEntity> fetchSections() async {
-    // return Future.delayed(
-    //     Durations.extralong4, () => SectionEntity.fromJson(sectionJson));
     var dio = await dioFactory.getDio();
     final response = await dio.get(HomeRoutes.fetchSections);
     if (response.statusCode == 200) {
@@ -58,15 +52,14 @@ class HomeRepository {
     if (response.statusCode == 200) {
       return PlaylistEntity.fromJson(response.data);
     } else {
-      throw Exception('Failed to load playlist [$id], ${response}');
+      throw Exception('Failed to load playlist [$id], $response');
     }
   }
 
-  Future<ProgramEntity> fetchPrograms(
-      {required int rows, required int first}) async {
-    // return Future.delayed(
-    //     Durations.extralong4, () => ProgramEntity.fromJson(programJson));
-
+  Future<ProgramEntity> fetchPrograms({
+    required int rows,
+    required int first,
+  }) async {
     var dio = await dioFactory.getDio();
     final response =
         await dio.get(HomeRoutes.fetchPrograms(rows: rows, first: first));
@@ -92,9 +85,6 @@ class HomeRepository {
   }
 
   Future<NewsEntity> fetchNews(String uuid, String dataType) async {
-    // return Future.delayed(
-    //     Durations.extralong4, () => NewsEntity.fromJson(newsJson));
-
     var dio = await dioFactory.getDio();
     final response =
         await dio.get(HomeRoutes.fetchNews(uuid: uuid, dataType: dataType));
@@ -106,11 +96,10 @@ class HomeRepository {
     }
   }
 
-  Future<Data> fetchByKeywords(String dataType,
-      [List<String>? keywords]) async {
-    // return Future.delayed(
-    //     Durations.extralong4, () => NewsEntity.fromJson(newsJson));
-
+  Future<Data> fetchByKeywords(
+    String dataType, [
+    List<String>? keywords,
+  ]) async {
     var dio = await dioFactory.getDio();
     final response = await dio.get(HomeRoutes.fetchByKeywords(
         dataType: dataType, keywords: keywords ?? []));

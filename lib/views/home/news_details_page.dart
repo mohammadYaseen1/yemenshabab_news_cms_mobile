@@ -3,11 +3,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/extension/string.dart';
+import 'package:yemenshabab/core/utils/social_media.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
@@ -18,11 +21,7 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
 import 'package:yemenshabab/shared/component/youtube_view.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/social_media.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/my_slider.dart';
 import 'package:yemenshabab/views/keyword_details_page.dart';
 import 'package:yemenshabab/views/reading_mode_page.dart';
@@ -39,21 +38,19 @@ class NewsDetailsPage extends StatefulWidget {
 
 class _NewsDetailsPageState extends State<NewsDetailsPage> {
   late bool isArabicLang;
-  late SfRangeValues _values;
   var fontSize = 18.0;
 
   late Locale lang;
 
   @override
   void initState() {
-    _values = const SfRangeValues(10.0, 24.0);
     super.initState();
   }
 
   @override
   void didChangeDependencies() {
     isArabicLang = isArabic(context);
-    lang = AppLocalizations.supportedLocales[isArabicLang ? 0 : 1];
+    // lang = AppLocalizations.supportedLocales[isArabicLang ? 0 : 1];
     super.didChangeDependencies();
   }
 
@@ -109,8 +106,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                 physics: const NeverScrollableScrollPhysics(),
                                 children: [
                                   Text(
-                                    AppLocalizations.of(context)!
-                                        .settingContent,
+                                    "settingContent".tr,
                                     style: const TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold),
@@ -121,7 +117,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text(
-                                    AppLocalizations.of(context)!.fontSize,
+                                    "fontSize".tr,
                                     style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w400,
@@ -138,7 +134,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text(
-                                    AppLocalizations.of(context)!.language,
+                                    "language".tr,
                                     style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w400,
@@ -147,12 +143,15 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                   AnimatedToggleSwitch<Locale>.size(
                                     textDirection: TextDirection.rtl,
                                     current: lang,
-                                    values: AppLocalizations.supportedLocales,
+                                    values: const [
+                                      Locale('ar'),
+                                      Locale('en'),
+                                    ],
                                     indicatorSize: const Size.fromWidth(300),
                                     borderWidth: 4.0,
-                                    iconList: [
-                                      const Text('العربية'),
-                                      const Text('English'),
+                                    iconList: const [
+                                      Text('العربية'),
+                                      Text('English'),
                                     ],
                                     iconAnimationType: AnimationType.onHover,
                                     style: ToggleStyle(
@@ -512,7 +511,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        AppLocalizations.of(context)!.keywords,
+                                        'keywords'.tr,
                                         style: const TextStyle(
                                           fontSize: 20,
                                         ),
@@ -627,7 +626,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
         ),
         const SizedBox(height: 10),
         Text(
-          AppLocalizations.of(context)!.relatedNews,
+          'relatedNews'.tr,
           style: const TextStyle(
             fontSize: 20,
           ),
@@ -663,14 +662,16 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                 ),
                 child: Row(
                   children: [
-                    Container(
-                      constraints: const BoxConstraints(maxHeight: 100),
-                      width: 150,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                    Expanded(
+                      child: Container(
+                        constraints: const BoxConstraints(maxHeight: 100),
+                        width: 150,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ImageComponent(imageUrl: items[index].image!),
                       ),
-                      child: ImageComponent(imageUrl: items[index].image!),
                     ),
                     const SizedBox(width: 10),
                     Expanded(
@@ -678,31 +679,43 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                isArabic(context)
-                                    ? items[index].category!
-                                    : items[index].categoryEn!,
-                                style: TextStyle(
-                                    color: parseColorString(
-                                        items[index].categoryColor!)),
+                              Row(
+                                children: [
+                                  Text(
+                                    isArabic(context)
+                                        ? items[index].category!
+                                        : items[index].categoryEn!,
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                        color: parseColorString(
+                                            items[index].categoryColor!)),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Container(
+                                    width: 1,
+                                    height: 15,
+                                    decoration: BoxDecoration(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
+                                        borderRadius:
+                                            BorderRadius.circular(50)),
+                                  ),
+                                  const SizedBox(width: 5),
+                                ],
                               ),
-                              const SizedBox(width: 5),
-                              Container(
-                                width: 2,
-                                height: 13,
-                                decoration: BoxDecoration(
+                              Expanded(
+                                child: AutoSizeText(
+                                  getFormattedDate(items[index].date!),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.secondary,
-                                    borderRadius: BorderRadius.circular(50)),
-                              ),
-                              const SizedBox(width: 5),
-                              AutoSizeText(
-                                getFormattedDate(items[index].date!),
-                                maxLines: 2,
-                                style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
+                                    fontSize: 10,
+                                  ),
                                 ),
                               )
                             ],

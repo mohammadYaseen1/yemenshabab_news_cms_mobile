@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
 import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
@@ -8,7 +9,6 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/no_items_found_indicator.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/playlist_details_page.dart';
 
 class PlaylistView extends StatefulWidget {
@@ -100,7 +100,7 @@ class _PlaylistViewState extends State<PlaylistView> {
           ),
           noItemsFoundIndicatorBuilder: (context) =>
               const CustomNoItemsFoundIndicator(),
-          firstPageProgressIndicatorBuilder: (context) => LoadingScreen(),
+          firstPageProgressIndicatorBuilder: (context) => const LoadingScreen(),
           firstPageErrorIndicatorBuilder: (context) =>
               CustomFirstPageErrorIndicator(
             onTryAgain: _pagingController.retryLastFailedRequest,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 import 'package:yemenshabab/layout/navigation_cubit.dart';
 
 class DrawerList extends StatelessWidget {
@@ -9,7 +9,7 @@ class DrawerList extends StatelessWidget {
 
   // final DrawerData drawerData;
 
-  DrawerList({
+  const DrawerList({
     super.key,
     required this.controller,
     // required this.drawerData,
@@ -33,7 +33,7 @@ class DrawerList extends StatelessWidget {
                   // controller.hideDrawer();
                 },
                 leading: const Icon(Icons.home_rounded),
-                title: Text(AppLocalizations.of(context)!.home),
+                title: Text('home'.tr),
               ),
               ListTile(
                 onTap: () {
@@ -41,7 +41,7 @@ class DrawerList extends StatelessWidget {
                   context.read<NavigationCubit>().selectSettings();
                 },
                 leading: const Icon(Icons.settings_rounded),
-                title: Text(AppLocalizations.of(context)!.settings),
+                title: Text('settings'.tr),
               ),
               ListTile(
                 onTap: () {
@@ -49,7 +49,7 @@ class DrawerList extends StatelessWidget {
                   context.read<NavigationCubit>().selectAboutUs();
                 },
                 leading: const Icon(Icons.description_rounded),
-                title: Text(AppLocalizations.of(context)!.about_us),
+                title: Text('about_us'.tr),
               ),
               ListTile(
                 onTap: () {
@@ -57,7 +57,7 @@ class DrawerList extends StatelessWidget {
                   controller.hideDrawer();
                 },
                 leading: const Icon(Icons.settings),
-                title: Text(AppLocalizations.of(context)!.terms_conditions),
+                title: Text('terms_conditions'.tr),
               ),
               ListTile(
                 onTap: () {
@@ -65,7 +65,7 @@ class DrawerList extends StatelessWidget {
                   controller.hideDrawer();
                 },
                 leading: const Icon(Icons.settings),
-                title: Text(AppLocalizations.of(context)!.privacy_policy),
+                title: Text('privacy_policy'.tr),
               ),
               ListTile(
                 onTap: () {
@@ -73,7 +73,7 @@ class DrawerList extends StatelessWidget {
                   controller.hideDrawer();
                 },
                 leading: const Icon(Icons.question_mark_rounded),
-                title: Text(AppLocalizations.of(context)!.faq),
+                title: Text('faq'.tr),
               ),
               const Spacer(
                 flex: 3,
@@ -81,12 +81,12 @@ class DrawerList extends StatelessWidget {
               ListTile(
                 onTap: () {},
                 leading: const Icon(Icons.brightness_4_outlined),
-                title: Text(AppLocalizations.of(context)!.theme),
+                title: Text('theme'.tr),
               ),
               ListTile(
                 onTap: () {},
                 leading: const Icon(Icons.translate_rounded),
-                title: Text(AppLocalizations.of(context)!.language),
+                title: Text('language'.tr),
               ),
               const Spacer(
                 flex: 3,
@@ -102,9 +102,9 @@ class DrawerList extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Text("v1.0"),
-                      SizedBox(height: 5),
-                      Text(AppLocalizations.of(context)!.copyright),
+                      const Text("v1.0"),
+                      const SizedBox(height: 5),
+                      Text('copyright'.tr),
                     ],
                   ),
                 ),

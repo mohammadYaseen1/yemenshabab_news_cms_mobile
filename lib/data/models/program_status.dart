@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 
 enum ProgramStatus {
   AIRING(Color.fromRGBO(73, 149, 32, 0.8)),
@@ -40,8 +40,8 @@ enum ProgramStatus {
       status == null && statusString == null
           ? null
           : switch (status ?? valueOf(statusString!)) {
-              AIRING => AppLocalizations.of(context)!.airing,
-              FINISHED => AppLocalizations.of(context)!.finished,
-              SOON => AppLocalizations.of(context)!.soon,
+              AIRING => 'airing'.tr,
+              FINISHED => 'finished'.tr,
+              SOON => 'soon'.tr,
             };
 }

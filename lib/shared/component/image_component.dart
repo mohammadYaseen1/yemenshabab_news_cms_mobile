@@ -7,11 +7,12 @@ import 'package:yemenshabab/gen/assets.gen.dart';
 import 'package:yemenshabab/shared/utils.dart';
 
 class ImageComponent extends StatelessWidget {
-  const ImageComponent(
-      {super.key,
-      required this.imageUrl,
-      this.clickable = false,
-      this.height = 250});
+  const ImageComponent({
+    super.key,
+    required this.imageUrl,
+    this.clickable = false,
+    this.height = 250,
+  });
 
   final String imageUrl;
   final bool clickable;
@@ -47,7 +48,7 @@ class ImageComponent extends StatelessWidget {
         debugPrint("error loadImage: \n error: $error, \n url: $url");
         deleteImageFromCache(url);
         return Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 border: Border.all(color: Theme.of(context).cardColor),
                 borderRadius: BorderRadius.circular(15)),

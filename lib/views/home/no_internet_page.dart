@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 
 class NoInternetPage extends StatelessWidget {
   const NoInternetPage({
@@ -19,7 +19,7 @@ class NoInternetPage extends StatelessWidget {
             Assets.images.logoGrey.image(width: 150),
             const SizedBox(height: 30),
             Text(
-              AppLocalizations.of(context)!.noInternet,
+              'noInternet'.tr,
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 22,
@@ -28,7 +28,7 @@ class NoInternetPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              AppLocalizations.of(context)!.noInternetDesc,
+              'noInternetDesc',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
@@ -46,7 +46,7 @@ class NoInternetPage extends StatelessWidget {
                 await homeController.homeCubit
                     .fetchAll(Localizations.localeOf(context).languageCode);
               },
-              label: Text(AppLocalizations.of(context)!.try_again),
+              label: Text('try_again'.tr),
               icon: const Icon(Icons.refresh_rounded),
             ),
           ],

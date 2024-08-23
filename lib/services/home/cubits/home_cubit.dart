@@ -1,7 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/data/models/home/bottom_nav_model.dart';
 import 'package:yemenshabab/data/models/home/data_type.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
@@ -12,7 +13,6 @@ import 'package:yemenshabab/data/models/section/section_data_entity.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/views/home/home_page.dart';
 import 'package:yemenshabab/views/home/program_schedule_page.dart';
 import 'package:yemenshabab/views/home/programs_page.dart';
@@ -114,8 +114,7 @@ class HomeCubit extends Cubit<HomeState> {
     }
     for (var sec in section.sections ?? []) {
       if ('PROGRAM' != sec.dataType) {
-        sec.categories?.forEach((category) =>
-            this.section.add(CategorySection(
+        sec.categories?.forEach((category) => this.section.add(CategorySection(
               dataType: ViewType.valueOf(sec.dataType),
               color: category.color,
               layout: Layout.valueOf(category.layout!),
@@ -133,7 +132,7 @@ class HomeCubit extends Cubit<HomeState> {
       programEntity = program;
       emit(ProgramsLoaded(program));
     } catch (e) {
-      emit(ProgramsError('Failed to fetch programs'));
+      emit(const ProgramsError('Failed to fetch programs'));
     }
   }
 
@@ -143,7 +142,7 @@ class HomeCubit extends Cubit<HomeState> {
       final program = await homeService.fetchProgramsSchedule();
       emit(ProgramsScheduleLoaded(program));
     } catch (e) {
-      emit(ProgramsScheduleError('Failed to fetch programs schedule'));
+      emit(const ProgramsScheduleError('Failed to fetch programs schedule'));
     }
   }
 
@@ -152,9 +151,9 @@ class HomeCubit extends Cubit<HomeState> {
       emit(SectionsLoading());
       final section = await homeService.fetchSections();
       fillCategorySection(section);
-      emit(SectionsLoaded());
+      emit(const SectionsLoaded());
     } catch (e) {
-      emit(SectionsError('Failed to fetch home'));
+      emit(const SectionsError('Failed to fetch home'));
     }
   }
 
@@ -166,8 +165,9 @@ class HomeCubit extends Cubit<HomeState> {
     bool refresh = false,
   }) async {
     try {
-      if (!refresh && categoryDataMap.containsKey(category))
+      if (!refresh && categoryDataMap.containsKey(category)) {
         return emit(CategoryDataLoaded());
+      }
       emit(CategoryDataLoading());
       final categoryData = await homeService.fetchCategoryData(
         dataType: dataType,
@@ -183,27 +183,26 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-  List<BottomNavModel> bottomNavData(BuildContext context) =>
-      [
+  List<BottomNavModel> bottomNavData(BuildContext context) => [
         BottomNavModel(
           icon: Icons.home_filled,
-          title: AppLocalizations.of(context)!.home,
+          title: "home".tr,
           screen: ([data]) => HomePage(homeModel: data as HomeModel),
         ),
         BottomNavModel(
           icon: Icons.video_collection_rounded,
-          title: AppLocalizations.of(context)!.programs,
+          title: "programs".tr,
           screen: ([data]) => ProgramPage(program: (data as HomeModel).program),
         ),
         BottomNavModel(
           icon: Icons.ondemand_video_rounded,
-          title: AppLocalizations.of(context)!.programsSchedule,
-          screen: ([data]) => ProgramSchedulePage(),
+          title: "programsSchedule".tr,
+          screen: ([data]) => const ProgramSchedulePage(),
         ),
         BottomNavModel(
           icon: Icons.settings_rounded,
-          title: AppLocalizations.of(context)!.settings,
-          screen: ([data]) => SettingsPage(),
+          title: "settings".tr,
+          screen: ([data]) => const SettingsPage(),
         ),
       ];
 

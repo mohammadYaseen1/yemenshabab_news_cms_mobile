@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 
 class ArticleView extends StatelessWidget {
@@ -46,7 +46,7 @@ class ArticleView extends StatelessWidget {
                   ),
                 ),
                 if (category != null)
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_rounded,
                     size: 30,
                   ),
@@ -75,7 +75,7 @@ class ArticleView extends StatelessWidget {
                 margin: const EdgeInsetsDirectional.only(end: 20),
                 child: Container(
                   width: 300,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(

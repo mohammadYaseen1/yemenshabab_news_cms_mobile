@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/program_status.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/shared/component/CustomHoverAnimatedContainer.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramPage extends StatelessWidget {
@@ -71,42 +71,6 @@ class ProgramPage extends StatelessWidget {
                     color: Colors.black38,
                     height: 40,
                     padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: status.color,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          // height: 40,
-                          width: 4,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: AutoSizeText(
-                                  isArabic(context)
-                                      ? program.programs![index].titleAr!
-                                      : program.programs![index].title!,
-                                  maxLines: 1,
-                                  style: const TextStyle(color: Colors.white),
-                                ),
-                              ),
-                              AutoSizeText(
-                                getFormattedTime(program.programs![index].time!,
-                                    locale: Localizations.localeOf(context)
-                                        .toLanguageTag()),
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
                     hoverChild: Row(
                       children: [
                         Container(
@@ -157,66 +121,45 @@ class ProgramPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: status.color,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          // height: 40,
+                          width: 4,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: AutoSizeText(
+                                  isArabic(context)
+                                      ? program.programs![index].titleAr!
+                                      : program.programs![index].title!,
+                                  maxLines: 1,
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              AutoSizeText(
+                                getFormattedTime(program.programs![index].time!,
+                                    locale: Localizations.localeOf(context)
+                                        .toLanguageTag()),
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              // child: BannerBasicPage(
-              //   fontSize: 12,
-              //   title: ProgramStatus.titleOf(context,
-              //       status: status)!,
-              //   color: status.color,
-              //   widget: AnimatedContainer(
-              //     height: 500,
-              //     duration: const Duration(milliseconds: 350),
-              //     clipBehavior: Clip.antiAlias,
-              //     decoration: BoxDecoration(
-              //       borderRadius: const BorderRadius.all(
-              //         Radius.circular(10),
-              //       ),
-              //     ),
-              //     child: Stack(
-              //       alignment: Alignment.bottomCenter,
-              //       children: [
-              //         ImageComponent(
-              //           imageUrl: program.programs![index].image!,
-              //         ),
-              //         Container(
-              //           color: Colors.black26,
-              //           height: 50,
-              //           padding: EdgeInsets.all(10),
-              //           child: Row(
-              //             children: [
-              //               Container(
-              //                 decoration: BoxDecoration(
-              //                   color:status.color,
-              //                   borderRadius: BorderRadius.circular(50),
-              //                 ),
-              //                 height: 40,
-              //                 width: 4,
-              //               ),
-              //               SizedBox(width: 10),
-              //               Expanded(
-              //                 child: Row(
-              //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //                   children: [
-              //                     Expanded(
-              //                       child: AutoSizeText( program.programs![index].titleAr!,
-              //                         maxLines: 1,
-              //                         style: TextStyle(
-              //                         color: Colors.white
-              //                       ),),
-              //                     ),
-              //                     Text(getFormattedTime(program.programs![index].time!)),
-              //                   ],
-              //                 ),
-              //               ),
-              //             ],
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
             ),
           ),
         ),

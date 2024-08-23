@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/data/models/section/category.dart';
 import 'package:yemenshabab/services/category_cubit.dart';
 import 'package:yemenshabab/shared/component/default_list_view.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 
 class TabScreen extends StatefulWidget {
-  TabScreen(
-      {Key? key,
+  const TabScreen(
+      {super.key,
       required this.categoryData,
       required this.videoSection,
-      this.index})
-      : super(key: key);
+      this.index});
 
   final int? index;
   final List<CategorySection> categoryData;
@@ -32,8 +31,6 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.categoryData);
-
     return BlocProvider(
       create: (context) => homeController.newCategoryCubit(),
       child: BlocConsumer<CategoryCubit, CategoryState>(

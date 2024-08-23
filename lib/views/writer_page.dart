@@ -3,20 +3,20 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/extension/string.dart';
+import 'package:yemenshabab/core/utils/social_media.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/writer_entity.dart';
 import 'package:yemenshabab/services/home/cubits/writer_cubit.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/social_media.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 
 class WriterPage extends StatelessWidget {
-  const WriterPage({Key? key, required this.uuid}) : super(key: key);
+  const WriterPage({super.key, required this.uuid});
 
   final String uuid;
 
@@ -77,42 +77,40 @@ class WriterPage extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  children: [
-                    if ((writer.writer!.facebook ?? '').isNotEmpty)
-                      buildSocialMediaButton(
-                          url: writer.writer!.facebook!,
-                          icon: FontAwesomeIcons.squareFacebook,
-                          context: context,
-                          iconColor: "#1877F2".toColor),
-                    if ((writer.writer!.instagram ?? '').isNotEmpty)
-                      buildSocialMediaButton(
-                          url: writer.writer!.instagram!,
-                          icon: FontAwesomeIcons.instagram,
-                          context: context,
-                          iconColor: "#C13584".toColor),
-                    if ((writer.writer!.twitter ?? '').isNotEmpty)
-                      buildSocialMediaButton(
-                          url: writer.writer!.twitter!,
-                          icon: FontAwesomeIcons.squareXTwitter,
-                          context: context,
-                          iconColor: Theme.of(context).iconTheme.color),
-                    if ((writer.writer!.linkedin ?? '').isNotEmpty)
-                      buildSocialMediaButton(
-                          url: writer.writer!.linkedin!,
-                          icon: FontAwesomeIcons.linkedin,
-                          context: context,
-                          iconColor: "#0762C8".toColor),
-                    if ((writer.writer!.telegram ?? '').isNotEmpty)
-                      buildSocialMediaButton(
-                          url: writer.writer!.telegram!,
-                          icon: FontAwesomeIcons.telegram,
-                          context: context,
-                          iconColor: "#24A1DE".toColor),
-                  ],
-                ),
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  if ((writer.writer!.facebook ?? '').isNotEmpty)
+                    buildSocialMediaButton(
+                        url: writer.writer!.facebook!,
+                        icon: FontAwesomeIcons.squareFacebook,
+                        context: context,
+                        iconColor: "#1877F2".toColor),
+                  if ((writer.writer!.instagram ?? '').isNotEmpty)
+                    buildSocialMediaButton(
+                        url: writer.writer!.instagram!,
+                        icon: FontAwesomeIcons.instagram,
+                        context: context,
+                        iconColor: "#C13584".toColor),
+                  if ((writer.writer!.twitter ?? '').isNotEmpty)
+                    buildSocialMediaButton(
+                        url: writer.writer!.twitter!,
+                        icon: FontAwesomeIcons.squareXTwitter,
+                        context: context,
+                        iconColor: Theme.of(context).iconTheme.color),
+                  if ((writer.writer!.linkedin ?? '').isNotEmpty)
+                    buildSocialMediaButton(
+                        url: writer.writer!.linkedin!,
+                        icon: FontAwesomeIcons.linkedin,
+                        context: context,
+                        iconColor: "#0762C8".toColor),
+                  if ((writer.writer!.telegram ?? '').isNotEmpty)
+                    buildSocialMediaButton(
+                        url: writer.writer!.telegram!,
+                        icon: FontAwesomeIcons.telegram,
+                        context: context,
+                        iconColor: "#24A1DE".toColor),
+                ],
               ),
             ),
           ),

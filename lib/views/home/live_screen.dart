@@ -1,22 +1,22 @@
 import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:qyplayer/interface/qyplayer_interface.dart';
 import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/social_media.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
 import 'package:yemenshabab/shared/audio/controls.dart';
 import 'package:yemenshabab/shared/component/web_view.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/utils/social_media.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class LiveScreen extends StatefulWidget {
-  LiveScreen({Key? key}) : super(key: key);
+  const LiveScreen({super.key});
 
   @override
   State<LiveScreen> createState() => _LiveScreenState();
@@ -110,23 +110,6 @@ class _LiveScreenState extends State<LiveScreen> {
           body:
               WebViewWidget(controller: viewController ?? WebViewController())),
       childWhenDisabled: Scaffold(
-        // floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterTop,
-        // floatingActionButton: FloatingActionButton.extended(
-        //   onPressed: () async {
-        //     print(_audioPlayer.processingState);
-        //     var play = _audioPlayer.playing;
-        //     print("playing: $play");
-        //     if (_audioPlayer.playing) {
-        //       await _audioPlayer.stop();
-        //       print("stop");
-        //     } else {
-        //       await _audioPlayer.play();
-        //       print("play");
-        //     }
-        //   },
-        //   icon: Icon(Icons.podcasts_rounded),
-        //   label: Text(AppLocalizations.of(context)!.audioBroadcast),
-        // ),
         appBar: AppBar(),
         body: Padding(
           padding: const EdgeInsets.all(20),
@@ -136,7 +119,7 @@ class _LiveScreenState extends State<LiveScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.liveNow,
+                    "liveNow".tr,
                     style: const TextStyle(fontSize: 24),
                   ),
                 ],
@@ -146,15 +129,10 @@ class _LiveScreenState extends State<LiveScreen> {
               const SizedBox(height: 40),
               FloatingActionButton.extended(
                 onPressed: () async {
-                  print(_audioPlayer.processingState);
-                  var play = _audioPlayer.playing;
-                  print("playing: $play");
                   if (_audioPlayer.playing) {
                     await _audioPlayer.stop();
-                    print("stop");
                   } else {
                     await _audioPlayer.play();
-                    print("play");
                   }
                 },
                 icon: Controls(
@@ -163,7 +141,7 @@ class _LiveScreenState extends State<LiveScreen> {
                   // iconColor: Theme.of(context).textTheme.labelLarge!.color,
                 ),
                 label: Text(
-                  AppLocalizations.of(context)!.audioBroadcast,
+                  "audioBroadcast".tr,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -221,7 +199,7 @@ class _LiveScreenState extends State<LiveScreen> {
                       Expanded(
                         flex: 1,
                         child: Text(
-                          AppLocalizations.of(context)!.copyright,
+                          "copyright".tr,
                           style: TextStyle(
                             fontSize: 14,
                             color: Theme.of(context).colorScheme.secondary,

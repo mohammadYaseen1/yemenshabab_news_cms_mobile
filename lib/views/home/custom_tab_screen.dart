@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/social_media.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
@@ -9,17 +13,13 @@ import 'package:yemenshabab/shared/component/article_view.dart';
 import 'package:yemenshabab/shared/component/custom_grid_view.dart';
 import 'package:yemenshabab/shared/component/indicator.dart';
 import 'package:yemenshabab/shared/component/program_view.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/utils/social_media.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class CustomTabScreen extends StatelessWidget {
-  CustomTabScreen({
-    Key? key,
+  const CustomTabScreen({
+    super.key,
     required this.homeModel,
     this.category,
-  }) : super(key: key);
+  });
 
   final HomeModel homeModel;
   final List<SectionDate>? category;
@@ -83,7 +83,7 @@ class CustomTabScreen extends StatelessWidget {
                     isArabic(context) ? TextDirection.rtl : TextDirection.ltr,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.followUs,
+                    "followUs".tr,
                     style: const TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,

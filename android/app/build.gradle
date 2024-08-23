@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
@@ -39,8 +42,7 @@ android {
 
     defaultConfig {
         applicationId = "net.yemenshabab"
-        minSdkVersion 21
-        minSdk = flutter.minSdkVersion
+        minSdkVersion 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
@@ -68,4 +70,14 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation "com.google.android.material:material:1.6.1"
+    implementation 'com.google.firebase:firebase-bom:32.7.2'
+    implementation 'com.google.android.gms:play-services-measurement-api:<compatible_version>'
+}
+
+configurations.all {
+    exclude group: 'com.google.android.gms', module: 'play-services-measurement-api'
 }

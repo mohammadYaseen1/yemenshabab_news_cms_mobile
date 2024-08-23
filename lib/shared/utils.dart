@@ -3,13 +3,11 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/extension/string.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/extension/string.dart';
-import 'package:yemenshabab/views/search_page.dart';
 
 Future<String> loadJsonData() async {
   String jsonData = await rootBundle.loadString('assets/data.json');
@@ -19,9 +17,6 @@ Future<String> loadJsonData() async {
 void parseJsonData() async {
   String jsonData = await loadJsonData();
   Map<String, dynamic> data = json.decode(jsonData);
-
-  // Access the data as needed
-  print(data['key']);
 }
 
 Route createRoute(Widget Function() page) {
@@ -63,7 +58,7 @@ Future deleteImageFromCache(String url) async {
 
 PreferredSize buildAppBar(BuildContext context) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(70.0),
+    preferredSize: const Size.fromHeight(70.0),
     child: AppBar(
       toolbarHeight: 150,
       title: Center(
@@ -77,17 +72,13 @@ PreferredSize buildAppBar(BuildContext context) {
           onPressed: () {
             customLaunchUrl(Uri.parse(Config.archiveSite));
           },
-          style: ButtonStyle(
+          style: const ButtonStyle(
             backgroundColor: WidgetStateColor.transparent,
             overlayColor: WidgetStateColor.transparent,
             foregroundColor: WidgetStateColor.transparent,
-            // splashColor: Colors.transparent,
-            // hoverColor: Colors.transparent,
-            // focusColor: Colors.transparent,
-            // highlightColor: Colors.transparent,
           ),
           child: Text(
-            AppLocalizations.of(context)!.archive,
+            'archive'.tr,
             style: TextStyle(
               color: "#d97706".toColor,
             ),

@@ -1,14 +1,14 @@
 import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_watch_page.dart';
 
 class ProgramDetailsPage extends StatelessWidget {
@@ -39,10 +39,10 @@ class ProgramDetailsPage extends StatelessWidget {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
-                tooltip: AppLocalizations.of(context)!.watch,
+                tooltip: 'watch'.tr,
                 label: Text(
-                  AppLocalizations.of(context)!.watch,
-                  style: TextStyle(
+                  'watch'.tr,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -144,7 +144,7 @@ class ProgramDetailsPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    '${AppLocalizations.of(context)!.timeShow}:  ',
+                                    '${'timeShow'.tr}:  ',
                                     style: const TextStyle(
                                       fontSize: 20,
                                     ),
@@ -153,7 +153,7 @@ class ProgramDetailsPage extends StatelessWidget {
                                   Row(
                                     children: [
                                       Text(
-                                        '${AppLocalizations.of(context)!.broadcastsHour}:  ',
+                                        '${'broadcastsHour'.tr}:  ',
                                         style: const TextStyle(
                                           fontSize: 18,
                                         ),
@@ -173,7 +173,7 @@ class ProgramDetailsPage extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 20),
                                   Text(
-                                    '${AppLocalizations.of(context)!.daysShow}:  ',
+                                    '${'daysShow'.tr}:  ',
                                     style: const TextStyle(
                                       fontSize: 18,
                                     ),

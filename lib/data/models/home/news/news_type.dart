@@ -1,4 +1,4 @@
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 
 enum ViewType {
   NEWS,

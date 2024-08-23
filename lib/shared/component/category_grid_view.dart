@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
@@ -9,7 +10,6 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/no_items_found_indicator.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 import 'package:yemenshabab/views/home/video_details_page.dart';
 
@@ -86,7 +86,7 @@ class CategoryGridView extends StatelessWidget {
         ),
         noItemsFoundIndicatorBuilder: (context) =>
             const CustomNoItemsFoundIndicator(),
-        firstPageProgressIndicatorBuilder: (context) => LoadingScreen(),
+        firstPageProgressIndicatorBuilder: (context) => const LoadingScreen(),
         firstPageErrorIndicatorBuilder: (context) =>
             CustomFirstPageErrorIndicator(
           onTryAgain: _pagingController.retryLastFailedRequest,
@@ -98,42 +98,39 @@ class CategoryGridView extends StatelessWidget {
   Widget buildNews(SectionDataData item, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        // width: 200,
-        child: Column(
-          children: [
-            Container(
-              height: 120,
-              // width: 150,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-              ),
-              child: ImageComponent(
-                imageUrl: item.image!,
-              ),
+      child: Column(
+        children: [
+          Container(
+            height: 120,
+            // width: 150,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(7),
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: AutoSizeText(
-                      isArabic(context) ? item.titleAr! : item.titleEn!,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                      maxLines: 5,
-                      overflow: TextOverflow.ellipsis,
+            child: ImageComponent(
+              imageUrl: item.image!,
+            ),
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: AutoSizeText(
+                    isArabic(context) ? item.titleAr! : item.titleEn!,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
+                    maxLines: 5,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  buildCreationDate(context, item),
-                ],
-              ),
+                ),
+                buildCreationDate(context, item),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -141,49 +138,47 @@ class CategoryGridView extends StatelessWidget {
   Widget buildArticle(SectionDataData item, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 80,
-              width: 80,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: ImageComponent(
-                imageUrl: item.writerImage!,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 80,
+            width: 80,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
             ),
-            SizedBox(height: 10),
-            AutoSizeText(
-              isArabic(context) ? item.writerName! : item.writerName!,
-              style: TextStyle(
-                fontSize: 20,
+            child: ImageComponent(
+              imageUrl: item.writerImage!,
+            ),
+          ),
+          const SizedBox(height: 10),
+          AutoSizeText(
+            isArabic(context) ? item.writerName! : item.writerName!,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.primary.withRed(210),
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: AutoSizeText(
+              isArabic(context) ? item.titleAr! : item.titleEn!,
+              minFontSize: 18,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.primary.withRed(210),
               ),
-              maxLines: 2,
+              maxLines: 3,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
-            Expanded(
-              child: AutoSizeText(
-                isArabic(context) ? item.titleAr! : item.titleEn!,
-                minFontSize: 18,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 20),
-            buildCreationDate(context, item, true),
-          ],
-        ),
+          ),
+          const SizedBox(height: 20),
+          buildCreationDate(context, item, true),
+        ],
       ),
     );
   }

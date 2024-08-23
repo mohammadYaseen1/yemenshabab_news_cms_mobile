@@ -1,9 +1,9 @@
+import 'package:yemenshabab/core/helper/dio_helper.dart';
 import 'package:yemenshabab/services/app/models/setting_entity.dart';
 import 'package:yemenshabab/services/app/routes/app_routes.dart';
-import 'package:yemenshabab/shared/network/dio_factory.dart';
 
 class AppRepository {
-  final dioFactory = DioFactory();
+  final dioFactory = DioHelper();
 
   Future<SettingEntity> fetchSettings() async {
     var dio = await dioFactory.getDio();

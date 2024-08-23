@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/generated/json/base/json_field.dart';
 import 'package:yemenshabab/generated/json/program_schedule_entity.g.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 export 'package:yemenshabab/generated/json/program_schedule_entity.g.dart';
 

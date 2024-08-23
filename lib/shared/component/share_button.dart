@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 
 class ShareButton extends StatelessWidget {
-  const ShareButton({Key? key, required this.url}) : super(key: key);
+  const ShareButton({super.key, required this.url});
 
   final String url;
 

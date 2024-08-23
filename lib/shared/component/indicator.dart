@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:yemenshabab/data/models/home/indicator/Indicator_model.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
@@ -125,7 +125,7 @@ class Indicator extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      '${AppLocalizations.of(context)!.since} ${indicators[index].time!}',
+                      '${'since'.tr} ${'time'.tr}',
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 18,

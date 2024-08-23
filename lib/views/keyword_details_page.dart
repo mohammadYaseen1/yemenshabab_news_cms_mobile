@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
@@ -8,15 +10,12 @@ import 'package:yemenshabab/services/home/models/landing/data.dart';
 import 'package:yemenshabab/services/home/models/landing/item.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 
 class KeywordDetailsPage extends StatelessWidget {
   const KeywordDetailsPage(
-      {Key? key, required this.dataType, required this.keyword})
-      : super(key: key);
+      {super.key, required this.dataType, required this.keyword});
 
   final ViewType dataType;
   final String keyword;
@@ -33,7 +32,7 @@ class KeywordDetailsPage extends StatelessWidget {
               centerTitle: true,
               title: Text(
                 keyword,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),

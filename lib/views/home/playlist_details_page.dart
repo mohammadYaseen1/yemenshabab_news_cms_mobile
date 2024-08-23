@@ -1,12 +1,12 @@
 import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/playlist_entity.dart';
 import 'package:yemenshabab/shared/component/youtube_player.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class PlaylistDetailsPage extends StatefulWidget {
-  PlaylistDetailsPage({super.key, required this.item});
+  const PlaylistDetailsPage({super.key, required this.item});
 
   final PlaylistItems item;
 
@@ -25,7 +25,7 @@ class _PlaylistDetailsPageState extends State<PlaylistDetailsPage> {
   }
 
   void enable() async {
-    await floating.enable(OnLeavePiP());
+    await floating.enable(const OnLeavePiP());
   }
 
   void disable() async {
@@ -57,7 +57,7 @@ class _PlaylistDetailsPageState extends State<PlaylistDetailsPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       widget.item.snippet?.title ?? '',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
                       ),
@@ -83,18 +83,18 @@ class _PlaylistDetailsPageState extends State<PlaylistDetailsPage> {
                     child: CustomYouTubePlayer(
                         id: widget.item.snippet?.resourceId?.videoId ?? ''),
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: SelectionArea(
                       child: HtmlWidget(
                         widget.item.snippet?.description ?? '',
                         renderMode: RenderMode.column,
-                        textStyle: TextStyle(fontSize: 18),
+                        textStyle: const TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
-                  SizedBox(height: 100),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),

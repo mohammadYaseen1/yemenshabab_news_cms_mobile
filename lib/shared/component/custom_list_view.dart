@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/tag.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';
 import 'package:yemenshabab/views/home/video_details_page.dart';
 
@@ -34,7 +34,7 @@ class CustomsListView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Icon(
+              const Icon(
                 Icons.arrow_forward_rounded,
                 size: 30,
               ),
@@ -76,7 +76,7 @@ class CustomsListView extends StatelessWidget {
                               imageUrl: newsModel.data![index ~/ 2].image!,
                             ),
                           ),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,20 +86,20 @@ class CustomsListView extends StatelessWidget {
                                   color: newsModel.data![index ~/ 2].color!,
                                   width: 120,
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Text(
                                   newsModel.data![index ~/ 2].title!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Text(
                                   newsModel.data![index ~/ 2].time!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.grey,
                                     fontSize: 18,
                                   ),
@@ -110,8 +110,8 @@ class CustomsListView extends StatelessWidget {
                         ],
                       ),
                     )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                  : const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
             ),

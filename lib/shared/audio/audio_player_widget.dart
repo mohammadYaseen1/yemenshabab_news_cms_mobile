@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:yemenshabab/core/config/config.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/shared/audio/audio_player_management.dart';
 import 'package:yemenshabab/shared/audio/controls.dart';
 import 'package:yemenshabab/shared/audio/position_data.dart';
-import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class AudioPlayerWidget extends StatefulWidget {
   const AudioPlayerWidget({super.key, required this.url});
@@ -40,7 +39,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    artist = AppLocalizations.of(context)!.audioBroadcast;
+    artist = 'audioBroadcast';
     _theme = Theme.of(context);
     _init();
   }

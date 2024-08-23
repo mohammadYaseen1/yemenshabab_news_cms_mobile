@@ -10,13 +10,13 @@ class NewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('News')),
+      appBar: AppBar(title: const Text('News')),
       body: BlocProvider(
         create: (_) => newsController.newsCubit..fetchNews(),
         child: BlocBuilder<NewsCubit, NewsState>(
           builder: (context, state) {
             if (state is NewsLoading) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (state is NewsLoaded) {
               return ListView.builder(
                 itemCount: state.news.length,

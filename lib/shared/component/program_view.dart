@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
 import 'package:yemenshabab/data/models/program_status.dart';
 import 'package:yemenshabab/shared/component/banner_basic.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/utils.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_details_page.dart';
 
 class ProgramView extends StatelessWidget {
@@ -42,10 +42,6 @@ class ProgramView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // Icon(
-                //   Icons.arrow_forward_rounded,
-                //   size: 30,
-                // ),
               ],
             ),
           ),
@@ -53,7 +49,7 @@ class ProgramView extends StatelessWidget {
         SizedBox(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 250,
                 child: InkWell(
                   splashColor: Colors.transparent,
@@ -117,60 +113,57 @@ class ProgramView extends StatelessWidget {
     return length >= 4 ? 4 : length;
   }
 
-  Container buildProgram(DataModel model, BuildContext context) {
+  BannerBasicPage buildProgram(DataModel model, BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     ProgramStatus status = ProgramStatus.valueOf(model.subTitle!);
-    return Container(
-      // height: 120,
-      child: BannerBasicPage(
-        title: ProgramStatus.titleOf(context, status: status)!,
-        color: status.color,
-        fontSize: status == ProgramStatus.AIRING ? 12 : 15,
-        widget: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              // width: 199,
-              // height: 120,
-              child: ImageComponent(
-                imageUrl: model.image!,
-              ),
+    return BannerBasicPage(
+      title: ProgramStatus.titleOf(context, status: status)!,
+      color: status.color,
+      fontSize: status == ProgramStatus.AIRING ? 12 : 15,
+      widget: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
             ),
-            Container(
-              // width: 199,
-              // height: 120,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                gradient:
-                    LinearGradient(begin: Alignment.bottomRight, stops: const [
-                  0.1,
-                  0.5,
-                  1,
-                ], colors: [
-                  Colors.black.withOpacity(.8),
-                  Colors.black.withOpacity(.5),
-                  Colors.black.withOpacity(0)
-                ]),
-              ),
+            // width: 199,
+            // height: 120,
+            child: ImageComponent(
+              imageUrl: model.image!,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                model.title!,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+          ),
+          Container(
+            // width: 199,
+            // height: 120,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              gradient:
+                  LinearGradient(begin: Alignment.bottomRight, stops: const [
+                0.1,
+                0.5,
+                1,
+              ], colors: [
+                Colors.black.withOpacity(.8),
+                Colors.black.withOpacity(.5),
+                Colors.black.withOpacity(0)
+              ]),
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              model.title!,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
       ),
     );
   }

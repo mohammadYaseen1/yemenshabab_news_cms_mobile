@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
 import 'package:yemenshabab/layout/layout_cubit.dart';
 import 'package:yemenshabab/layout/navigation_cubit.dart';
 import 'package:yemenshabab/shared/component/animated_search_bar.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/about_us_screen.dart';
 import 'package:yemenshabab/views/faq_screen.dart';
 import 'package:yemenshabab/views/home/home_screen.dart';
@@ -15,11 +15,17 @@ import 'package:yemenshabab/views/profile_screen.dart';
 import 'package:yemenshabab/views/settings_screen.dart';
 import 'package:yemenshabab/views/terms_screen.dart';
 
-class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   final _advancedDrawerController = AdvancedDrawerController();
-  Widget _screen = HomeScreen();
+
+  Widget _screen = const HomeScreen();
 
   final TextEditingController _controller = TextEditingController();
 
@@ -30,7 +36,7 @@ class MainScreen extends StatelessWidget {
       child: BlocConsumer<NavigationCubit, NavigationState>(
         listener: (context, state) {
           _screen = switch (state) {
-            NavigationState.home => HomeScreen(),
+            NavigationState.home => const HomeScreen(),
             NavigationState.aboutUs => const AboutUsScreen(),
             NavigationState.terms => const TermsScreen(),
             NavigationState.profile => const ProfileScreen(),

@@ -1,3 +1,5 @@
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/utils/utils.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
 import 'package:yemenshabab/data/models/home/indicator/Indicator_model.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
@@ -17,9 +19,7 @@ import 'package:yemenshabab/services/home/models/news/news_entity.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/services/home/repositories/home_repository.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/days.dart';
-import 'package:yemenshabab/shared/utils/utils.dart';
 
 class HomeService {
   final HomeRepository homeRepository;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/views/search_page.dart';
 
 class CustomSearchDelegate extends SearchDelegate {

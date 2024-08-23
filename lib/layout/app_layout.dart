@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemenshabab/core/helper/cache_helper.dart';
+import 'package:yemenshabab/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:yemenshabab/services/app/cubits/app_cubit.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/views/main/main_screen.dart';
 
 class AppLayout extends StatelessWidget {
-  AppLayout({Key? key}) : super(key: key);
+  const AppLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => appController.appCubit..fetchSettings()),
-        BlocProvider(
-          create: (_) => homeController.homeCubit
-            ..fetchAll(Localizations.localeOf(context).toLanguageTag()),
-        ),
-      ],
-      child: BlocConsumer<AppCubit, AppState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return MainScreen();
-        },
-      ),
+    bool isLogin = CacheHelper.getData(key: 'isLogin') ?? false;
+
+    return BlocBuilder<AppCubit, AppState>(
+      builder: (context, state) {
+        return isLogin ? const MainScreen() : const SignInScreen();
+      },
     );
   }
 }
