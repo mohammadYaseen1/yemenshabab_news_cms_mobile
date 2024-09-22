@@ -28,7 +28,7 @@ class AdsView extends StatelessWidget {
           focusColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            await customLaunchUrl(Uri.parse(dataModel.subTitle!))
+            await customLaunchUrl(Uri.parse(dataModel.subTitle!));
           },
           onLongPress: () {
             // print("onLongPress");
