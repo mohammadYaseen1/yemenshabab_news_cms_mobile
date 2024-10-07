@@ -2,6 +2,7 @@ import 'package:floating/floating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:yemenshabab/data/models/playlist_entity.dart';
+import 'package:yemenshabab/shared/component/back_component.dart';
 import 'package:yemenshabab/shared/component/youtube_player.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 
@@ -45,7 +46,9 @@ class _PlaylistDetailsPageState extends State<PlaylistDetailsPage> {
       childWhenEnabled: CustomYouTubePlayer(
           id: widget.item.snippet?.resourceId?.videoId ?? ''),
       childWhenDisabled: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: const BackComponent(),
+        ),
         body: SingleChildScrollView(
           child: Container(
             child: Padding(

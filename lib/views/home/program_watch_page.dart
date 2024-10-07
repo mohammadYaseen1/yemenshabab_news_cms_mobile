@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yemenshabab/shared/component/back_component.dart';
 import 'package:yemenshabab/shared/component/playlist_view.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
 
@@ -15,6 +16,7 @@ class ProgramWatchPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(title),
+        leading: const BackComponent(),
       ),
       body: PlaylistView(
           homeService: homeController.newPlaylistCubit().homeService,

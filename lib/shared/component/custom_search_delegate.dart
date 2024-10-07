@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/search_page.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
@@ -20,7 +21,14 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      icon: const Icon(Icons.arrow_back_ios_new_rounded),
+      icon: Padding(
+        padding: EdgeInsetsDirectional.only(start: isArabic(context) ? 30 : 0),
+        child: Icon(
+          isArabic(context)
+              ? Icons.arrow_forward_ios_rounded
+              : Icons.arrow_back_ios_new_rounded,
+        ),
+      ),
       onPressed: () {
         close(context, null);
       },

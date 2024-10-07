@@ -9,6 +9,7 @@ import 'package:qyplayer/qyplayer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
 import 'package:yemenshabab/shared/audio/controls.dart';
+import 'package:yemenshabab/shared/component/back_component.dart';
 import 'package:yemenshabab/shared/component/web_view.dart';
 import 'package:yemenshabab/shared/config/config.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
@@ -107,8 +108,10 @@ class _LiveScreenState extends State<LiveScreen> {
     return PiPSwitcher(
       floating: floating,
       childWhenEnabled: Scaffold(
-          body:
-              WebViewWidget(controller: viewController ?? WebViewController())),
+        body: WebViewWidget(
+          controller: viewController ?? WebViewController(),
+        ),
+      ),
       childWhenDisabled: Scaffold(
         // floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterTop,
         // floatingActionButton: FloatingActionButton.extended(
@@ -127,7 +130,10 @@ class _LiveScreenState extends State<LiveScreen> {
         //   icon: Icon(Icons.podcasts_rounded),
         //   label: Text(AppLocalizations.of(context)!.audioBroadcast),
         // ),
-        appBar: AppBar(),
+
+        appBar: AppBar(
+          leading: const BackComponent(),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(

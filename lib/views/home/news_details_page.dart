@@ -14,6 +14,7 @@ import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
 import 'package:yemenshabab/services/home/models/landing/data.dart';
 import 'package:yemenshabab/services/home/models/landing/item.dart';
 import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart';
+import 'package:yemenshabab/shared/component/back_component.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
@@ -66,6 +67,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
+              leading: const BackComponent(),
               actions: [
                 if (state is NewsLoaded) ...[
                   ShareButton(url: makeSharedUrl(context, state.newsEntity)),

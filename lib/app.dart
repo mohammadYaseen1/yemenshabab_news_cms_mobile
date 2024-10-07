@@ -20,7 +20,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  Locale _locale = Locale(CacheHelper.getData(key: 'local') ?? 'ar');
+  Locale _locale = Locale(CacheHelper.getData(key: 'local') ?? 'en');
   ThemeMode _themeMode =
       ThemeMode.values[CacheHelper.getData(key: 'theme') ?? 0];
 

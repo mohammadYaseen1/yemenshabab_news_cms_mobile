@@ -53,7 +53,9 @@ class CustomGridView extends StatelessWidget {
                   ),
                   if (category != null)
                     Icon(
-                      Icons.arrow_forward_rounded,
+                      isArabic(context)
+                          ? Icons.arrow_back_ios_new_rounded
+                          : Icons.arrow_forward_ios_rounded,
                       size: 30,
                     ),
                 ],

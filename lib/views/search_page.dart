@@ -29,7 +29,7 @@ class _SearchPageState extends State<SearchPage> {
   static const _pageSize = 10;
 
   final PagingController<int, SearchSearchItems> _pagingController =
-  PagingController(firstPageKey: 0);
+      PagingController(firstPageKey: 0);
 
   @override
   void initState() {
@@ -67,8 +67,7 @@ class _SearchPageState extends State<SearchPage> {
     return PagedListView<int, SearchSearchItems>(
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<SearchSearchItems>(
-          itemBuilder: (context, item, index) =>
-              Padding(
+          itemBuilder: (context, item, index) => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   constraints: const BoxConstraints(
@@ -76,9 +75,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: Theme
-                        .of(context)
-                        .cardColor,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: InkWell(
@@ -91,16 +88,14 @@ class _SearchPageState extends State<SearchPage> {
                       String uuid = routes.last;
                       String type = routes.first;
                       Navigator.of(context).push(
-                        createRoute(() =>
-                        switch (type) {
-                          'programs' => ProgramDetailsPage(uuid: uuid),
-                          String() =>
-                              NewsDetailsPage(
-                                dataModel: DataModel(
-                                    uuid: uuid,
-                                    dataType: ViewType.valueOf(routes[1])),
-                              ),
-                        }),
+                        createRoute(() => switch (type) {
+                              'programs' => ProgramDetailsPage(uuid: uuid),
+                              String() => NewsDetailsPage(
+                                  dataModel: DataModel(
+                                      uuid: uuid,
+                                      dataType: ViewType.valueOf(routes[1])),
+                                ),
+                            }),
                       );
                     },
                     child: ListTile(
@@ -126,7 +121,7 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
           noItemsFoundIndicatorBuilder: (context) =>
-          const CustomNoItemsFoundIndicator(),
+              const CustomNoItemsFoundIndicator(),
           firstPageProgressIndicatorBuilder: (context) => const LoadingScreen(),
           firstPageErrorIndicatorBuilder: (context) =>
               CustomFirstPageErrorIndicator(

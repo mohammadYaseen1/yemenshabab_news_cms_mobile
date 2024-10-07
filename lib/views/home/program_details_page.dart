@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
+import 'package:yemenshabab/shared/component/back_component.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/constants/constants.dart';
@@ -50,6 +51,7 @@ class ProgramDetailsPage extends StatelessWidget {
               body: CustomScrollView(
                 slivers: [
                   SliverAppBar(
+                    leading: const BackComponent(),
                     title: Text(
                       isArabic(context)
                           ? (state as ProgramLoaded).program.titleAr!
