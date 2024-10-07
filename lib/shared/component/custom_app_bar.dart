@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
+import 'package:yemenshabab/shared/component/MenuWidget.dart';
 import 'package:yemenshabab/shared/component/custom_search_delegate.dart';
 import 'package:yemenshabab/shared/config/config.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
@@ -28,7 +29,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    buildDefaultActions(context);
+    // buildDefaultActions(context);
     return static
         ? Scaffold(
             appBar: PreferredSize(
@@ -39,9 +40,10 @@ class CustomAppBar extends StatelessWidget {
                     toolbarHeight: 90,
                     title: getLogo(),
                     centerTitle: true,
-                    leading: searchButton(context),
+                    leading: MenuWidget(),
                     actions: [
-                      ...defaultActions,
+                      // ...defaultActions,
+                      searchButton(context),
                       ...actions,
                     ],
                   ),
@@ -65,8 +67,12 @@ class CustomAppBar extends StatelessWidget {
                   pinned: pinned,
                   snap: true,
                   bottom: bottom,
-                  leading: searchButton(context),
-                  actions: [...defaultActions, ...actions],
+                  leading: MenuWidget(),
+                  actions: [
+                    // ...defaultActions,
+                    searchButton(context),
+                    ...actions,
+                  ],
                 ),
               ),
             ],

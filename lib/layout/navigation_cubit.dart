@@ -15,7 +15,7 @@ class NavigationCubit extends Cubit<NavigationState> {
 
   void selectPrivacy() => emit(NavigationState.privacy);
 
-  void selectFaq() => emit(NavigationState.faq);
+  void selectArchive() => emit(NavigationState.faq);
 
   void selectProfile() => emit(NavigationState.profile);
 }

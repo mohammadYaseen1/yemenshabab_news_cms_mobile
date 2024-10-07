@@ -4,7 +4,7 @@ import 'package:loading_animations/loading_animations.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:yemenshabab/gen/assets.gen.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 
 class WebView extends StatefulWidget {
   const WebView({super.key, required this.url});

@@ -10,7 +10,7 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
 import 'package:yemenshabab/shared/component/youtube_player.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 

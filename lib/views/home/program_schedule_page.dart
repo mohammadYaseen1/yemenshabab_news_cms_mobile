@@ -6,7 +6,7 @@ import 'package:yemenshabab/shared/component/CustomFirstPageErrorIndicator.dart'
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab/shared/component/dynamic_tabbar.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/days.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_tab_screen.dart';

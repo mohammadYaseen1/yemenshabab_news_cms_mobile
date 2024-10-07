@@ -8,7 +8,7 @@ import 'package:toastification/toastification.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/toast.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/views/home/live_screen.dart';
 import 'package:yemenshabab/views/home/no_internet_page.dart';

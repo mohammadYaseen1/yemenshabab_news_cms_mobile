@@ -8,6 +8,7 @@ import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/data/models/home/news/data.dart';
 import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/services/home/cubits/news_cubit.dart';
@@ -18,11 +19,11 @@ import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
 import 'package:yemenshabab/shared/component/share_button.dart';
 import 'package:yemenshabab/shared/component/youtube_view.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/social_media.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
+import 'package:yemenshabab/views/comment_screen.dart';
 import 'package:yemenshabab/views/home/my_slider.dart';
 import 'package:yemenshabab/views/keyword_details_page.dart';
 import 'package:yemenshabab/views/reading_mode_page.dart';
@@ -65,6 +66,16 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
       child: BlocBuilder<NewsCubit, NewsState>(
         builder: (context, state) {
           return Scaffold(
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+
+            floatingActionButton: FloatingActionButton(
+            tooltip: AppLocalizations.of(context)!.comments,
+              child: Icon(Icons.comment_rounded),
+              onPressed: () {
+              Navigator.of(context)
+                  .push(createRoute(() => CommentScreen(uuid:widget.dataModel.uuid! ),));
+              },
+            ),
             appBar: AppBar(
               actions: [
                 if (state is NewsLoaded) ...[

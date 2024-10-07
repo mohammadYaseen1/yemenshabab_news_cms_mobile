@@ -11,7 +11,7 @@ import 'package:yemenshabab/shared/audio/audio_player_widget.dart';
 import 'package:yemenshabab/shared/audio/controls.dart';
 import 'package:yemenshabab/shared/component/web_view.dart';
 import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils/social_media.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 

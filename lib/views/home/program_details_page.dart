@@ -6,7 +6,7 @@ import 'package:yemenshabab/services/home/cubits/program_cubit.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/program_watch_page.dart';

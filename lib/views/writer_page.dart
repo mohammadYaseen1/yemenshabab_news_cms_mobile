@@ -8,7 +8,7 @@ import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/writer_entity.dart';
 import 'package:yemenshabab/services/home/cubits/writer_cubit.dart';
 import 'package:yemenshabab/shared/component/loading.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/social_media.dart';

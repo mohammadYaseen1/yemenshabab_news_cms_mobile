@@ -166,5 +166,54 @@
   "and": "And",
   "@soon": {
     "description": "Airing Soon"
-  }
+  },
+  "username": "username",
+  "@username": {
+    "description": "Username"
+  },
+  "password": "password",
+  "@password": {
+    "description": "Username"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot Password"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "usernameErrorMessage": "username is required !",
+  "@usernameErrorMessage": {
+    "description": "A valid username is required !"
+  },
+  "passwordErrorMessage": "password is required !",
+  "@passwordErrorMessage": {
+    "description": "A valid password is required !"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create Account"
+  },
+  "dontHaveAccount": "You don't have an account? ,",
+  "haveAccount": "Do you have account? ,",
+  "registerNow": "Register now",
+  "emailIsRequired": "Email is Required",
+  "email": "Email",
+  "passwordIsRequired": "Password is Required",
+  "confirmPasswordIsRequired": "Confirm Password Is Required",
+  "nameIsRequired": "Username is Required",
+  "notMatchPassword": "Password and confirm password does not matches",
+  "confirmPassword": "Confirm Password",
+  "incorrectEmailOrPassword": "Incorrect Email Or Password",
+  "userIsExist": "The User Already Exist",
+  "comments": "Comments"
 }

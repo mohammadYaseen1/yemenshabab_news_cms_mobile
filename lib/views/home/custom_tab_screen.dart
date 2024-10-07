@@ -10,7 +10,7 @@ import 'package:yemenshabab/shared/component/custom_grid_view.dart';
 import 'package:yemenshabab/shared/component/indicator.dart';
 import 'package:yemenshabab/shared/component/program_view.dart';
 import 'package:yemenshabab/shared/config/config.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils/social_media.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 

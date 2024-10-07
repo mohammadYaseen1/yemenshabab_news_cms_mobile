@@ -9,7 +9,7 @@ import 'package:yemenshabab/data/models/section/category.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/custom_tab_screen.dart';
 
@@ -222,4 +222,127 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       (index) => false,
     );
   }
+
+// Widget buildDynamicTabBarWidget(
+//     BuildContext context, List<CategorySection> sections) {
+//   return DynamicTabBarWidget(
+//     tabAlignment: TabAlignment.start,
+//     dynamicTabs: [
+//       TabData(
+//         index: 0,
+//         title: Tab(
+//           text: AppLocalizations.of(context)!.you,
+//         ),
+//         content: CustomTabScreen(homeModel: widget.homeModel),
+//       ),
+//       ...List.generate(
+//         sections.length,
+//         (index) {
+//           return TabData(
+//             index: index,
+//             title: Tab(
+//               text: isArabic(context)
+//                   ? sections[index].nameAr
+//                   : sections[index].nameEn,
+//             ),
+//             content: TabScreen(
+//               categoryData: sections[index],
+//               videoSection: homeController.homeCubit.videoSection,
+//             ),
+//           );
+//         },
+//       )
+//     ],
+//     padding: EdgeInsets.all(0),
+//     viewportFractionTabBarView: 1,
+//     labelStyle: TextStyle(fontWeight: FontWeight.w900),
+//     unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+//     unselectedLabelColor: Colors.grey,
+//     dividerColor: Theme.of(context).cardColor,
+//     isScrollable: true,
+//     dividerHeight: 0.5,
+//     onTabControllerUpdated: (controller) {
+//       debugPrint("onTabControllerUpdated");
+//     },
+//     onTabChanged: (index) {
+//       debugPrint("Tab changed: $index");
+//     },
+//     showBackIcon: false,
+//     showNextIcon: false,
+//     indicatorColor: Colors.red,
+//     automaticIndicatorColorAdjustment: true,
+//   );
+// }
+//
+// Widget buildTabBarWidget(
+//     BuildContext context, List<CategorySection> sections) {
+//   return TabBar(tabs: [
+//     Tab(
+//       text: AppLocalizations.of(context)!.you,
+//       // child: CustomTabScreen(homeModel: homeModel),
+//     ),
+//     ...List.generate(
+//       sections.length,
+//       (index) {
+//         return Tab(
+//           text: isArabic(context)
+//               ? sections[index].nameAr
+//               : sections[index].nameEn,
+//           // child: TabScreen(
+//           //   categoryData: sections[index],
+//           //   videoSection: homeController.homeCubit.videoSection,
+//           // ),
+//         );
+//       },
+//     )
+//   ]);
+//
+//   return DynamicTabBarWidget(
+//     tabAlignment: TabAlignment.start,
+//     dynamicTabs: [
+//       TabData(
+//         index: 0,
+//         title: Tab(
+//           text: AppLocalizations.of(context)!.you,
+//         ),
+//         content: CustomTabScreen(homeModel: widget.homeModel),
+//       ),
+//       ...List.generate(
+//         sections.length,
+//         (index) {
+//           return TabData(
+//             index: index,
+//             title: Tab(
+//               text: isArabic(context)
+//                   ? sections[index].nameAr
+//                   : sections[index].nameEn,
+//             ),
+//             content: TabScreen(
+//               categoryData: sections[index],
+//               videoSection: homeController.homeCubit.videoSection,
+//             ),
+//           );
+//         },
+//       )
+//     ],
+//     padding: EdgeInsets.all(0),
+//     viewportFractionTabBarView: 1,
+//     labelStyle: TextStyle(fontWeight: FontWeight.w900),
+//     unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+//     unselectedLabelColor: Colors.grey,
+//     dividerColor: Theme.of(context).cardColor,
+//     isScrollable: true,
+//     dividerHeight: 0.5,
+//     onTabControllerUpdated: (controller) {
+//       debugPrint("onTabControllerUpdated");
+//     },
+//     onTabChanged: (index) {
+//       debugPrint("Tab changed: $index");
+//     },
+//     showBackIcon: false,
+//     showNextIcon: false,
+//     indicatorColor: Colors.red,
+//     automaticIndicatorColorAdjustment: true,
+//   );
+// }
 }

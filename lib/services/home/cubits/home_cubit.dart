@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yemenshabab/data/models/home/bottom_nav_model.dart';
 import 'package:yemenshabab/data/models/home/data_type.dart';
 import 'package:yemenshabab/data/models/home/home_model.dart';
@@ -9,10 +10,12 @@ import 'package:yemenshabab/data/models/home/news/news_type.dart';
 import 'package:yemenshabab/data/models/program_schedule.dart';
 import 'package:yemenshabab/data/models/section/category.dart';
 import 'package:yemenshabab/data/models/section/section_data_entity.dart';
+import 'package:yemenshabab/features/favorite/presentation/screens/favorite_screen.dart';
 import 'package:yemenshabab/services/home/models/program/program_entity.dart';
 import 'package:yemenshabab/services/home/models/section/section_entity.dart';
 import 'package:yemenshabab/services/home/service/home_service.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/views/bookmark_page.dart';
 import 'package:yemenshabab/views/home/home_page.dart';
 import 'package:yemenshabab/views/home/program_schedule_page.dart';
 import 'package:yemenshabab/views/home/programs_page.dart';
@@ -201,9 +204,9 @@ class HomeCubit extends Cubit<HomeState> {
           screen: ([data]) => ProgramSchedulePage(),
         ),
         BottomNavModel(
-          icon: Icons.settings_rounded,
-          title: AppLocalizations.of(context)!.settings,
-          screen: ([data]) => SettingsPage(),
+          icon: Icons.bookmarks_rounded,
+          title: AppLocalizations.of(context)!.myList,
+          screen: ([data]) => FavoriteScreen(),
         ),
       ];
 

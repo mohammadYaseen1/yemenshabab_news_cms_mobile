@@ -1,8 +1,11 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qyplayer/modals/landscape_playback_rate.dart';
 import 'package:yemenshabab/app.dart';
+import 'package:yemenshabab/layout/navigation_cubit.dart';
 import 'package:yemenshabab/shared/component/custom_app_bar.dart';
 import 'package:yemenshabab/shared/config/config.dart';
 import 'package:yemenshabab/shared/extension/string.dart';
@@ -60,6 +63,7 @@ class SettingsPage extends StatelessWidget {
                           highlightColor: Colors.transparent,
                           onTap: () {
                             App.of(context)!.setThemeMode(ThemeMode.system);
+                            context.read<NavigationCubit>().selectSettings();
                           },
                           child: Container(
                             decoration: BoxDecoration(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yemenshabab/data/models/home/news/news_model.dart';
 import 'package:yemenshabab/services/home/cubits/home_cubit.dart';
 import 'package:yemenshabab/shared/component/image_component.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
 import 'package:yemenshabab/shared/utils.dart';
 import 'package:yemenshabab/shared/utils/utils.dart';
 import 'package:yemenshabab/views/home/news_details_page.dart';

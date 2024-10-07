@@ -76,65 +76,67 @@ class Indicator extends StatelessWidget {
                   )),
                 ));
           },
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            fit: StackFit.expand,
-            children: [
-              SizedBox(
-                height: double.infinity,
-                child: ImageComponent(
-                  imageUrl: indicators[index].image!,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              fit: StackFit.expand,
+              children: [
+                SizedBox(
+                  height: double.infinity,
+                  child: ImageComponent(
+                    imageUrl: indicators[index].image!,
+                  ),
                 ),
-              ),
-              Container(
-                height: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        stops: const [
-                          0.0,
-                          0.9
-                        ],
-                        colors: [
-                          Colors.black.withOpacity(.8),
-                          Colors.black.withOpacity(.5)
-                        ])),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(35),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Tag(
-                      tagName: indicators[index].tag!,
-                      color: indicators[index].color!,
-                      opacity: 0.5,
-                      tagColor: Colors.white,
-                    ),
-                    Text(
-                      indicators[index].title!,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w500,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      '${AppLocalizations.of(context)!.since} ${indicators[index].time!}',
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
+                Container(
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomRight,
+                          stops: const [
+                            0.0,
+                            0.9
+                          ],
+                          colors: [
+                            Colors.black.withOpacity(.8),
+                            Colors.black.withOpacity(.5)
+                          ])),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(35),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Tag(
+                        tagName: indicators[index].tag!,
+                        color: indicators[index].color!,
+                        opacity: 0.5,
+                        tagColor: Colors.white,
+                      ),
+                      Text(
+                        indicators[index].title!,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        '${AppLocalizations.of(context)!.since} ${indicators[index].time!}',
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );

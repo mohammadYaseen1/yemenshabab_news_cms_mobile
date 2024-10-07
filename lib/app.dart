@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/routes/app_routes.dart';
+import 'package:yemenshabab/features/auth/domian/entites/user_info.dart';
+import 'package:yemenshabab/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:yemenshabab/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:yemenshabab/layout/app_layout.dart';
-import 'package:yemenshabab/shared/constants/constants.dart';
-import 'package:yemenshabab/shared/local/cache_helper.dart';
+import 'package:yemenshabab/core/constants/constants.dart';
+import 'package:yemenshabab/core/helper/cache_helper.dart';
 import 'package:yemenshabab/shared/theme/dark_theme.dart';
 import 'package:yemenshabab/shared/theme/light_theme.dart';
 
@@ -21,6 +27,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   Locale _locale = Locale(CacheHelper.getData(key: 'local') ?? 'ar');
+
   ThemeMode _themeMode =
       ThemeMode.values[CacheHelper.getData(key: 'theme') ?? 0];
 
@@ -43,6 +50,12 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    isLoggedIn = (CacheHelper.getData(key: 'isLogin') ?? false) as bool;
+    var encodedUserInfo = CacheHelper.getData(key: 'userInfo');
+    if (encodedUserInfo != null) {
+      userInfo =  UserInfo.decode( encodedUserInfo);
+    }
+
     return MaterialApp(
       title: 'يمن شباب',
       localizationsDelegates: const [
@@ -57,10 +70,13 @@ class _AppState extends State<App> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: _themeMode,
-      initialRoute: '/',
+      initialRoute: AppRoutes.base,
       routes: {
-        '/': (context) => AppLayout(),
+        AppRoutes.base: (context) => AppLayout(),
+        AppRoutes.signIn: (context) => SignInScreen(),
+        AppRoutes.signUp: (context) => SignUpScreen(),
       },
+      // getPages: AppRoutes.getPages,
     );
   }
 }
